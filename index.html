@@ -120,7 +120,7 @@
                                     <!-- PAL is an electronic e-money distributor and liquidity provider acting as an
                                     off-ramp for remittance and African Businesses wanting to innovate cost-effectively
                                     within the Francophone Africa market. -->
-                                    Powering Nigerian SMEs with instant, secure cross-border payments from buyers across West Africa — including <span style="color: #2BB996;">Benin, Niger, Chad, and Cameroon.</span>
+                                    Powering Nigerian SMEs with instant, secure cross-border payments from buyers across West Africa — including <span id="country-typewriter" style="color: #2BB996;"></span>
                                 </div>
                                 <div class="bttns mt-5">
                                     <!-- <a target="_blank" href="https://dashboard.pals.africa/auth/login"
@@ -261,16 +261,12 @@
                 position: relative;
                 overflow: hidden;
                 border-radius: 20px;
-            }
-    
-            .carousel-wrapper {
-                display: flex;
-                transition: transform 0.5s ease-in-out;
+                /* Remove overflow: hidden; since no sliding */
             }
     
             .wallet-container {
                 min-width: 100%;
-                background-color: #4a4a4a;
+                /* background-color: #4a4a4a; */
                 padding: 40px;
                 color: white;
                 flex-shrink: 0;
@@ -288,7 +284,7 @@
                 right: 0;
                 width: 50%;
                 height: 100%;
-                background: linear-gradient(90deg, rgba(52, 52, 52, 0.9) 0%, rgba(74, 74, 74, 0.3) 100%);
+                /* background: linear-gradient(90deg, rgba(43, 54, 72, 0.9) 0%, rgba(43, 53, 71, 0.3) 100%); */
                 z-index: 1;
                 pointer-events: none;
             }
@@ -495,11 +491,13 @@
             /* Card 1 - Different background */
             .wallet-container.card1 {
                 background-color: #252f40;
+                background-image: url(../CurrentLandingPage-master/assets/img/noise.png);
+                background-blend-mode: difference;
             }
     
             .wallet-container.card1::before {
-                background: linear-gradient(90deg, rgba(43, 54, 72, 0.9) 0%, rgba(43, 53, 71, 0.3) 100%);
-            }
+               background: linear-gradient(90deg, rgba(45, 55, 72, 0.9) 0%, rgba(45, 55, 72, 0.3) 100%);
+           }
     
             /* Card 2 - Different background */
             .wallet-container.card2 {
@@ -657,133 +655,38 @@
     </head>
     <body>
         <div class="carousel-container">
-            <!-- Navigation Buttons -->
-            <!-- <button class="carousel-nav prev" onclick="prevSlide()">❮</button>
-            <button class="carousel-nav next" onclick="nextSlide()">❯</button> -->
-    
-            <div class="carousel-wrapper" id="carouselWrapper">
-                <!-- Card 1 - Benin -->
-                <div class="wallet-container card1">
-                    <div class="animation-background">
-                        <iframe src="https://cdn.lottielab.com/l/5cKf19UrLGpsHK.html" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                    
-                    <div class="content-wrapper">
-                        <div class="header">
-                            <span>Business</span> Wallet for African
-                        </div>
-                        
-                        <div class="profile-section">
-                            <div class="profile-left">
-                                <div class="profile-image">
-                                    <img src="assets/img/Ellipse.png" alt="Profile">
-                                </div>
-                                <div class="profile-info">
-                                    <h2>
-                                        Benin, Cotonou
-                                        <div class="flag benin"></div>
-                                    </h2>
-                                    <p>
-                                        I am able to pay Nigerian exporters with PAL app 
-                                        <span class="peace-sign">✌️</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="website-url">
-                                
-                            </div>
-                        </div>
-    
-                        <div class="download-section">
-                            <a href="#" class="download-link">Download Your Wallet</a>
-                        </div>
-                    </div>
+            <div class="wallet-container card1">
+                <div class="animation-background">
+                    <iframe src="https://cdn.lottielab.com/l/5cKf19UrLGpsHK.html" allowfullscreen loading="lazy"></iframe>
                 </div>
-    
-                <!-- Card 2 - Nigeria -->
-                <div class="wallet-container card2">
-                    <div class="animation-background">
-                        <iframe src="https://cdn.lottielab.com/l/5cKf19UrLGpsHK.html" allowfullscreen loading="lazy"></iframe>
+                <div class="content-wrapper">
+                    <div class="header">
+                        <span>Business</span> Wallet for African
                     </div>
-                    
-                    <div class="content-wrapper">
-                        <div class="header">
-                            <span>Business</span> Wallet for African
-                        </div>
-                        
-                        <div class="profile-section">
-                            <div class="profile-left">
-                                <div class="profile-image">
-                                    <img src="assets/img/Ellipse.png" alt="Profile">
-                                </div>
-                                <div class="profile-info">
-                                    <h2>
-                                        Nigeria, Lagos
-                                        <div class="flag nigeria"></div>
-                                    </h2>
-                                    <p>
-                                        Export goods to West African countries easily 
-                                        <span class="peace-sign">🚀</span>
-                                    </p>
-                                </div>
+                    <div class="profile-section">
+                        <div class="profile-left" id="profile-left">
+                            <div class="profile-image">
+                                <img id="profile-img" src="assets/img/Ellipse.png" alt="Profile">
                             </div>
-                            <div class="website-url">
-                               
+                            <div class="profile-info">
+                                <h2>
+                                    <span id="country-city">Benin, Cotonou</span>
+                                    <div id="country-flag" class="flag benin"></div>
+                                </h2>
+                                <p id="country-message">
+                                    I am able to pay Nigerian exporters with PAL app 
+                                    <span id="country-emoji" class="peace-sign">✌️</span>
+                                </p>
                             </div>
                         </div>
-    
-                        <div class="download-section">
-                            <a href="#" class="download-link">Download Your Wallet</a>
-                        </div>
+                        <div class="website-url"></div>
                     </div>
-                </div>
-    
-                <!-- Card 3 - Ghana -->
-                <div class="wallet-container card3">
-                    <div class="animation-background">
-                        <iframe src="https://cdn.lottielab.com/l/5cKf19UrLGpsHK.html" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                    
-                    <div class="content-wrapper">
-                        <div class="header">
-                            <span>Business</span> Wallet for African
-                        </div>
-                        
-                        <div class="profile-section">
-                            <div class="profile-left">
-                                <div class="profile-image">
-                                    <img src="assets/img/Ellipse.png" alt="Profile">
-                                </div>
-                                <div class="profile-info">
-                                    <h2>
-                                        Ghana, Accra
-                                        <div class="flag ghana"></div>
-                                    </h2>
-                                    <p>
-                                        Connect with traders across Africa seamlessly 
-                                        <span class="peace-sign">⭐</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="website-url">
-                              
-                            </div>
-                        </div>
-    
-                        <div class="download-section">
-                            <a href="#" class="download-link">Download Your Wallet</a>
-                        </div>
+                    <div class="download-section">
+                        <a href="wallet-page.html" class="download-link">Download Your Wallet</a>
                     </div>
                 </div>
             </div>
         </div>
-    
-        <!-- Dots Indicator -->
-        <!-- <div class="carousel-dots">
-            <div class="dot active" onclick="currentSlide(1)"></div>
-            <div class="dot" onclick="currentSlide(2)"></div>
-            <div class="dot" onclick="currentSlide(3)"></div>
-        </div> -->
     
         <script>
             let currentSlideIndex = 0;
@@ -1646,57 +1549,6 @@
                             src="assets/img/transfer-schema.PNG" alt="">
                     </div> 
                 </div>
-                <!-- <div class="container mt-5" id="produits">
-                    <h2 class="text-clignote mb-5">
-                        <span class="line"></span>&nbsp;Voici à quoi vous s'attendre.
-                    </h2> -->
-                    <!-- <ul class="d-md-flex justify-content-between">
-                        <div class="col">
-                            <div class="row">
-                                <li class="w-25 col pr-3">
-                                    <div class="text-bold mb-3">Commencez rapidement</div>
-                                    <div>Ouvrir un compte PAL et détenir un portefeuille de devises est facile, il vous
-                                        suffit d'en demander un. PAL gère automatiquement la collecte de données et les
-                                        exigences de sécurité, puis, pouf, vous avez un portefeuille.</div>
-                                </li>
-                                <li class="w-25 col px-3">
-                                    <div class="text-bold mb-3">Virement bancaire et mobile money
-                                    </div>
-                                    <div>Effectuez des transferts de fonds instantanés et à moindre coût vers des comptes bancaires et des portefeuilles
-                                        mobiles au Bénin, au Togo, au Sénégal, au Mali, au Nigeria, en Côte d'Ivoire, au Niger, au Burkina Faso et dans
-                                        d'autres régions.
-                                    </div>
-                                </li>
-                            </div>
-                        </div> -->
-                        <!-- <div class="px-3 py-3"></div> -->
-                        <!-- <div class="col">
-                            <div class="row">
-                                <li class="w-25 col px-3">
-                                    <div class="text-bold mb-3">Accès à la liquidité sur demande</div>
-                                    <div>Vous rencontrez une pénurie de liquidités ? Nous vous soutenons. Nous offrons un cash flot immédiat sans avoir
-                                        besoin de garantie, garantissant ainsi la continuité de vos opérations.
-                                    </div>
-                                </li>
-                                <li class="w-25 col px-3">
-                                    <div class="text-bold mb-3">Taux de change avantageux (FX)</div>
-                                    <div>Nous proposons le meilleur taux de change pour aider les entreprises à déplacer
-                                        de l'argent entre différentes devises africaines.</div>
-                                </li>
-                            </div>
-                        </div>
-                    </ul>
-                    <div class="d-flex justify-content-center mt-5">
-                        <a target="_blank" href="https://dashboard.pals.africa/auth/login" class="btn btn-dark mr-5">
-                            <span>Obtenez une clé API</span>
-                        </a>
-                        <div class="px-3 w-5"></div>
-                        <a target="_blank" href="https://dashboard.pals.africa/auth/register"
-                            class="btn signup-btn rounded">
-                            <span>Ouvrez un compte - c'est gratuit</span>
-                        </a>
-                    </div>
-                </div> -->
             </section>
             <section class="">
                 <div class="flag-slider bg-black dark my-5" style="color: white;">
@@ -2045,13 +1897,13 @@
 
         $('.carousel-inner').carousel(1)
     </script>
-    <script>
+    <!-- <script>
         let slideIndex = 1;
         function showSlides(n) {
             let i;
             let slides = document.getElementsByClassName("ucSlides");
             let dots = document.getElementsByClassName("uc-slider");
-            if (n > slides.length) { slideIndex = 1 }
+            if (n > slides.length) slideIndex = 1 }
             if (n < 1) { slideIndex = slides.length }
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
@@ -2064,7 +1916,44 @@
             console.log(slideIndex - 1)
         }
         showSlides(1);
-    </script>
+    </script> -->
+                                      
+    <!-- <script type="text/javascript">
+    const countries = ["Benin", "Niger", "Chad", "Cameroon"];
+    const typewriterSpan = document.getElementById("country-typewriter");
+    let countryIndex = 0;
+    let charIndex = 0;
+    let typing = true;
+
+    function typeCountry() {
+        if (typing) {
+            if (charIndex < countries[countryIndex].length) {
+                typewriterSpan.textContent += countries[countryIndex][charIndex];
+                charIndex++;
+                setTimeout(typeCountry, 120);
+            } else {
+                typing = false;
+                setTimeout(typeCountry, 1000); // Wait before erasing
+            }
+        } else {
+            if (charIndex > 0) {
+                typewriterSpan.textContent = countries[countryIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(typeCountry, 60);
+            } else {
+                typing = true;
+                countryIndex = (countryIndex + 1) % countries.length;
+                setTimeout(typeCountry, 400);
+            }
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        typeCountry();
+    });
+    </script> -->
+    </head>
+                                      
     <!-- <script>
         // Detect browser language 
         // const language = navigator.language || navigator.userLanguage;
@@ -2113,6 +2002,99 @@
     </script>
     
     <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/40101953.js"></script>
+
+    <script>
+    const countryProfiles = [
+        {
+            name: "Benin",
+            city: "Benin, Cotonou",
+            flagClass: "benin",
+            message: "I am able to pay Nigerian exporters with PAL app",
+            emoji: "✌️",
+            img: "assets/img/Ellipse.png"
+        },
+        {
+            name: "Nigeria",
+            city: "Nigeria, Lagos",
+            flagClass: "nigeria",
+            message: "Export goods to West African countries easily",
+            emoji: "🚀",
+            img: "assets/img/Eclipse2.jpg"
+        },
+        {
+            name: "Ghana",
+            city: "Ghana, Accra",
+            flagClass: "ghana",
+            message: "Connect with traders across Africa seamlessly",
+            emoji: "⭐",
+            img: "assets/img/Eclipse3.jpg"
+        },
+        {
+            name: "Chad",
+            city: "Chad, N'Djamena",
+            flagClass: "chad",
+            message: "Trade securely with PAL across borders",
+            emoji: "🌍",
+            img: "assets/img/Eclipse4.jpg"
+        },
+        {
+            name: "Cameroon",
+            city: "Cameroon, Yaoundé",
+            flagClass: "cameroon",
+            message: "PAL connects Cameroon to West Africa",
+            emoji: "💼",
+            img: "assets/img/Eclipse5.jpg"
+        }
+    ];
+
+    const typewriterSpan = document.getElementById("country-typewriter");
+    const countryCity = document.getElementById("country-city");
+    const countryFlag = document.getElementById("country-flag");
+    const countryMessage = document.getElementById("country-message");
+    const profileImg = document.getElementById("profile-img");
+
+    let countryIndex = 0;
+    let charIndex = 0;
+    let typing = true;
+
+    function updateProfile(idx) {
+        const profile = countryProfiles[idx];
+        countryCity.textContent = profile.city;
+        countryFlag.className = "flag " + profile.flagClass;
+        countryMessage.innerHTML = profile.message + ' <span id="country-emoji" class="peace-sign">' + profile.emoji + '</span>';
+        profileImg.src = profile.img;
+    }
+
+    function typeCountry() {
+        const profile = countryProfiles[countryIndex];
+        if (typing) {
+            if (charIndex < profile.name.length) {
+                typewriterSpan.textContent += profile.name[charIndex];
+                charIndex++;
+                setTimeout(typeCountry, 120);
+            } else {
+                typing = false;
+                setTimeout(typeCountry, 1000); // Wait before erasing
+            }
+        } else {
+            if (charIndex > 0) {
+                typewriterSpan.textContent = profile.name.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(typeCountry, 60);
+            } else {
+                typing = true;
+                countryIndex = (countryIndex + 1) % countryProfiles.length;
+                updateProfile(countryIndex);
+                setTimeout(typeCountry, 400);
+            }
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        updateProfile(countryIndex);
+        typeCountry();
+    });
+    </script>
 </body>
 
 </html>

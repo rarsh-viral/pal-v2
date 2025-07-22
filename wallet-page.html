@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAL</title>
+    <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .page-bg {
+            background-image: url(../CurrentLandingPage-master/assets/img/noise.png);
+            background-blend-mode: difference;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            color: #000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+       
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1002;
+}
+.menu-icon {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  display: block;
+  position: relative;
+  border-radius: 2px;
+}
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.menu-icon::before { top: -9px; }
+.menu-icon::after  { top: 9px; }
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #181a1b;
+  width: 200px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  border-radius: 0 0 8px 8px;
+  z-index: 1001;
+  padding: 16px 0;
+}
+.mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mobile-menu ul li {
+  margin: 0;
+  padding: 0;
+}
+.mobile-menu ul li a {
+  display: block;
+  padding: 12px 24px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+.mobile-menu ul li a:hover {
+  background: #2bb996;
+  color: #181a1b;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none !important;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .mobile-menu.active {
+    display: block;
+  }
+}
+
+
+
+
+
+        /* .nav-icon:first-child {
+            background: #000;
+        }
+
+        .nav-icon:last-child {
+            background: #000;
+        } */
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 0 0 0;
+            
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #000;
+            line-height: 1.1;
+        }
+
+        .hero .highlight {
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: #666;
+            max-width: 500px;
+            margin: 0 auto 50px;
+            line-height: 1.5;
+        }
+
+        .hero p strong {
+            color: #000;
+            font-weight: 700;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 80px;
+        }
+
+        .download-btn {
+            width: 180px;
+            height: 54px;
+            
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .phone-section {
+            position: relative;
+            padding: 0 0 0 0;
+        }
+
+        .phone-mockup {
+            /* background: #f5f5f5; */
+            position: relative;
+            display: inline-block;
+            z-index: 2;
+        }
+
+        .phone-mockup-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        .phone-frame {
+            width: 280px;
+            height: 560px;
+            background: #000;
+            border-radius: 40px;
+            padding: 8px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #7dd3fc 0%, #0ea5e9 100%);
+            border-radius: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 26px;
+            background: #000;
+            border-radius: 15px;
+        }
+
+        .phone-status {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .balance-display {
+            margin-top: 120px;
+            text-align: center;
+        }
+
+        .balance {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .balance-label {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        .phone-buttons {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .phone-btn {
+            width: 56px;
+            height: 56px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .phone-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(125, 211, 252, 0.3) 0%, rgba(125, 211, 252, 0.1) 50%, transparent 100%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Features Section */
+        .features {
+            background: #2d3748;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 40px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .features .highlight {
+            font-weight: 700;
+        }
+
+        .features-subtitle {
+            font-size: 16px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-subtitle strong {
+            font-weight: 700;
+        }
+
+        .currency-flags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .flag {
+            width: 40px;
+            height: 30px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* Trade Section */
+        .trade-section {
+            padding: 100px 0;
+            text-align: left;
+            
+        }
+
+        .trade-section h2 {
+            font-size: 56px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #000;
+            line-height: 1.1;
+        }
+
+        /* .trade-section p{
+            margin-bottom: 20px;
+        } */
+
+        .trade-section .highlight {
+            font-weight: 700;
+        }
+
+        .trade-section h2,
+        .trade-section > p {
+            text-align: left;
+            margin-left: 0;
+            margin-right: 0;
+            
+        }
+
+        .trade-section > p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .trade-cards {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .trade-card {
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            width: 620px;
+            min-height: 420px;
+            position: relative;
+            background: #fff;
+        }
+
+        .trade-card-left,
+        .trade-card-right {
+            height: 320px;
+        }
+
+        .trade-card-left {
+            background: #b2dfdb;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 220px;
+            text-align: center;
+        }
+
+        .trade-card-left h3 {
+            margin: 0 0 10px 0;
+            font-weight: 400;
+            color: #222;
+        }
+
+        .trade-card-left .currency {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #222;
+        }
+
+        .trade-card-right {
+            /* width: 220px; */
+            height: 220px;
+            position: relative;
+            background: #eee;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+
+        .trade-card-right .person-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .trade-card-right .card-overlay {
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 60px;
+            background: #8d294f;
+            opacity: 0.95;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+        }
+
+        .trade-card-right .person-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            width: 100%;
+        }
+
+        .flag-badge img {
+            width: 22px;
+            height: 16px;
+            border-radius: 2px;
+            margin-right: 6px;
+        }
+
+        .person-name {
+            font-weight: bold;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+
+        .person-quote {
+            font-size: 0.85em;
+            opacity: 0.85;
+            margin-left: auto;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Ratings */
+        .ratings {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+        }
+
+        .rating {
+            text-align: center;
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .star {
+            width: 20px;
+            height: 20px;
+            background: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        .rating-text {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Payment Link Section */
+        .payment-section {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 48px 5vw 48px 5vw;
+            min-height: 500px;
+            gap: 30px;
+        }
+
+        .payment-content {
+            flex: 1 1 1;
+            max-width: 640px;
+        }
+
+        .payment-content h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            margin: 0 0 0.5em 0;
+            letter-spacing: -1px;
+        }
+
+        .payment-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0 0 0.5em 0;
+            letter-spacing: -1px;
+        }
+
+        .payment-content .subtitle {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 2em;
+            line-height: 1.4;
+        }
+
+        .payment-steps {
+            margin-bottom: 2em;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5em;
+            
+        }
+
+        .step-icon {
+            font-size: 2em;
+            color: #222;
+            min-width: 2em;
+            margin-top: 0.1em;
+        }
+
+        .step-title {
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 0.2em;
+        }
+
+        .step-desc {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.4;
+        }
+
+        .payment-btn {
+            background: #222;
+            color: #fff;
+            font-size: 1.25em;
+            font-weight: 600;
+            border: none;
+            border-radius: 1em;
+            padding: 0.9em 2.2em;
+            margin-top: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .payment-btn:hover {
+            background: #444;
+        }
+
+        .payment-image {
+            margin-top: 150px;
+            margin-right: 100px;
+            flex: 1 1 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            min-width: 320px;
+        }
+
+        .payment-image img {
+            max-width: 350px;
+            width: 100%;
+            height: auto;
+            border-radius: 0 0 0 0;
+            object-fit: contain;
+            background: none;
+            box-shadow: none;
+        }
+        @media (max-width: 900px) {
+            .payment-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 32px;
+            }
+            .payment-image {
+            justify-content: center;
+                width: 100%;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .phone-frame {
+                width: 250px;
+                height: 500px;
+            }
+
+            .trade-cards {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 16px;
+                padding-bottom: 12px;
+                grid-template-columns: 1fr;
+            }
+
+            .payment-content {
+                grid-template-columns: 1fr;
+            }
+
+            .ratings {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .trade-section h2,
+            .payment-text h2 {
+                font-size: 40px;
+            }
+        }
+
+        .banner {
+            background-image: url(../CurrentLandingPage-master/assets/img/noise.png);
+            background-blend-mode: difference;
+            /* background: 666666; */
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 50px 30px;
+            text-align: center;
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            bottom: 5px;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            z-index: 5;
+           
+        }
+
+        .hero .banner .title {
+            color: white;
+        }
+
+        .hero .banner .subtitle {
+            color: white;
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+            pointer-events: none;
+            border-radius: 24px;
+        }
+
+        .title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 40px;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .title .no-fees {
+            font-weight: 900;
+        }
+
+        .title .one-africa {
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #e0e0e0;
+            max-width: 900px;
+            margin: 0 auto 60px auto;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .highlight {
+            font-weight: 700;
+            
+        }
+
+        .flags-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 80px;
+            margin-top: 20px;
+        }
+
+        .flags-track {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            gap: 30px;
+            width: max-content;
+        }
+
+        .flag {
+            width: 70px;
+            height: 50px;
+            border-radius: 8px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .flag:hover {
+            transform: scale(1.1);
+        }
+
+        /* Flag designs */
+        .flag.cote-divoire {
+            background: linear-gradient(to right, #ff8c00 33.33%, white 33.33%, white 66.66%, #009639 66.66%);
+        }
+
+        .flag.togo {
+            background: linear-gradient(to bottom, 
+                #006a4e 0%, #006a4e 20%, 
+                #ffce00 20%, #ffce00 40%, 
+                #006a4e 40%, #006a4e 60%, 
+                #ffce00 60%, #ffce00 80%, 
+                #006a4e 80%);
+            position: relative;
+        }
+
+        .flag.togo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100%;
+            background: #d21034;
+        }
+
+        .flag.togo::after {
+            content: '★';
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 16px;
+            z-index: 2;
+        }
+
+        .flag.maldives {
+            background: #d21034;
+            position: relative;
+        }
+
+        .flag.maldives::before {
+            content: '';
+            position: absolute;
+            top: 15%;
+            left: 25%;
+            width: 50%;
+            height: 70%;
+            background: #007e3a;
+            border-radius: 50%;
+        }
+
+        .flag.maldives::after {
+            content: '☪';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 20px;
+        }
+
+        .flag.mali {
+            background: linear-gradient(to right, #14b53a 33.33%, #fcd116 33.33%, #fcd116 66.66%, #ce1126 66.66%);
+        }
+
+        .flag.nigeria {
+            background: linear-gradient(to right, #008751 33.33%, white 33.33%, white 66.66%, #008751 66.66%);
+        }
+
+        .flag.ireland {
+            background: linear-gradient(to right, #009639 33.33%, white 33.33%, white 66.66%, #ff8c00 66.66%);
+        }
+
+        .flag.togo2 {
+            background: linear-gradient(to bottom, 
+                #006a4e 0%, #006a4e 20%, 
+                #ffce00 20%, #ffce00 40%, 
+                #006a4e 40%, #006a4e 60%, 
+                #ffce00 60%, #ffce00 80%, 
+                #006a4e 80%);
+            position: relative;
+        }
+
+        .flag.togo2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100%;
+            background: #d21034;
+        }
+
+        .flag.togo2::after {
+            content: '★';
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 16px;
+            z-index: 2;
+        }
+
+        .flag.burkina-faso {
+            background: linear-gradient(to bottom, #ce1126 50%, #009639 50%);
+            position: relative;
+        }
+
+        .flag.burkina-faso::after {
+            content: '★';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fcd116;
+            font-size: 18px;
+        }
+
+        .flag.chad {
+            background: linear-gradient(to right, #002664 33.33%, #fecb00 33.33%, #fecb00 66.66%, #c60c30 66.66%);
+        }
+
+        .flag.nigeria2 {
+            background: linear-gradient(to right, #008751 33.33%, white 33.33%, white 66.66%, #008751 66.66%);
+        }
+
+        .flag.burkina-faso2 {
+            background: linear-gradient(to bottom, #ce1126 50%, #009639 50%);
+            position: relative;
+        }
+
+        .flag.burkina-faso2::after {
+            content: '★';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fcd116;
+            font-size: 18px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+            
+            .banner {
+                padding: 40px 20px;
+                border-radius: 20px;
+            }
+            
+            .title {
+                font-size: 3rem;
+                /* color: white; */
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .flag {
+                width: 60px;
+                height: 40px;
+            }
+        }
+
+        .trade-card-left.card1 { background: #b2dfdb; }   /* Teal */
+        .trade-card-left.card2 { background: #ffe082; }   /* Light Yellow */
+        .trade-card-left.card3 { background: #b39ddb; }   /* Light Purple */
+
+        .trade-card-left { display: none; }
+        .trade-card-left.active { display: flex; }
+
+        .trade-cards-rating {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 16px;
+        }
+
+        .rating {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+            font-size: 1.2em;
+            color: #FFD700; /* gold */
+        }
+
+        .rating-text {
+            font-size: 0.95em;
+            color: #333;
+            margin-top: 4px;
+        }
+
+        .rating-left {
+            width: 620px; /* match .trade-card width */
+        }
+
+        .rating-right {
+            width: 620px; /* match .trade-card width */
+        }
+
+        .feature-tags-section {
+          background: #232323;
+          width: 100vw;
+          overflow: hidden;
+          position: relative;
+          height: 220px; /* Increased height for 4 rows */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0;
+          justify-content: center;
+        }
+
+        .feature-tags-marquee {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          position: relative;
+          gap: 10px;
+          justify-content: center;
+        }
+
+        .feature-tags-row {
+          display: flex;
+          gap: 10px 12px;
+          align-items: center;
+          white-space: nowrap;
+          height: 48px;
+          font-size: 1.35em;
+          animation: marquee-left 22s linear infinite;
+        }
+
+        .feature-tags-row:nth-child(2) {
+          animation: marquee-right 24s linear infinite;
+        }
+        .feature-tags-row:nth-child(3) {
+          animation: marquee-left 26s linear infinite;
+        }
+        .feature-tags-row:nth-child(4) {
+          animation: marquee-right 28s linear infinite;
+        }
+
+        .feature-tags-marquee:hover .feature-tags-row {
+          animation-play-state: paused;
+        }
+
+        @keyframes marquee-left {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+          0%   { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+
+        .tag {
+          display: inline-flex;
+          align-items: center;
+          font-size: 1.08em;
+          font-weight: 600;
+          border-radius: 7px;
+          padding: 6px 16px;
+          background: #333;
+          color: #fff;
+          box-shadow: 0 1px 2px #0002;
+          letter-spacing: 0.01em;
+          white-space: nowrap;
+          border: none;
+          transition: background 0.2s;
+          height: 36px;
+        }
+
+        .tag-emoji {
+          margin-right: 7px;
+          font-size: 1.1em;
+        }
+
+        .tag-blue    { background: #1976d2; color: #fff; }
+        .tag-yellow  { background: #ffb300; color: #222; }
+        .tag-brown   { background: #6d4c41; color: #fff; }
+        .tag-grey    { background: #444; color: #fff; }
+        .tag-red     { background: #b71c1c; color: #fff; }
+        .tag-orange  { background: #ff9800; color: #fff; }
+        .tag-green   { background: #388e3c; color: #fff; }
+        .tag-purple  { background: #7c4dff; color: #fff; }
+        .tag-pink    { background: #d81b60; color: #fff; }
+
+       
+     
+
+.virtual-cards-section {
+  padding: 64px 0 64px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.virtual-cards-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.coming-soon {
+  font-size: 1.05em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.virtual-cards-title {
+  font-size: 2.8em;
+  font-weight: 400;
+  margin: 0 0 0.1em 0;
+  color: #222;
+}
+
+.virtual-cards-headline {
+  font-size: 2.8em;
+  font-weight: 800;
+  margin: 0 0 0.5em 0;
+  color: #111;
+  letter-spacing: -1px;
+}
+
+.virtual-cards-subtitle {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 64px;
+  line-height: 1.4;
+}
+
+.virtual-cards-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.virtual-cards-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  font-size: 1.18em;
+  color: #444;
+  margin-bottom: 36px;
+  text-align: left;
+}
+
+.virtual-cards-features .checkmark {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 50%;
+  background: #2bb996;
+  margin-top: 2px;
+  position: relative;
+}
+.virtual-cards-features .checkmark::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 7px;
+  width: 12px;
+  height: 18px;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  transform: rotate(45deg);
+}
+
+.virtual-cards-features span:last-child {
+  line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+  .virtual-cards-content {
+    padding: 0 16px;
+  }
+  .virtual-cards-title,
+  .virtual-cards-headline {
+    font-size: 2em;
+  }
+  .virtual-cards-features li {
+    font-size: 1em;
+  }
+}
+
+.virtual-cards-flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 48px;
+  margin-top: 48px;
+}
+
+.virtual-cards-features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 340px;
+  text-align: left;
+}
+
+.virtual-card-visual {
+  flex: 0 0 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.virtual-card-stack {
+  position: relative;
+  width: 340px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatCardStack 3.5s ease-in-out infinite alternate;
+}
+
+.pal-cards-img {
+  width: 340px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 32px rgba(44,185,150,0.18)) drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+  transition: transform 0.3s;
+}
+
+@keyframes floatCardStack {
+  0%   { transform: translateY(0) rotate(-2deg) scale(1);}
+  100% { transform: translateY(-12px) rotate(2deg) scale(1.03);}
+}
+
+.virtual-card-chip {
+  width: 38px;
+  height: 28px;
+  border-radius: 7px;
+  background: linear-gradient(90deg, #fff 60%, #e0e0e0 100%);
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  box-shadow: 0 1px 4px #0002;
+}
+
+.virtual-card-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 60% 40%, #fff 60%, #fbc02d 100%);
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  box-shadow: 0 1px 4px #0002;
+}
+
+.virtual-card-number {
+  font-size: 1.25em;
+  letter-spacing: 0.12em;
+  margin-bottom: 18px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.virtual-card-name {
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.virtual-card-valid {
+  font-size: 0.95em;
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .virtual-cards-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .virtual-card-visual {
+    margin-top: 24px;
+            }
+        }
+
+
+
+
+.security-section-bg {
+  padding: 64px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.security-card {
+  background: #2b2b2b;
+  background-image: url(../CurrentLandingPage-master/assets/img/noise.png);
+  background-blend-mode: difference;
+  color: #fff;
+  border-radius: 32px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+  max-width: 760px;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 56px 40px 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.security-link {
+  color: #fff;
+  opacity: 0.85;
+  font-size: 1.25em;
+  margin-bottom: 48px;
+  word-break: break-all;
+  font-family: 'Inter', 'Arial', sans-serif;
+}
+
+.security-headline {
+  font-size: 2.2em;
+  font-weight: 400;
+  margin-bottom: 32px;
+  color: #fff;
+  font-family: 'Inter', 'Arial', sans-serif;
+}
+.security-headline strong {
+  font-weight: 800;
+}
+
+.security-desc {
+  font-size: 1.1em;
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-family: 'Inter', 'Arial', sans-serif;
+  max-width: 600px;
+}
+
+@media (max-width: 700px) {
+  .security-card {
+    padding: 32px 12px 32px 12px;
+    border-radius: 18px;
+  }
+  .security-headline {
+    font-size: 1.3em;
+  }
+  .security-link {
+    font-size: 1em;
+  }
+}
+
+.pal-footer {
+  background: #181a1b;
+  color: #fff;
+  /* border-top: 3px solid #2bb996; */
+  font-family: 'Inter', Arial, sans-serif;
+  margin-top: 0;
+}
+
+.pal-footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 24px 24px;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.pal-footer-col {
+  min-width: 180px;
+  flex: 1 1 0;
+}
+
+.pal-footer-logo {
+  flex: 1 1 0;
+}
+
+.pal-footer-brand {
+  font-size: 2.8em;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+}
+
+.pal-footer-title {
+  font-size: 1.18em;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.pal-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pal-footer-col ul li {
+  margin-bottom: 12px;
+  font-size: 1.08em;
+  color: #e0e0e0;
+}
+
+.pal-footer-col ul li a {
+  color: #e0e0e0;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.pal-footer-col ul li a:hover {
+  color: #2bb996;
+}
+
+.pal-footer-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.pal-footer-social-link svg {
+  vertical-align: middle;
+  color: blue;
+  transition: color 0.2s;
+}
+.pal-footer-social-link:hover svg {
+  color: #fff;
+}
+
+.pal-footer-note {
+  text-align: center;
+  color: #bdbdbd;
+  font-size: 1em;
+  margin: 24px 0 0 0;
+  padding: 0 24px;
+}
+
+.pal-footer-bottom {
+  border-top: 1px solid #444;
+  margin-top: 32px;
+  padding: 18px 24px 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.08em;
+  background: #181a1b;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pal-footer-bottom a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 8px;
+  margin-right: 8px;
+  transition: color 0.2s;
+}
+.pal-footer-bottom a:hover {
+  color: #2bb996;
+}
+
+@media (max-width: 900px) {
+  .pal-footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .pal-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 1em;
+  }
+}
+
+.security-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.security-animation svg {
+  animation: lockBounce 2.5s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 12px #2bb99655);
+}
+@keyframes lockBounce {
+  0%   { transform: translateY(0) scale(1);}
+  100% { transform: translateY(-8px) scale(1.04);}
+}
+
+.security-animation svg {
+  animation: lockBounce 2.5s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 12px #2bb99655);
+}
+@keyframes lockBounce {
+  0%   { transform: translateY(0) scale(1);}
+  100% { transform: translateY(-8px) scale(1.04);}
+}
+        
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const menuToggle = document.querySelector('.menu-toggle');
+          const mobileMenu = document.querySelector('.mobile-menu');
+          if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+              mobileMenu.classList.toggle('active');
+            });
+          }
+        });
+    </script>
+</head>
+<body class="page-bg">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="display:inline-block;">
+                        <img src="assets/img/logo_pal-removebg-preview.png" alt="PAL Logo" style="height:90px; width:100%; vertical-align:middle;">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="#">Trade & Swap</a>
+                    <a href="#">Pay With Link</a>
+                    <a href="#">Virtual Card</a>
+                </div>
+                <button class="menu-toggle" aria-label="Open menu">
+                    <span class="menu-icon"></span>
+                  </button>
+                  <div class="mobile-menu">
+                    <ul>
+                      <li><a href="#">Trade & Swap</a></li>
+                      <li><a href="#">Pay With Link</a></li>
+                      <li><a href="#">Virtual Card</a></li>
+                    </ul>
+                </div>
+                <div class="nav-right">
+                    <div class="nav-icon">
+                        <img src="assets/img/Google Play.png" alt="Google Play" style="width:34px; height:34px; object-fit:contain;">
+                    </div>
+                    <div class="nav-icon">
+                        <img src="assets/img/App Store.png" alt="App Store" style="width:34px; height:34px; object-fit:contain;">
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1><span class="highlight">Business Wallet</span> that make<br>trade happen</h1>
+            <p>From Lagos to Yaoundé, Benin Republic, Niamey, and beyond — <strong>hold, send, and receive payments</strong> in any African currency with ease.</p>
+            
+            <div class="download-buttons">
+                <a href="#" class="download-btn">
+                    <img src="assets/img/Google_Play_Store.png" alt="Google Play" style="height:52px; width:auto; display:block;">
+                </a>
+                 <a href="#" class="download-btn">
+                    <img src="assets/img/App-Store.png" alt="App Store" style="height:102px; width:auto; display:block;">
+                </a>
+            </div>
+        </div>
+        
+        <div class="phone-section">
+            <div class="phone-glow"></div>
+             <div class="phone-mockup-wrapper" style="position: relative; display: inline-block;">
+                <img src="assets/img/phone2.png" alt="PAL Phone" class="phone-mockup-img" style="width:140%; max-width:100%; display:block; margin:0 auto; position:relative; z-index:2;">
+                <img src="assets/img/Subtract.png" alt="Decor" class="phone-mockup-decor"
+                    style="
+                        position: absolute;
+                        left: 40%;
+                        transform: translateX(-50%);
+                        bottom: -100px;
+                        width: 210%;
+                        max-width: 900px;
+                        z-index: 3;
+                        pointer-events: none;
+                    ">
+            </div>
+            <div class="banner">
+                <h1 class="title">
+                    <span class="no-fees">No Fees.</span> <span class="one-africa">One Africa.</span>
+                </h1>
+                
+                <p class="subtitle">
+                    Our digital wallet supports <span class="highlight">multiple</span> local currencies like <span class="highlight">XOF, NGN, and XAF</span> — helping you 
+                    <span class="highlight">trade, pay, and exchange money instantly and affordably</span> between countries
+                </p>
+                
+                <div class="flags-container">
+                    <div class="flags-track">
+                        <div class="flag cote-divoire"></div>
+                        <div class="flag togo"></div>
+                        <div class="flag maldives"></div>
+                        <div class="flag mali"></div>
+                        <div class="flag nigeria"></div>
+                        <div class="flag ireland"></div>
+                        <div class="flag togo2"></div>
+                        <div class="flag burkina-faso"></div>
+                        <div class="flag chad"></div>
+                        <div class="flag nigeria2"></div>
+                        <div class="flag burkina-faso2"></div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="flag cote-divoire"></div>
+                        <div class="flag togo"></div>
+                        <div class="flag maldives"></div>
+                        <div class="flag mali"></div>
+                        <div class="flag nigeria"></div>
+                        <div class="flag ireland"></div>
+                        <div class="flag togo2"></div>
+                        <div class="flag burkina-faso"></div>
+                        <div class="flag chad"></div>
+                        <div class="flag nigeria2"></div>
+                        <div class="flag burkina-faso2"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="phone-frame">
+                <div class="phone-screen">
+                    <div class="phone-notch"></div>
+                    <div class="phone-status">
+                        <span>PAL</span>
+                        <span>100%</span>
+                    </div>
+                    <div class="balance-display">
+                        <div class="balance">₦0.00</div>
+                        <div class="balance-label">Available Balance</div>
+                    </div>
+                    <div class="phone-buttons">
+                        <div class="phone-btn">Send</div>
+                        <div class="phone-btn">Receive</div>
+                        <div class="phone-btn">Swap</div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <!-- <section class="features">
+        <div class="container">
+            <h2><span class="highlight">No Fees.</span> One Africa.</h2>
+            <p class="features-subtitle">Our digital wallet supports <strong>multiple</strong> local currencies like <strong>XOF, NGN, and XAF</strong> — helping you <strong>trade, pay, and exchange money</strong> instantly and affordably between countries</p>
+            
+            <div class="currency-flags">
+                <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
+                <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
+                <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
+                <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
+                <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
+                <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
+                <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
+                <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
+                <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
+                <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
+                <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Trade Section -->
+    <section class="trade-section">
+        <div class="container">
+            <h2>Let's make<br><span class="highlight">Trade moves.</span></h2>
+            <p>Join thousands of African importers who trust PAL for fast, secure, and </p>
+            <p>free transaction with Nigeria exporters.</p>
+            <br>
+            
+            <div class="trade-cards">
+                <div class="trade-card trade-card-left card1 active">
+                        <h3>Hold & SWAP</h3>
+                        <div class="currency">NGN</div>
+                    </div>
+                <div class="trade-card trade-card-left card2">
+                    <h3>Hold & SWAP</h3>
+                    <div class="currency">XOF</div>
+                </div>
+                <div class="trade-card trade-card-left card3">
+                    <h3>Hold & SWAP</h3>
+                    <div class="currency">XAF</div>
+                </div>
+                <div class="trade-card trade-card-right">
+                    <img class="person-image" src="C:\Users\rarsh\Downloads\CurrentLandingPage-master\CurrentLandingPage-master\iteck_html\assets\img\aisha-bakari.png" alt="Aicha Bakari">
+                    <div class="card-overlay">
+                        <div class="person-info">
+                            <span class="flag-badge"><img src="assets/img/flags/bj.png" alt="Benin" /></span>
+                            <span class="person-name">Aicha Bakari</span>
+                        <div class="person-quote">I am artisant that makes clothes look fresh</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trade-cards-rating">
+                <div class="rating rating-left">
+                    <div class="stars">
+                        <div class="star">★</div>
+                        <div class="star">★</div>
+                        <div class="star">★</div>
+                        <div class="star">★</div>
+                        <div class="star">★</div>
+                    </div>
+                    <div class="nav-icon">
+                        <img src="assets/img/Google Play.png" alt="Google Play" style="width:34px; height:34px; object-fit:contain;">
+                    </div>
+                    <div class="rating-text">Rated 4.7 stars on Play Store</div>
+                </div>
+                <div class="rating rating-right">
+                    <div class="stars">
+                        <div class="star">★</div>
+                        <div class="star">★</div>
+                        <div class="star">★</div>
+                        <div class="star">★</div>
+                        <div class="star">★</div>
+                    </div>
+                    <div class="nav-icon">
+                        <img src="assets/img/App Store.png" alt="App Store" style="width:34px; height:34px; object-fit:contain;">
+                    </div>
+                    <div class="rating-text">Rated 4.8 stars on App Store</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Link Section -->
+    <section class="payment-section">
+            <div class="payment-content">
+            <h1>Payment Link</h1>
+            <h2>Get paid easy</h2>
+            <p class="subtitle">
+                Create your payment link and share it with anyone.<br>
+                Get paid in multiple currencies — even if your customers don’t use PAL.
+            </p>
+                    <div class="payment-steps">
+                        <div class="step">
+                    <span class="step-icon">●</span>
+                    <div>
+                                <div class="step-title">Get your payment Link</div>
+                                <div class="step-desc">Download the PAL app and get your payment link for free</div>
+                            </div>
+                        </div>
+                        <div class="step">
+                    <span class="step-icon">◉</span>
+                    <div>
+                                <div class="step-title">Share your Link</div>
+                        <div class="step-desc">Share your link to anyone on social media or offline. They can pay you with momo, Visa/Mastercard and bank transfer</div>
+                            </div>
+                        </div>
+                <div class="step">
+                    <span class="step-icon">◍</span>
+                    <div>
+                        <div class="step-title">Get Paid in NGN, XOF, XAF and more</div>
+                        <div class="step-desc">Instant settlement in the same currency your customer pays you.</div>
+                    </div>
+                </div>
+            </div>
+            <button class="payment-btn">Ready? Start Now</button>
+        </div>
+                <div class="payment-image">
+            <img src="assets/img/woman_with_hijab.png" alt="Smiling woman with phone">
+                    </div>
+    </section>
+    <div class="feature-tags-section">
+      <div class="feature-tags-marquee">
+        <div class="feature-tags-row">
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @Kredete Tag</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> Kredete Tag</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
+        <div class="feature-tags-row">
+          <!-- Repeat the same tags for seamless animation -->
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @Kredete Tag</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> Kredete Tag</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
+        <div class="feature-tags-row">
+          <!-- Third row, opposite direction -->
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @Kredete Tag</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> Kredete Tag</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
+        <div class="feature-tags-row">
+          <!-- Fourth row, opposite direction -->
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @Kredete Tag</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> Kredete Tag</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
+      </div>
+    </div>
+    <script>
+const leftCards = document.querySelectorAll('.trade-card-left');
+let currentLeft = 0;
+
+function showLeftCard(idx) {
+    leftCards.forEach((card, i) => {
+        card.classList.toggle('active', i === idx);
+    });
+}
+
+setInterval(() => {
+    currentLeft = (currentLeft + 1) % leftCards.length;
+    showLeftCard(currentLeft);
+}, 3000); // Change every 3 seconds
+
+// Show the first card on load
+showLeftCard(currentLeft);
+</script>
+    <section class="virtual-cards-section">
+      <div class="virtual-cards-content">
+        <div class="coming-soon">COMING SOON</div>
+        <h2 class="virtual-cards-title">Virtual cards</h2>
+        <h1 class="virtual-cards-headline">for a cashless world.</h1>
+        <div class="virtual-cards-subtitle">
+          Create your papayment link and share it with anyone<br>
+          Get paid in different currencies even if your customers doesn’t have PAL.
+        </div>
+        <div class="virtual-cards-flex">
+          <ul class="virtual-cards-features">
+            <li>
+              <span class="checkmark"></span>
+              <span>
+                Request your virtual dollar<br>
+                card in minutes
+              </span>
+            </li>
+            <li>
+              <span class="checkmark"></span>
+              <span>
+                Spend safely online with<br>
+                your Mastercard
+              </span>
+            </li>
+            <li>
+              <span class="checkmark"></span>
+              <span>
+                Customize your card to<br>
+                match your taste
+              </span>
+            </li>
+          </ul>
+          <div class="virtual-card-visual">
+            <div class="virtual-card-stack">
+              <img src="assets/img/pal_virtual_card.png" alt="PAL Virtual Cards" class="pal-cards-img" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="security-section-bg">
+  <div class="security-card">
+    <div class="security-animation">
+  <svg width="100" height="100" viewBox="0 0 64 64" fill="none">
+    <defs>
+      <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#2bb996" stop-opacity="0.7"/>
+        <stop offset="100%" stop-color="#2bb996" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="lockBody" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#444" />
+        <stop offset="100%" stop-color="#222" />
+      </linearGradient>
+      <linearGradient id="shackle" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#fff" />
+        <stop offset="100%" stop-color="#b2dfdb" />
+      </linearGradient>
+    </defs>
+    <!-- Glow -->
+    <ellipse cx="32" cy="70" rx="22" ry="8" fill="url(#glow)" />
+    <!-- Shackle -->
+    <path d="M20 32 v-8 a12 12 0 0 1 24 0 v8" stroke="url(#shackle)" stroke-width="4" fill="none" />
+    <!-- Lock body -->
+    <rect x="16" y="30" width="32" height="24" rx="7" fill="url(#lockBody)" stroke="#2bb996" stroke-width="2"/>
+    <!-- Keyhole circle -->
+    <circle cx="32" cy="46" r="4" fill="#fff" stroke="#2bb996" stroke-width="2"/>
+    <!-- Keyhole slot -->
+    <rect x="30.5" y="46" width="3" height="8" rx="1.5" fill="#2bb996"/>
+  </svg>
+</div>
+    <div class="security-headline">
+      <strong>Built for your</strong> peace of mind
+    </div>
+    <div class="security-desc">
+      We use 2-Factor Authentication (2FA) to implement additional layers of authentication to verify the payer's identity during a transaction. We also utilize secure communication protocols, like SSL and secure network configurations to protect transmitted data.
+    </div>
+  </div>
+</section>
+
+<footer class="pal-footer">
+    <div class="pal-footer-main">
+      <div class="pal-footer-col pal-footer-logo">
+        <div class="pal-footer-brand">PAL.</div>
+      </div>
+      <div class="pal-footer-col">
+        <div class="pal-footer-title">Products</div>
+        <ul>
+          <li>Business Wallet</li>
+          <li>API for businesses</li>
+          <li>Earn as agent</li>
+          <li>Pay with Link</li>
+          <li>Virtual Card</li>
+        </ul>
+      </div>
+      <div class="pal-footer-col">
+        <div class="pal-footer-title">Developer</div>
+        <ul>
+          <li>API Doc</li>
+        </ul>
+      </div>
+      <div class="pal-footer-col">
+        <div class="pal-footer-title">Get in touch</div>
+        <ul>
+          <li><a href="mailto:contact@pals.africa">contact@pals.africa</a></li>
+          <li class="pal-footer-socials">
+
+            <a href="https://www.linkedin.com/company/72080034/admin/" aria-label="LinkedIn" class="pal-footer-social-link"><svg width="20" height="20" fill="currentColor"><use href="#icon-linkedin"></use></svg></a>
+            <a href="https://twitter.com/Palafrika" aria-label="Twitter" class="pal-footer-social-link"><svg width="20" height="20" fill="currentColor"><use href="#icon-twitter"></use></svg></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pal-footer-note">
+      PAL Africa is not a licensed bank. Banking services on Pal are facilitated through partnerships with licensed financial institutions.
+    </div>
+    <div class="pal-footer-bottom">
+      <span>© <b>PAL Africa. 2025 All rights reserved</b></span>
+      <span>• <a href="#">Terms of Service</a></span>
+      <span>• <a href="#">Privacy policy</a></span>
+    </div>
+    <!-- SVG icons for social links -->
+    <svg style="display:none;">
+      <symbol id="icon-linkedin" viewBox="0 0 32 32"><path d="M29 0h-26c-1.7 0-3 1.3-3 3v26c0 1.7 1.3 3 3 3h26c1.7 0 3-1.3 3-3v-26c0-1.7-1.3-3-3-3zM9.3 27h-4.3v-13h4.3v13zM7.1 12.2c-1.4 0-2.3-1-2.3-2.2 0-1.3 0.9-2.2 2.3-2.2s2.3 0.9 2.3 2.2c0 1.2-0.9 2.2-2.3 2.2zM27 27h-4.3v-6.7c0-1.6-0.6-2.7-2-2.7-1.1 0-1.7 0.7-2 1.4-0.1 0.2-0.1 0.5-0.1 0.8v7.2h-4.3s0.1-11.7 0-13h4.3v1.8c0.6-0.9 1.6-2.2 4-2.2 2.9 0 5 1.9 5 6.1v7.3z"></path></symbol>
+      <symbol id="icon-twitter" viewBox="0 0 32 32"><path d="M32 6.1c-1.2 0.5-2.4 0.8-3.7 1 1.3-0.8 2.3-2 2.8-3.4-1.2 0.7-2.6 1.3-4 1.6-1.1-1.2-2.7-2-4.4-2-3.3 0-6 2.7-6 6 0 0.5 0.1 1 0.2 1.5-5-0.2-9.4-2.6-12.3-6.1-0.5 0.8-0.8 1.7-0.8 2.7 0 1.8 0.9 3.3 2.3 4.2-0.8 0-1.6-0.2-2.3-0.6v0.1c0 2.5 1.8 4.6 4.2 5.1-0.4 0.1-0.8 0.2-1.2 0.2-0.3 0-0.6 0-0.9-0.1 0.6 1.9 2.4 3.3 4.5 3.3-1.7 1.3-3.8 2-6.1 2-0.4 0-0.8 0-1.2-0.1 2.2 1.4 4.8 2.2 7.6 2.2 9.1 0 14.1-7.5 14.1-14.1 0-0.2 0-0.4 0-0.6 1-0.7 1.9-1.7 2.6-2.7z"></path></symbol>
+    </svg>
+  </footer>
+</body>
+</html>
