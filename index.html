@@ -40,14 +40,215 @@
     <link rel="stylesheet" href="assets/css/flag-carousel-animation.css" />
     <link rel="stylesheet" href="assets/css/gradient-background.css" />
     <link rel="stylesheet" href="assets/css/others/animate.css" />
+    <style>
+        /* Add to your CSS file or <style> block */
+        .flags-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 80px;
+            margin-top: 10px;
+        }
+
+        .flags-track {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            gap: 30px;
+            width: max-content;
+        }
+
+        .flag {
+            width: 70px;
+            height: 50px;
+            border-radius: 50px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .flag-label {
+          display: flex;
+          align-items: center;
+          background: rgba(255, 247, 247, 0.12);
+          border-radius: 50px;
+          padding: 8px 20px 8px 20px;
+          margin-right: 10px;
+          box-shadow: 0 2px 8px rgba(44,185,150,0.08);
+        }
+
+        .country-name {
+          margin-left: 12px;
+          font-size: 1.08em;
+          font-weight: 600;
+          color: #ffffff;
+          /* background: rgba(255,255,255,0.7); */
+          padding: 3px 12px;
+          border-radius: 6px;
+          letter-spacing: 0.01em;
+          box-shadow: 0 1px 2px #0001;
+        }
+
+        .flag:hover {
+            transform: scale(1.1);
+        }
+
+        /* Flag designs */
+        .flag.cote-divoire {
+            background: linear-gradient(to right, #ff8c00 33.33%, white 33.33%, white 66.66%, #009639 66.66%);
+        }
+
+        .flag.togo {
+            background: linear-gradient(to bottom, 
+                #006a4e 0%, #006a4e 20%, 
+                #ffce00 20%, #ffce00 40%, 
+                #006a4e 40%, #006a4e 60%, 
+                #ffce00 60%, #ffce00 80%, 
+                #006a4e 80%);
+            position: relative;
+        }
+
+        .flag.togo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100%;
+            background: #d21034;
+        }
+
+        .flag.togo::after {
+            content: '★';
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 16px;
+            z-index: 2;
+        }
+
+        .flag.maldives {
+            background: #d21034;
+            position: relative;
+        }
+
+        .flag.maldives::before {
+            content: '';
+            position: absolute;
+            top: 15%;
+            left: 25%;
+            width: 50%;
+            height: 70%;
+            background: #007e3a;
+            border-radius: 50%;
+        }
+
+        .flag.maldives::after {
+            content: '☪';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 20px;
+        }
+
+        .flag.mali {
+            background: linear-gradient(to right, #14b53a 33.33%, #fcd116 33.33%, #fcd116 66.66%, #ce1126 66.66%);
+        }
+
+        .flag.nigeria {
+            background: linear-gradient(to right, #008751 33.33%, white 33.33%, white 66.66%, #008751 66.66%);
+        }
+
+        .flag.ireland {
+            background: linear-gradient(to right, #009639 33.33%, white 33.33%, white 66.66%, #ff8c00 66.66%);
+        }
+
+        .flag.togo2 {
+            background: linear-gradient(to bottom, 
+                #006a4e 0%, #006a4e 20%, 
+                #ffce00 20%, #ffce00 40%, 
+                #006a4e 40%, #006a4e 60%, 
+                #ffce00 60%, #ffce00 80%, 
+                #006a4e 80%);
+            position: relative;
+        }
+
+        .flag.togo2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100%;
+            background: #d21034;
+        }
+
+        .flag.togo2::after {
+            content: '★';
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 16px;
+            z-index: 2;
+        }
+
+        .flag.burkina-faso {
+            background: linear-gradient(to bottom, #ce1126 50%, #009639 50%);
+            position: relative;
+        }
+
+        .flag.burkina-faso::after {
+            content: '★';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fcd116;
+            font-size: 18px;
+        }
+
+        .flag.chad {
+            background: linear-gradient(to right, #002664 33.33%, #fecb00 33.33%, #fecb00 66.66%, #c60c30 66.66%);
+        }
+
+        .flag.nigeria2 {
+            background: linear-gradient(to right, #008751 33.33%, white 33.33%, white 66.66%, #008751 66.66%);
+        }
+
+        .flag.burkina-faso2 {
+            background: linear-gradient(to bottom, #ce1126 50%, #009639 50%);
+            position: relative;
+        }
+
+        .flag.burkina-faso2::after {
+            content: '★';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fcd116;
+            font-size: 18px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+    </style>
 </head>
 
 <body class="page-bg">
-
-    <!-- ====== start loading page ====== -->
-    <div id="preloader">
-    </div>
-    <!-- ====== end loading page ====== -->
 
     <div id="google_translate_element"></div>
 
@@ -139,11 +340,38 @@
 
                             <!-- Replace single image with two hero images side by side -->
                             <div style="display: flex; gap: 10px;">
-                                <img style="height: 100%; width: 50%; object-fit: contain;" class="img"
-                                    src="assets/img/hero1.png" alt="Hero 1">
-                                <img style="height: 100%; width: 50%; object-fit: contain;" class="img"
-                                    src="assets/img/hero2.png" alt="Hero 2">
+                                <img id="hero-img-1" style="height: 100%; width: 50%; object-fit: contain;" src="assets/img/hero1.png" alt="Hero 1">
+                                <img id="hero-img-2" style="height: 100%; width: 50%; object-fit: contain;" src="assets/img/hero2.png" alt="Hero 2">
                             </div>
+                            <script>
+                            const heroImages = [
+                                "assets/img/hero1.png",
+                                "assets/img/hero2.png",
+                                "assets/img/hero3.png",
+                                "assets/img/hero4.png"
+                            ];
+
+                            function getRandomImage(exclude) {
+                                let filtered = heroImages.filter(img => img !== exclude);
+                                return filtered[Math.floor(Math.random() * filtered.length)];
+                            }
+
+                            function updateHeroImages() {
+                                const img1 = document.getElementById("hero-img-1");
+                                const img2 = document.getElementById("hero-img-2");
+                                let current1 = img1.src.split('/').pop();
+                                let current2 = img2.src.split('/').pop();
+
+                                // Pick two different images at random
+                                let newImg1 = heroImages[Math.floor(Math.random() * heroImages.length)];
+                                let newImg2 = getRandomImage(newImg1);
+
+                                img1.src = newImg1;
+                                img2.src = newImg2;
+                            }
+
+                            setInterval(updateHeroImages, 2500); // Change images every 2.5 seconds
+                            </script>
 
                         </div>
                     </div>
@@ -417,9 +645,9 @@
             }
     
             .download-section {
-                display: flex;
-                justify-content: flex-end;
-                margin-top: auto;
+                /* display: flex; */
+                justify-content: flex-start;
+                margin-top: 150px;
             }
     
             .download-link {
@@ -495,9 +723,9 @@
                 background-blend-mode: difference;
             }
     
-            .wallet-container.card1::before {
+            /* .wallet-container.card1::before {
                background: linear-gradient(90deg, rgba(45, 55, 72, 0.9) 0%, rgba(45, 55, 72, 0.3) 100%);
-           }
+           } */
     
             /* Card 2 - Different background */
             .wallet-container.card2 {
@@ -650,6 +878,44 @@
                     width: 18px;
                     height: 12px;
                 }
+            }
+            @media (max-width: 768px) {
+            .carousel-container {
+                max-width: 98vw;
+                padding: 8px;
+                border-radius: 10px;
+            }
+            .wallet-container {
+                padding: 16px;
+                min-height: 220px;
+            }
+            .header {
+                font-size: 1.3em;
+                margin-bottom: 18px;
+            }
+            .profile-image {
+                width: 44px;
+                height: 44px;
+            }
+            .profile-info h2 {
+                font-size: 1em;
+            }
+            .profile-info p,
+            .website-url {
+                font-size: 0.95em;
+                max-width: 120px;
+            }
+            .download-link {
+                font-size: 1em;
+            }
+            .carousel-nav {
+                padding: 6px 10px;
+                font-size: 1em;
+            }
+            .flag {
+                width: 16px;
+                height: 10px;
+            }
             }
         </style>
     </head>
@@ -955,807 +1221,299 @@
                 </div>
             </section>
             <section class="">
-                <div class="flag-slider bg-black dark my-5" style="color: white;">
-                    <div class="flag-slide-track-1">
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/gh.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/ci.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/tg.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/bj.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/ng.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/bf.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/ml.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/ngn.png" alt="">
-                        </a>
-
-
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/gh.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/ci.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/tg.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/bj.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/ng.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/bf.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/ml.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Logo description" loading="lazy" src="assets/img/flags/ngn.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="container">
-                    <h2 class="text-clignote">
-                        <span class="line"></span>&nbsp;Uses Cases
-                    </h2>
-                    <div class="d-md-flex justify-content-between mt-5">
-                        <div class="container p-0 transparent-bg">
-                            <div class="accordion accordion-flush transparent-bg" id="accordionFlushExample">
-                                <div class="accordion-item transparent-bg">
-                                    <h2 class="accordion-header transparent-bg" id="flush-headingOne">
-                                        <button onclick="showSlides(1)" class="accordion-button collapsed uc-slider"
-                                            data-target="#carouselExampleIndicators" data-slide-to="0" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                            aria-expanded="false" aria-controls="flush-collapseOne">
-                                            Remittance
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <div>With just three API calls, gain seamless access to the lucrative
-                                                African market, instantly connecting with mobile wallets, business
-                                                wallets, and banks. Experience the power of streamlined operations,
-                                                saving costs, and boosting your profit margins.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item transparent-bg">
-                                    <h2 class="accordion-header" id="flush-headingTwo">
-                                        <button onclick="showSlides(2)" data-target="#carouselExampleIndicators"
-                                            data-slide-to="1" class="accordion-button collapsed uc-slider" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                            aria-expanded="false" aria-controls="flush-collapseTwo">
-                                            Payment gateway
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <div>Did you know that a staggering 78% of African businesses lack a bank
-                                                account? By connecting to PAL infrastructure, you can bridge this gap
-                                                and gain access to local business and agent's wallets effortlessly.
-                                                Unlock a world of untapped opportunities, expand your reach, and
-                                                maximize your business potential.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item transparent-bg">
-                                    <h2 class="accordion-header transparent-bg" id="flush-headingThree">
-                                        <button onclick="showSlides(3)" data-target="#carouselExampleIndicators"
-                                            data-slide-to="2" class="accordion-button collapsed uc-slider" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                            aria-expanded="false" aria-controls="flush-collapseThree">
-                                            Small & medium business
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            If you're an African business, unlock the benefits of a PAL account,
-                                            enabling instant bank transfers and mobile wallet deposits across Togo,
-                                            Ivory Coast, Mali, Niger, Senegal, Burkina Faso, Nigeria, South Africa, and
-                                            Guinea Bissau ---> Experience our competitive FX rates for converting XOF to
-                                            NAIRA, EURO, or vice versa and get advance cash liquidity with no collateral
-                                            if needed
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item transparent-bg">
-                                    <h2 class="accordion-header transparent-bg" id="flush-headingFour">
-                                        <button onclick="showSlides(4)" class="accordion-button collapsed uc-slider"
-                                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
-                                            aria-expanded="false" aria-controls="flush-collapseFour">
-                                            Gig workers (Merchants)
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseFour" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            With our innovative solution, gig workers can seize new opportunities,
-                                            expand their business, and achieve financial independence like never before
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="flag-slider bg-black dark" style="color: white;">
+                    <div class="flags-container">
+                        <div class="flags-track">
+                            <div class="flag-label">
+                            <div class="flag cote-divoire"></div>
+                            <span class="country-name">Côte d'Ivoire</span>
                             </div>
-                        </div>
-                        <div class="w-10 px-5"></div>
-                        <div class="use-case">
-                            <div class="ucSlides">
-                                <img src="assets/img/pal/uc-1.png" alt="">
+                            <div class="flag-label">
+                            <div class="flag togo"></div>
+                            <span class="country-name">Togo</span>
                             </div>
-                            <div class="ucSlides">
-                                <img src="assets/img/pal/uc-2.png" alt="">
+                            <div class="flag-label">
+                            <div class="flag maldives"></div>
+                            <span class="country-name">Maldives</span>
                             </div>
-                            <div class="ucSlides">
-                                <img src="assets/img/pal/uc-3.png" alt="">
+                            <div class="flag-label">
+                            <div class="flag mali"></div>
+                            <span class="country-name">Mali</span>
                             </div>
-                            <div class="ucSlides">
-                                <img src="assets/img/pal/uc-4.png" alt="">
+                            <div class="flag-label">
+                            <div class="flag nigeria"></div>
+                            <span class="country-name">Nigeria</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag ireland"></div>
+                            <span class="country-name">Ireland</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag togo2"></div>
+                            <span class="country-name">Togo</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag burkina-faso"></div>
+                            <span class="country-name">Burkina Faso</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag chad"></div>
+                            <span class="country-name">Chad</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag nigeria2"></div>
+                            <span class="country-name">Nigeria</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag burkina-faso2"></div>
+                            <span class="country-name">Burkina Faso</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag cote-divoire"></div>
+                            <span class="country-name">Côte d'Ivoire</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag togo"></div>
+                            <span class="country-name">Togo</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag maldives"></div>
+                            <span class="country-name">Maldives</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag mali"></div>
+                            <span class="country-name">Mali</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag nigeria"></div>
+                            <span class="country-name">Nigeria</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag ireland"></div>
+                            <span class="country-name">Ireland</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag togo2"></div>
+                            <span class="country-name">Togo</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag burkina-faso"></div>
+                            <span class="country-name">Burkina Faso</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag chad"></div>
+                            <span class="country-name">Chad</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag nigeria2"></div>
+                            <span class="country-name">Nigeria</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag burkina-faso2"></div>
+                            <span class="country-name">Burkina Faso</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <footer class="style-3 bg-dark text-white pt-5" id="developers">
-                <div class="container">
-                    <div class="row gx-0 justify-content-between">
-                        <div class="col-md-2">
-                            <a class="navbar-brand" style="font-size: 48; font-weight: bolder;" href="#">
-                                PAL.
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <div class="">
-                                <div class="title text-bold mb-3">
-                                    Product
-                                </div>
-                                <ul>
-                                    <li class="text mb-10 d-block text-gray2">
-                                        Wallet Transfer
-                                    </li>
-                                    <li class="text mb-10 d-block text-gray2">
-                                        Bank Transfer
-                                    </li>
-                                    <li class="text mb-10 d-block text-gray2">
-                                        On-demande liquidity
-                                    </li>
-                                    <li class="text mb-10 d-block text-gray2">
-                                        POS for Gig workers
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <div class="">
-                                <div class="title text-bold mb-3">
-                                    Developer
-                                </div>
-                                <ul>
-                                    <li class="text mb-10 d-block text-gray2">
-                                        API Doc
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6">
-                            <div class="">
-                                <div class="title text-bold mb-3">
-                                    Industries
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="text mb-10 d-block text-gray2"> Remittance </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="text mb-10 d-block text-gray2"> Payment Gateway </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="text mb-10 d-block text-gray2"> Small & medium business </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="text mb-10 d-block text-gray2"> Gig workers (Merchants) </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6">
-                            <div class="">
-                                <div class="title text-bold mb-3">
-                                    Get in touch
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="mailto:contact@pals.africa" class="text mb-10 d-block text-gray2">
-                                            contact@pals.africa </a>
-                                    </li>
-                                </ul>
-                                <div>
-                                    <a href="https://www.linkedin.com/company/72080034/admin/" target="_blank"
-                                        class="text-white mx-1">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-                                    <a href="https://twitter.com/Palafrika" target="_blank" class="text-white mx-1">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <section class="disburse-section my-5">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="disburse-card p-0" style="background:none;box-shadow:none;">
+                    <img src="assets/img/image2.png" alt="Business Card" style="width:100%;border-radius:18px;display:block;">
                 </div>
-                <hr class="hr hr-blurry" />
-                <div class="container pb-3">
-                    <div class="row" style="@media screen (max-width: 480px){
-                    display: flex;
-                    flex-direction: column;
-                }">
-                        <small class="col-sm-8 col-10 small">
-                            © PAL Africa. 2023 All rights reserved
-                        </small>
-                        <div class="col">
-                            <ul class="row" style="">
-                                <li class="col" style="list-style: disc; list-style-position: inside;"><a
-                                        href="./service-terme.html" target="_blank">Terms of Service</a></li>
-                                <li class="col" style="list-style: disc; list-style-position: inside;"><a
-                                        href="./privacy-policy.html" target="_blank">Privacy policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <img src="assets/img/contact_globe.svg" alt="" class="contact_globe">
-            </footer>
-            <!--End-Contents-->
-            <!-- ====== end to top button ====== -->
-    </div>
-
-    <div id="french_content" style="display: none;">
-        <nav class="navbar navbar-expand-lg navbar-light style-1">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img height="60px" src="assets/img/logo_pal-removebg-preview.png" alt="">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#produits" role="button" aria-expanded="false">
-                                Produits
-                            </a>
+            </div>
+            <div class="col-lg-6">
+                <div class="disburse-info">
+                    <h2 class="disburse-title-main">Disburse</h2>
+                    <p class="disburse-desc-main">
+                        Withdraw, convert, or pay anyone—anywhere—with real-time, multi-currency payouts.
+                    </p>
+                    <ul class="disburse-list">
+                        <li>
+                            <span class="disburse-list-icon"><i class="bi bi-check-circle-fill"></i></span>
+                            Withdraw in XOF, NGN, XAF, and more
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#developpeurs" role="button" aria-expanded="false">
-                                Développeurs
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#developpeurs">
-                                À propos de nous
-                            </a>
+                        <li>
+                            <span class="disburse-list-icon"><i class="bi bi-check-circle-fill"></i></span>
+                            Send payouts via Bank transfer, mobile money, Merchant Account, and more.
                         </li>
                     </ul>
-                    <div class="nav-side">
-                        <a target="_blank" href="https://dashboard.pals.africa/auth/login" class="btn btn-dark rounded">
-                            <span>Connexion</span>
-                        </a>
-                        <div class="px-3 w-5"></div>
-                        <a target="_blank" href="https://dashboard.pals.africa/auth/register/step1"
-                            class="btn signup-btn rounded">
-                            <span>Ouvrir - c'est gratuit</span>
-                        </a>
+                    <div class="disburse-btns mt-4">
+                        <a href="https://dashboard.pals.africa/auth/login" target="_blank" class="btn btn-dark disburse-btn">Get Api Key</a>
+                        <a href="https://dashboard.pals.africa/auth/register/step1" target="_blank" class="btn disburse-btn disburse-btn-light">Open account - it’s free</a>
                     </div>
                 </div>
-            </div>
-        </nav>
-        <!-- ====== end navbar ====== -->
-
-
-        <div class="hero-containment">
-            <div class="gradient-background blur-background">
-                <div class="gradient-shape gradient-shape-1" style="--color: #77A5FF; --opacity: .6;"></div>
-                <div class="gradient-shape gradient-shape-2" style="--color: #77D656; --opacity: .6;"></div>
-                <div class="gradient-shape gradient-shape-4" style="--color: #BA83FF; --opacity: .6;"></div>
             </div>
         </div>
-        <!-- ====== start header ====== -->
-        <header class="mt-5 style-1">
-            <div class="container">
-                <div class="content">
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <div class="info">
-                                <div class="section-head mb-20">
-                                    <strong class="text-bold">
-                                        Un compte pour vos mouvements d'argent.
-                                    </strong>
-                                </div>
-                                <div class="text">
-                                    Transférez, encaissez, obtenez de la liquidité en continu et gérez l'ensemble de vos transactions financières avec PAL.
-                                    De plus, conservez, convertissez et réglez vos fournisseurs dans différentes devises telles que XOF, NGN, EUR... C'est
-                                    rapide et économique.
-                                </div>
-                                <div class="bttns mt-5">
-                                    <a target="_blank" href="https://dashboard.pals.africa/auth/login"
-                                        class="btn btn-dark mr-5">
-                                        <span>Obtenir la clé API</span>
-                                    </a>
-                                    <div class="px-3 w-5"></div>
-                                    <a target="_blank" href="https://dashboard.pals.africa/auth/register/step1"
-                                        class="btn signup-btn rounded">
-                                        <span>Ouvrir un compte - c'est gratuit</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5">
-
-                            <!-- Replace single image with two hero images side by side -->
-                            <div style="display: flex; gap: 10px;">
-                                <img style="height: 100%; width: 50%; object-fit: contain;" class="img"
-                                    src="assets/img/hero1.png" alt="Hero 1">
-                                <img style="height: 100%; width: 50%; object-fit: contain;" class="img"
-                                    src="assets/img/hero2.png" alt="Hero 2">
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- ====== end header ====== -->
-        <!--Contents-->
-        <main>
-            <!-- ====== start about ====== -->
-            <section class="about style-1">
-                <div class="slider my-5" style="color: white;">
-                    <div class="slide-track-1">
-                        <a href="#" class="slide">
-                            <img width="300" height="240" alt="Logo description" loading="lazy"
-                                src="assets/img/about/about_logos/1.png" alt="">
-                        </a>
-                        <a href="#" class="slide">
-                            <img width="300" height="240" alt="Logo description" loading="lazy"
-                                src="assets/img/about/about_logos/2.png" alt="">
-                        </a>
-                        <a href="#" class="slide">
-                            <img width="300" height="240" alt="Logo description" loading="lazy"
-                                src="assets/img/about/about_logos/3.png" alt="">
-                        </a>
-                        <a href="#" class="slide">
-                            <img width="300" height="240" alt="Logo description" loading="lazy"
-                                src="assets/img/about/about_logos/4.png" alt="">
-                        </a>
-                        <a href="#" class="slide">
-                            <img width="300" height="240" alt="Logo description" loading="lazy"
-                                src="assets/img/about/about_logos/5.png" alt="">
-                        </a>
-                        <a href="#" class="slide">
-                            <img width="300" height="240" alt="Logo description" loading="lazy"
-                                src="assets/img/about/about_logos/6.png" alt="">
-                        </a>
-
-                        <a href="#" class="ml-5 slide">
-                            <img width="300" height="240" alt="Logo description" loading="lazy"
-                                src="assets/img/about/about_logos/1.png" alt="">
-                        </a>
-                        <a href="#" class="slide">
-                            <img width="300" height="240" alt="Logo description" loading="lazy"
-                                src="assets/img/about/about_logos/2.png" alt="">
-                        </a>
-                        <a href="#" class="slide">
-                            <img width="300" height="240" alt="Logo description" loading="lazy"
-                                src="assets/img/about/about_logos/3.png" alt="">
-                        </a>
-                        <a href="#" class="slide">
-                            <img width="300" height="240" alt="Logo description" loading="lazy"
-                                src="assets/img/about/about_logos/4.png" alt="">
-                        </a>
-                        <a href="#" class="slide">
-                            <img width="300" height="240" alt="Logo description" loading="lazy"
-                                src="assets/img/about/about_logos/5.png" alt="">
-                        </a>
-                        <a href="#" class="slide">
-                            <img width="300" height="240" alt="Logo description" loading="lazy"
-                                src="assets/img/about/about_logos/6.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row mb-4">
-                        <h2 class="text-clignote">
-                            <span class="line"></span>&nbsp;API pour
-                            <span class="text-success">
-                                <div class="tlt">
-                                    <ul class="texts">
-                                        <li data-in-effect="tada">API dédiée aux entreprises de transfert d'argent.</li>
-                                        <li data-in-effect="tada"> API dédiée a la Fintech.</li>
-                                        <li data-in-effect="tada">API conçue pour les entreprises africaines.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </span>
-                        </h2>
-                    </div>
-                    <div class="d-md-flex justify-content-between px-5">
-                        <div>
-                            <div>
-                                PAL assure la gestion complète de la transaction, depuis le début jusqu'à la fin, vous fournissant ainsi une
-                                surveillance et un contrôle total sur l'ensemble du processus financier.
-                            </div>
-                            <ul>
-                                <li class="my-4">
-                                    <div class="d-flex flex-row">
-                                        <div class="mx-3">
-                                            <svg width="26" height="26" viewBox="0 0 50 50" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g clip-path="url(#clip0_1372_260)">
-                                                    <path
-                                                        d="M25 4.16675C13.5 4.16675 4.16663 13.5001 4.16663 25.0001C4.16663 36.5001 13.5 45.8334 25 45.8334C36.5 45.8334 45.8333 36.5001 45.8333 25.0001C45.8333 13.5001 36.5 4.16675 25 4.16675ZM25 41.6668C15.7916 41.6668 8.33329 34.2084 8.33329 25.0001C8.33329 15.7917 15.7916 8.33342 25 8.33342C34.2083 8.33342 41.6666 15.7917 41.6666 25.0001C41.6666 34.2084 34.2083 41.6668 25 41.6668Z"
-                                                        fill="#666666" />
-                                                    <path
-                                                        d="M14.5833 28.125C16.3091 28.125 17.7083 26.7259 17.7083 25C17.7083 23.2741 16.3091 21.875 14.5833 21.875C12.8574 21.875 11.4583 23.2741 11.4583 25C11.4583 26.7259 12.8574 28.125 14.5833 28.125Z"
-                                                        fill="#666666" />
-                                                    <path
-                                                        d="M25 28.125C26.7259 28.125 28.125 26.7259 28.125 25C28.125 23.2741 26.7259 21.875 25 21.875C23.2741 21.875 21.875 23.2741 21.875 25C21.875 26.7259 23.2741 28.125 25 28.125Z"
-                                                        fill="#666666" />
-                                                    <path
-                                                        d="M35.4166 28.125C37.1425 28.125 38.5416 26.7259 38.5416 25C38.5416 23.2741 37.1425 21.875 35.4166 21.875C33.6907 21.875 32.2916 23.2741 32.2916 25C32.2916 26.7259 33.6907 28.125 35.4166 28.125Z"
-                                                        fill="#666666" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_1372_260">
-                                                        <rect width="50" height="50" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <div class="text-bold">Portefeuille de devises multiples</div>
-                                            <div>
-                                                Détenez plusieurs devises telles que XOF, NGN, EUR, USD et plus, payer vos fournisseurs en monnaie local sans frais,
-                                                transférez les fonds instantanément vers un compte mobile money, compte bancaire ou sur des portefeuilles marchands.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="my-4">
-                                    <div class="d-flex flex-row">
-                                        <div class="mx-3">
-                                            <svg width="26" height="26" viewBox="0 0 50 50" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g clip-path="url(#clip0_1372_251)">
-                                                    <path
-                                                        d="M25 4.16675C13.5 4.16675 4.16663 13.5001 4.16663 25.0001C4.16663 36.5001 13.5 45.8334 25 45.8334C36.5 45.8334 45.8333 36.5001 45.8333 25.0001C45.8333 13.5001 36.5 4.16675 25 4.16675ZM25 41.6668C15.7916 41.6668 8.33329 34.2084 8.33329 25.0001C8.33329 15.7917 15.7916 8.33342 25 8.33342C34.2083 8.33342 41.6666 15.7917 41.6666 25.0001C41.6666 34.2084 34.2083 41.6668 25 41.6668Z"
-                                                        fill="#666666" />
-                                                    <path
-                                                        d="M14.7916 21.2084C15.3333 22.3751 15.6041 23.6251 15.625 24.9584C15.6458 26.2709 15.3541 27.5626 14.7916 28.8334L17.6458 30.1251C18.4166 28.4376 18.7916 26.6876 18.7708 24.9167C18.75 23.1667 18.375 21.4792 17.6458 19.9167L14.7916 21.2084Z"
-                                                        fill="#666666" />
-                                                    <path
-                                                        d="M27.7708 15.2708C29.3958 18.5417 30.2291 21.8125 30.2291 24.9375C30.2291 28.0833 29.3958 31.375 27.7708 34.7083L30.5833 36.0833C32.4166 32.3125 33.3541 28.5625 33.3541 24.9375C33.3541 21.3125 32.4166 17.5833 30.5833 13.875L27.7708 15.2708Z"
-                                                        fill="#666666" />
-                                                    <path
-                                                        d="M21.25 18.1668C22.3542 20.396 22.9167 22.771 22.9167 25.2502C22.9167 27.6877 22.375 29.896 21.2917 31.8127L24 33.3543C25.3542 30.9585 26.0417 28.2502 26.0417 25.2502C26.0417 22.2918 25.375 19.4377 24.0417 16.771L21.25 18.1668Z"
-                                                        fill="#666666" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_1372_251">
-                                                        <rect width="50" height="50" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-
-                                        </div>
-                                        <div>
-                                            <div class="text-bold">Échange de devises instantané</div>
-                                            <div>Profitez de transactions de change étrangères en ligne rapides et
-                                                efficaces. Dites adieu aux files d'attente bancaires et aux déceptions.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="my-4">
-                                    <div class="d-flex flex-row">
-                                        <div class="mx-3">
-                                            <svg width="26" height="26" viewBox="0 0 50 50" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g clip-path="url(#clip0_1372_269)">
-                                                    <path
-                                                        d="M16.6667 23.9583C16.6667 22.2291 15.2709 20.8333 13.5417 20.8333C11.8125 20.8333 10.4167 22.2291 10.4167 23.9583C10.4167 25.6874 11.8125 27.0833 13.5417 27.0833C15.2709 27.0833 16.6667 25.6874 16.6667 23.9583ZM31.25 13.5416C31.25 11.8124 29.8542 10.4166 28.125 10.4166H21.875C20.1459 10.4166 18.75 11.8124 18.75 13.5416C18.75 15.2708 20.1459 16.6666 21.875 16.6666H28.125C29.8542 16.6666 31.25 15.2708 31.25 13.5416ZM17.7084 31.2499C15.9792 31.2499 14.5834 32.6458 14.5834 34.3749C14.5834 36.1041 15.9792 37.4999 17.7084 37.4999C19.4375 37.4999 20.8334 36.1041 20.8334 34.3749C20.8334 32.6458 19.4375 31.2499 17.7084 31.2499ZM25 2.08325C12.3542 2.08325 2.08337 12.3541 2.08337 24.9999C2.08337 37.6458 12.3542 47.9166 25 47.9166C37.6459 47.9166 47.9167 37.6458 47.9167 24.9999C47.9167 12.3541 37.6459 2.08325 25 2.08325ZM25 43.7499C14.6667 43.7499 6.25004 35.3333 6.25004 24.9999C6.25004 14.6666 14.6667 6.24992 25 6.24992C35.3334 6.24992 43.75 14.6666 43.75 24.9999C43.75 35.3333 35.3334 43.7499 25 43.7499ZM36.4584 20.8333C34.7292 20.8333 33.3334 22.2291 33.3334 23.9583C33.3334 25.6874 34.7292 27.0833 36.4584 27.0833C38.1875 27.0833 39.5834 25.6874 39.5834 23.9583C39.5834 22.2291 38.1875 20.8333 36.4584 20.8333ZM32.2917 31.2499C30.5625 31.2499 29.1667 32.6458 29.1667 34.3749C29.1667 36.1041 30.5625 37.4999 32.2917 37.4999C34.0209 37.4999 35.4167 36.1041 35.4167 34.3749C35.4167 32.6458 34.0209 31.2499 32.2917 31.2499Z"
-                                                        fill="#666666" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_1372_269">
-                                                        <rect width="50" height="50" fill="white" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <div class="text-bold">Accédez aux mobiles money et aux comptes bancaires
-                                            </div>
-                                            <div>Avec le compte PAL, effectuez des paiements rapides à moindre coût vers divers réseaux mobile money et comptes bancaires.</div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <img class="d-none d-sm-block d-sm-none d-md-block" style="width: 90vw; height: 40vw;"
-                            src="assets/img/transfer-schema.PNG" alt="">
-                    </div> 
-                </div>
-            </section>
-            <section class="">
-                <div class="flag-slider bg-black dark my-5" style="color: white;">
-                    <div class="flag-slide-track-1">
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/gh.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/ci.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/tg.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/bj.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/ng.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/bf.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/ml.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/ngn.png" alt="">
-                        </a>
-
-
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/gh.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/ci.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/tg.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/bj.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/ng.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/bf.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/ml.png" alt="">
-                        </a>
-                        <div class="flag-slide justify-content-center">
-                            PAL
-                        </div>
-                        <a href="#" class="flag-slide">
-                            <img alt="Description du logo" loading="lazy" src="assets/img/flags/ngn.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="container">
-                    <h2 class="text-clignote">
-                        <span class="line"></span>&nbsp;Cas d'utilisation
-                    </h2>
-                    <div class="d-md-flex justify-content-between mt-5">
-                        <div class="container p-0 transparent-bg">
-                            <div class="accordion accordion-flush transparent-bg" id="accordionFlushExample">
-                                <div class="accordion-item transparent-bg">
-                                    <h2 class="accordion-header transparent-bg" id="flush-headingOne">
-                                        <button onclick="showSlides(1)" class="accordion-button collapsed uc-slider"
-                                            data-target="#carouselExampleIndicators" data-slide-to="0" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                            aria-expanded="false" aria-controls="flush-collapseOne">
-                                            Transfer d'argent
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <div>
-                                                Avec seulement trois appels d'API, obtenez un accès transparent au lucratif marché africain, en vous connectant
-                                                instantanément aux portefeuilles mobiles money, aux portefeuilles marchants et aux comptes bancaire.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item transparent-bg">
-                                    <h2 class="accordion-header" id="flush-headingTwo">
-                                        <button onclick="showSlides(2)" data-target="#carouselExampleIndicators"
-                                            data-slide-to="1" class="accordion-button collapsed uc-slider" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                            aria-expanded="false" aria-controls="flush-collapseTwo">
-                                            Fintech
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <div>Saviez-vous que 78% des entreprises africaines n'ont pas de compte bancaire? En vous
-                                                connectant à l'infrastructure PAL, vous pouvez combler ce fossé et accéder
-                                                facilement aux portefeuilles d'entreprise et d'agent locaux. Débloquez un monde
-                                                d'opportunités inexploitées, élargissez votre portée et maximisez le potentiel de votre
-                                                entreprise.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item transparent-bg">
-                                    <h2 class="accordion-header transparent-bg" id="flush-headingThree">
-                                        <button onclick="showSlides(3)" data-target="#carouselExampleIndicators"
-                                            data-slide-to="2" class="accordion-button collapsed uc-slider" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                            aria-expanded="false" aria-controls="flush-collapseThree">
-                                            Petites et moyennes entreprises
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            Si vous êtes une entreprise africaine, débloquez les avantages d'un compte PAL, permettant des
-                                            virements bancaires instantanés et des dépôts de portefeuille mobiles à travers le Togo, la
-                                            Côte d'Ivoire, le Mali, le Niger, le Sénégal, le Burkina Faso, le Nigeria, l'Afrique du Sud et la
-                                            Guinée-Bissau ---> Découvrez nos taux de change compétitifs pour convertir le XOF en NAIRA, EURO
-                                            ou vice versa et obtenez une liquidité en espèces anticipée sans garantie si nécessaire
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item transparent-bg">
-                                    <h2 class="accordion-header transparent-bg" id="flush-headingFour">
-                                        <button onclick="showSlides(4)" class="accordion-button collapsed uc-slider"
-                                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
-                                            aria-expanded="false" aria-controls="flush-collapseFour">
-                                            Agent de distribution (Mobile money)
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseFour" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            Grâce à notre solution innovante, les Agent de distribution (Mobile money) peuvent saisir de nouvelles opportunités,
-                                            développer leur activité et atteindre une indépendance financière comme jamais auparavant.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-10 px-5"></div>
-                        <div class="use-case">
-                            <div class="ucSlides">
-                                <img src="assets/img/pal/uc-1.png" alt="">
-                            </div>
-                            <div class="ucSlides">
-                                <img src="assets/img/pal/uc-2.png" alt="">
-                            </div>
-                            <div class="ucSlides">
-                                <img src="assets/img/pal/uc-3.png" alt="">
-                            </div>
-                            <div class="ucSlides">
-                                <img src="assets/img/pal/uc-4.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </section>
+    </div>
+</section>
+<style>
+.disburse-section {
+    /* background: #f5f5f5; */
+    border-radius: 20px;
+    padding: 40px 0;
+}
+.disburse-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(44,185,150,0.08);
+    padding: 32px 28px;
+    min-width: 320px;
+    max-width: 420px;
+    margin: auto;
+}
+.disburse-header {
+    font-size: 15px;
+    font-weight: 500;
+    color: #bdbdbd;
+    background: #ededed;
+    border-radius: 8px;
+    padding: 6px 18px;
+    display: inline-block;
+    margin-bottom: 18px;
+    letter-spacing: 0.04em;
+}
+.disburse-flow {
+    font-size: 17px;
+    color: #222;
+}
+.disburse-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2px;
+    margin-top: 8px;
+}
+.disburse-icon {
+    color: #2BB996;
+    font-size: 22px;
+}
+.pal-title {
+    font-weight: bold;
+    font-size: 22px;
+    color: #2BB996;
+    letter-spacing: 0.03em;
+}
+.disburse-title {
+    font-weight: 600;
+    font-size: 18px;
+    color: #222;
+}
+.disburse-desc {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 2px;
+    margin-left: 32px;
+}
+.disburse-label {
+    font-size: 13px;
+    color: #bdbdbd;
+    margin-left: 2px;
+}
+.disburse-arrow {
+    text-align: left;
+    font-size: 22px;
+    color: #bdbdbd;
+    margin: 8px 0 0 32px;
+}
+.disburse-currencies {
+    display: flex;
+    gap: 18px;
+    font-weight: 700;
+    font-size: 17px;
+    color: #222;
+    margin: 8px 0 0 32px;
+    margin-bottom: 8px;
+}
+.disburse-wallets {
+    display: flex;
+    gap: 22px;
+    margin: 10px 0 0 32px;
+}
+.wallet-logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    background: none;
+}
+.disburse-info {
+    padding-left: 18px;
+}
+.disburse-title-main {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #222;
+}
+.disburse-desc-main {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 18px;
+}
+.disburse-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.disburse-list li {
+    font-size: 17px;
+    color: #222;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.disburse-list-icon {
+    color: #2BB996;
+    font-size: 20px;
+}
+.disburse-btns {
+    display: flex;
+    gap: 18px;
+    margin-top: 30px;
+}
+.disburse-btn {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 32px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: none;
+    transition: background 0.2s;
+}
+.disburse-btn-light {
+    background: #ededed;
+    color: #222;
+}
+.disburse-btn-light:hover {
+    background: #e0e0e0;
+}
+@media (max-width: 991px) {
+    .disburse-section {
+        padding: 20px 0;
+    }
+    .disburse-info {
+        padding-left: 0;
+        margin-top: 28px;
+    }
+}
+@media (max-width: 600px) {
+    .disburse-card {
+        padding: 18px 8px;
+        min-width: 0;
+        max-width: 100%;
+    }
+    .disburse-title-main {
+        font-size: 22px;
+    }
+    .disburse-btn {
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+}
+</style>
             <footer class="style-3 bg-dark text-white pt-5" id="developers">
                 <div class="container">
                     <div class="row gx-0 justify-content-between">
