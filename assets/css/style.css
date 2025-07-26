@@ -4066,7 +4066,10 @@ header.style-15 {
     background-color: #f4f2fb;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
     .about.style-4 .btn-img .icon {
       -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -4251,43 +4254,41 @@ header.style-15 {
         z-index: 1;
         -webkit-animation: rotate-center 70s linear infinite both;
         animation: rotate-center 70s linear infinite both; }
-    .about.style-5 .content .img.main-img3 {
-      position: relative; }
-      .about.style-5 .content .img.main-img3 .img-body {
-        position: relative;
+    .about.style-5 .content .img.main-img3 .img-body {
+      position: relative;
+      z-index: 1;
+      max-height: 500px;
+      -o-object-fit: contain;
+      object-fit: contain;
+      -webkit-animation: rotate-center 100s linear infinite both;
+      animation: rotate-center 100s linear infinite both; }
+    .about.style-5 .content .img.main-img3 img {
+      position: absolute;
+      right: 0;
+      top: 20%;
+      width: 100%; }
+      .about.style-5 .content .img.main-img3 img:nth-of-type(2) {
+        z-index: 3;
+        -webkit-animation: slide_up_down 2s ease-in-out infinite alternate both;
+        animation: slide_up_down 2s ease-in-out infinite alternate both; }
+      .about.style-5 .content .img.main-img3 img:nth-of-type(3) {
         z-index: 1;
-        max-height: 500px;
-        -o-object-fit: contain;
-        object-fit: contain;
-        -webkit-animation: rotate-center 100s linear infinite both;
-        animation: rotate-center 100s linear infinite both; }
-      .about.style-5 .content .img.main-img3 img {
-        position: absolute;
-        right: 0;
-        top: 20%;
-        width: 100%; }
-        .about.style-5 .content .img.main-img3 img:nth-of-type(2) {
-          z-index: 3;
-          -webkit-animation: slide_up_down 2s ease-in-out infinite alternate both;
-          animation: slide_up_down 2s ease-in-out infinite alternate both; }
-        .about.style-5 .content .img.main-img3 img:nth-of-type(3) {
-          z-index: 1;
-          -webkit-animation: slide_up_down 2s ease-in-out infinite alternate both;
-          animation: slide_up_down 2s ease-in-out infinite alternate both;
-          -webkit-animation-delay: 1s;
-          animation-delay: 1s; }
-        .about.style-5 .content .img.main-img3 img:nth-of-type(4) {
-          z-index: 2;
-          -webkit-animation: slide_up_down 2s ease-in-out infinite alternate both;
-          animation: slide_up_down 2s ease-in-out infinite alternate both;
-          -webkit-animation-delay: 2s;
-          animation-delay: 2s; }
-        .about.style-5 .content .img.main-img3 img:nth-of-type(5) {
-          z-index: 4;
-          -webkit-animation: slide_up_down 2s ease-in-out infinite alternate both;
-          animation: slide_up_down 2s ease-in-out infinite alternate both;
-          -webkit-animation-delay: 3s;
-          animation-delay: 3s; }
+        -webkit-animation: slide_up_down 2s ease-in-out infinite alternate both;
+        animation: slide_up_down 2s ease-in-out infinite alternate both;
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s; }
+      .about.style-5 .content .img.main-img3 img:nth-of-type(4) {
+        z-index: 2;
+        -webkit-animation: slide_up_down 2s ease-in-out infinite alternate both;
+        animation: slide_up_down 2s ease-in-out infinite alternate both;
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s; }
+      .about.style-5 .content .img.main-img3 img:nth-of-type(5) {
+        z-index: 4;
+        -webkit-animation: slide_up_down 2s ease-in-out infinite alternate both;
+        animation: slide_up_down 2s ease-in-out infinite alternate both;
+        -webkit-animation-delay: 3s;
+        animation-delay: 3s; }
 
 .about.style-6 {
   position: relative; }
@@ -6593,28 +6594,24 @@ header.style-15 {
         .testimonials.style-11 .testimonial-card .info .author .inf h6 {
           font-size: 20px;
           font-weight: bold; }
-  .testimonials.style-11 .logos-content {
-    background-color: #fff; }
-    .testimonials.style-11 .logos-content .logos {
-      border-bottom: 1px solid #9993; }
-      .testimonials.style-11 .logos-content .logos .row > div {
-        text-align: center; }
-        .testimonials.style-11 .logos-content .logos .row > div:first-of-type {
-          text-align: start; }
-        .testimonials.style-11 .logos-content .logos .row > div:last-of-type {
-          text-align: end; }
-      .testimonials.style-11 .logos-content .logos .logo {
-        opacity: 30%;
-        margin-bottom: 30px; }
-        .testimonials.style-11 .logos-content .logos .logo:hover {
-          opacity: 1; }
-    .testimonials.style-11 .logos-content p {
-      font-size: 16px;
-      margin-top: 30px;
-      text-align: center;
-      color: #777; }
-      .testimonials.style-11 .logos-content p strong {
-        color: #000; }
+  .testimonials.style-11 .logos-content .logos .row > div {
+    text-align: center; }
+    .testimonials.style-11 .logos-content .logos .row > div:first-of-type {
+      text-align: start; }
+    .testimonials.style-11 .logos-content .logos .row > div:last-of-type {
+      text-align: end; }
+  .testimonials.style-11 .logos-content .logos .logo {
+    opacity: 30%;
+    margin-bottom: 30px; }
+    .testimonials.style-11 .logos-content .logos .logo:hover {
+      opacity: 1; }
+  .testimonials.style-11 .logos-content p {
+    font-size: 16px;
+    margin-top: 30px;
+    text-align: center;
+    color: #777; }
+    .testimonials.style-11 .logos-content p strong {
+      color: #000; }
 
 .testimonials.style-13 {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#eaedf2), to(transparent));
@@ -9666,7 +9663,9 @@ header.style-15 {
     max-height: unset;
     pointer-events: none;
     -o-object-fit: contain;
-    object-fit: contain; }
+    object-fit: contain;
+    -o-object-position: right;
+    object-position: right; }
   .chat-banner.style-9 .section-head h6::after, .chat-banner.style-9 .section-head h6::before {
     background-color: #fff; }
 
@@ -11837,11 +11836,6 @@ footer.style-15 {
   border-radius: 10px;
   background-color: #f0f4f8;
   text-transform: capitalize; }
-  .shop-page .filter .filter-card .card-title {
-    font-size: 15px;
-    color: #000;
-    font-weight: 800;
-    margin-bottom: 15px; }
   .shop-page .filter .filter-card .form-check-label {
     cursor: pointer; }
   .shop-page .filter .filter-card .cat-link {
@@ -12811,83 +12805,79 @@ footer.style-15 {
       border-left: 18px solid transparent;
       border-bottom: 18px solid #fff; }
 
-.careers-page.style-5 .career-form {
+.careers-page.style-5 .career-form .container {
   position: relative;
-  background-color: var(--color-blue5);
-  color: #fff; }
-  .careers-page.style-5 .career-form .container {
-    position: relative;
-    z-index: 10; }
-  .careers-page.style-5 .career-form .map_img {
+  z-index: 10; }
+.careers-page.style-5 .career-form .map_img {
+  position: absolute;
+  left: 0;
+  top: 70px;
+  pointer-events: none;
+  opacity: 0.3;
+  width: 50%; }
+.careers-page.style-5 .career-form h2 {
+  margin-bottom: 10px;
+  font-size: 44px; }
+.careers-page.style-5 .career-form p {
+  font-size: 16px; }
+.careers-page.style-5 .career-form .mum-card {
+  padding: 20px 0;
+  margin-top: 20px;
+  border-top: 1px solid #fff2; }
+  .careers-page.style-5 .career-form .mum-card h3 {
+    font-size: 50px; }
+  .careers-page.style-5 .career-form .mum-card small {
+    font-size: 14px;
+    color: #9dc7f9; }
+.careers-page.style-5 .career-form .form .form-group {
+  position: relative; }
+  .careers-page.style-5 .career-form .form .form-group .icon {
     position: absolute;
-    left: 0;
-    top: 70px;
-    pointer-events: none;
-    opacity: 0.3;
-    width: 50%; }
-  .careers-page.style-5 .career-form h2 {
-    margin-bottom: 10px;
-    font-size: 44px; }
-  .careers-page.style-5 .career-form p {
-    font-size: 16px; }
-  .careers-page.style-5 .career-form .mum-card {
-    padding: 20px 0;
-    margin-top: 20px;
-    border-top: 1px solid #fff2; }
-    .careers-page.style-5 .career-form .mum-card h3 {
-      font-size: 50px; }
-    .careers-page.style-5 .career-form .mum-card small {
-      font-size: 14px;
-      color: #9dc7f9; }
-  .careers-page.style-5 .career-form .form .form-group {
-    position: relative; }
-    .careers-page.style-5 .career-form .form .form-group .icon {
+    top: 15px;
+    left: 15px;
+    color: #fff; }
+  .careers-page.style-5 .career-form .form .form-group .form-control {
+    background-color: #fff1;
+    border-radius: 5px;
+    min-height: 50px;
+    border: 0;
+    font-weight: 300;
+    color: #fff;
+    padding-left: 40px; }
+    .careers-page.style-5 .career-form .form .form-group .form-control::-webkit-input-placeholder {
+      color: #9ecbff;
+      font-weight: 300; }
+    .careers-page.style-5 .career-form .form .form-group .form-control:-ms-input-placeholder {
+      color: #9ecbff;
+      font-weight: 300; }
+    .careers-page.style-5 .career-form .form .form-group .form-control::-ms-input-placeholder {
+      color: #9ecbff;
+      font-weight: 300; }
+    .careers-page.style-5 .career-form .form .form-group .form-control::placeholder {
+      color: #9ecbff;
+      font-weight: 300; }
+    .careers-page.style-5 .career-form .form .form-group .form-control:focus {
+      border: 1px solid #fff;
+      background-color: transparent; }
+  .careers-page.style-5 .career-form .form .form-group textarea.form-control {
+    padding-top: 10px; }
+  .careers-page.style-5 .career-form .form .form-group.upload-card {
+    text-align: center; }
+    .careers-page.style-5 .career-form .form .form-group.upload-card .form-control {
+      position: relative;
+      color: #fff3;
+      background-color: #0002;
+      padding: 12px; }
+    .careers-page.style-5 .career-form .form .form-group.upload-card .upload_input {
       position: absolute;
-      top: 15px;
-      left: 15px;
-      color: #fff; }
-    .careers-page.style-5 .career-form .form .form-group .form-control {
-      background-color: #fff1;
-      border-radius: 5px;
-      min-height: 50px;
-      border: 0;
-      font-weight: 300;
-      color: #fff;
-      padding-left: 40px; }
-      .careers-page.style-5 .career-form .form .form-group .form-control::-webkit-input-placeholder {
-        color: #9ecbff;
-        font-weight: 300; }
-      .careers-page.style-5 .career-form .form .form-group .form-control:-ms-input-placeholder {
-        color: #9ecbff;
-        font-weight: 300; }
-      .careers-page.style-5 .career-form .form .form-group .form-control::-ms-input-placeholder {
-        color: #9ecbff;
-        font-weight: 300; }
-      .careers-page.style-5 .career-form .form .form-group .form-control::placeholder {
-        color: #9ecbff;
-        font-weight: 300; }
-      .careers-page.style-5 .career-form .form .form-group .form-control:focus {
-        border: 1px solid #fff;
-        background-color: transparent; }
-    .careers-page.style-5 .career-form .form .form-group textarea.form-control {
-      padding-top: 10px; }
-    .careers-page.style-5 .career-form .form .form-group.upload-card {
-      text-align: center; }
-      .careers-page.style-5 .career-form .form .form-group.upload-card .form-control {
-        position: relative;
-        color: #fff3;
-        background-color: #0002;
-        padding: 12px; }
-      .careers-page.style-5 .career-form .form .form-group.upload-card .upload_input {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        z-index: 5; }
-  .careers-page.style-5 .career-form .form .btn span {
-    font-size: 16px; }
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 5; }
+.careers-page.style-5 .career-form .form .btn span {
+  font-size: 16px; }
 
 /* ===============================================================
 			[ * careers details page Style ] 
@@ -13615,7 +13605,7 @@ footer.style-15 {
 
 /* ===============================================================
 			[ * responsive style ] 
-================================================================*/
+=================================================================*/
 /* -------------------- responsive style ------------------------- */
 @media screen and (max-width: 1100px) {
   .screenshots.style-4 .screenshots-slider .img {
@@ -13897,15 +13887,13 @@ footer.style-15 {
       margin: 15px 0; }
   .about.style-4 .content {
     padding: 40px 0; }
-  .testimonials.style-4 {
-    overflow: hidden; }
-    .testimonials.style-4 .content .testi-cards .client_card {
-      right: 0 !important;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      margin: 20px 0 !important; }
+  .testimonials.style-4 .content .testi-cards .client_card {
+    right: 0 !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 20px 0 !important; }
       .testimonials.style-4 .content .testi-cards .client_card .user_img {
         margin-bottom: 30px; }
       .testimonials.style-4 .content .testi-cards .client_card .inf_content {

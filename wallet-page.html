@@ -172,8 +172,217 @@
         .hero {
             text-align: center;
             padding: 80px 0 0 0;
-            
+            position: relative; /* Ensure hero is relative for absolute children */
         }
+        /* --- BEGIN: Animated Line Background for Hero --- */
+        .hero .line-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .hero .animated-line {
+            position: absolute;
+            border-radius: 50px;
+            animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .hero .elegant-line-1 {
+            width: 4px;
+            height: 220px;
+            background: linear-gradient(0deg, transparent 0%, #2c3e50 20%, #34495e 40%, #2c3e50 60%, transparent 100%);
+            top: 18%;
+            left: 20%;
+            animation: elegantPulse1 3s infinite ease-in-out, verticalShimmer 4.5s infinite ease-in-out;
+            box-shadow: 0 0 15px rgba(44, 62, 80, 0.4), 0 0 30px rgba(44, 62, 80, 0.2);
+        }
+        .hero .elegant-line-2 {
+            width: 320px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, #e74c3c 25%, #c0392b 50%, #e74c3c 75%, transparent 100%);
+            top: 32%;
+            right: 12%;
+            animation: elegantPulse2 3.5s infinite ease-in-out, horizontalShimmer 4s infinite ease-in-out;
+            box-shadow: 0 0 18px rgba(231, 76, 60, 0.5), 0 0 35px rgba(231, 76, 60, 0.25);
+        }
+        .hero .elegant-line-3 {
+            width: 3px;
+            height: 260px;
+            background: linear-gradient(0deg, transparent 0%, #27ae60 25%, #2ecc71 50%, #27ae60 75%, transparent 100%);
+            bottom: 22%;
+            right: 25%;
+            animation: elegantPulse3 2.8s infinite ease-in-out, verticalShimmer2 4.2s infinite ease-in-out;
+            box-shadow: 0 0 20px rgba(39, 174, 96, 0.4), 0 0 40px rgba(39, 174, 96, 0.2);
+        }
+        .hero .elegant-line-4 {
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent 0%, #8e44ad 20%, #9b59b6 50%, #8e44ad 80%, transparent 100%);
+            bottom: 38%;
+            left: 15%;
+            animation: elegantPulse4 2.5s infinite ease-in-out, horizontalShimmer2 3.8s infinite ease-in-out;
+            box-shadow: 0 0 22px rgba(142, 68, 173, 0.5), 0 0 45px rgba(142, 68, 173, 0.3);
+        }
+        .hero .flow-line-1 {
+            width: 400px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #f39c12 35%, #e67e22 65%, transparent 100%);
+            top: 55%;
+            left: -120px;
+            transform: rotate(20deg);
+            animation: sophisticatedFlow1 5s infinite linear, intensityWave 2.5s infinite ease-in-out;
+            box-shadow: 0 0 15px rgba(243, 156, 18, 0.4);
+        }
+        .hero .flow-line-2 {
+            width: 380px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #3498db 35%, #2980b9 65%, transparent 100%);
+            top: 12%;
+            right: -140px;
+            transform: rotate(-25deg);
+            animation: sophisticatedFlow2 6s infinite linear, intensityWave2 3s infinite ease-in-out;
+            box-shadow: 0 0 18px rgba(52, 152, 219, 0.4);
+        }
+        .hero .accent-particle {
+            width: 3px;
+            height: 3px;
+            background: #34495e;
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(52, 73, 94, 0.6), 0 0 24px rgba(52, 73, 94, 0.3);
+        }
+        .hero .accent-1 {
+            top: 28%;
+            left: 45%;
+            animation: accentTrail1 7s infinite ease-in-out;
+        }
+        .hero .accent-2 {
+            bottom: 32%;
+            right: 40%;
+            animation: accentTrail2 8s infinite ease-in-out;
+        }
+        .hero .accent-3 {
+            top: 62%;
+            left: 30%;
+            animation: accentTrail3 6.5s infinite ease-in-out;
+        }
+        .hero .connect-line-1 {
+            width: 150px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(52, 73, 94, 0.8) 50%, transparent 100%);
+            top: 45%;
+            left: 35%;
+            transform: rotate(45deg);
+            animation: connectPulse1 4s infinite ease-in-out;
+        }
+        .hero .connect-line-2 {
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(52, 73, 94, 0.7) 50%, transparent 100%);
+            bottom: 45%;
+            right: 35%;
+            transform: rotate(-45deg);
+            animation: connectPulse2 4.5s infinite ease-in-out;
+        }
+        @media (max-width: 768px) {
+            .hero .elegant-line-2, .hero .flow-line-1, .hero .flow-line-2 {
+                width: 70%;
+            }
+            .hero .connect-line-1, .hero .connect-line-2 {
+                width: 100px;
+            }
+        }
+        /* Keyframes for hero animation */
+        @keyframes elegantPulse1 {
+            0%, 100% { opacity: 0.7; transform: scaleY(0.85); }
+            50% { opacity: 1; transform: scaleY(1.15); }
+        }
+        @keyframes elegantPulse2 {
+            0%, 100% { opacity: 0.8; transform: scaleX(0.9); }
+            50% { opacity: 1; transform: scaleX(1.1); }
+        }
+        @keyframes elegantPulse3 {
+            0%, 100% { opacity: 0.6; transform: scaleY(0.8); }
+            50% { opacity: 1; transform: scaleY(1.2); }
+        }
+        @keyframes elegantPulse4 {
+            0%, 100% { opacity: 0.75; transform: scaleX(0.88); }
+            50% { opacity: 1; transform: scaleX(1.12); }
+        }
+        @keyframes verticalShimmer {
+            0%, 100% { filter: brightness(1) contrast(1); }
+            50% { filter: brightness(1.3) contrast(1.2); }
+        }
+        @keyframes verticalShimmer2 {
+            0%, 100% { filter: brightness(1) contrast(1); }
+            50% { filter: brightness(1.4) contrast(1.3); }
+        }
+        @keyframes horizontalShimmer {
+            0%, 100% { filter: brightness(1) contrast(1); }
+            50% { filter: brightness(1.35) contrast(1.25); }
+        }
+        @keyframes horizontalShimmer2 {
+            0%, 100% { filter: brightness(1) contrast(1); }
+            50% { filter: brightness(1.25) contrast(1.15); }
+        }
+        @keyframes sophisticatedFlow1 {
+            0% { transform: rotate(20deg) translateX(-220px); opacity: 0; }
+            25% { opacity: 1; }
+            75% { opacity: 1; }
+            100% { transform: rotate(20deg) translateX(calc(100vw + 220px)); opacity: 0; }
+        }
+        @keyframes sophisticatedFlow2 {
+            0% { transform: rotate(-25deg) translateX(220px); opacity: 0; }
+            30% { opacity: 1; }
+            70% { opacity: 1; }
+            100% { transform: rotate(-25deg) translateX(calc(-100vw - 220px)); opacity: 0; }
+        }
+        @keyframes intensityWave {
+            0%, 100% { box-shadow: 0 0 15px rgba(243, 156, 18, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(243, 156, 18, 0.6), 0 0 50px rgba(243, 156, 18, 0.3); }
+        }
+        @keyframes intensityWave2 {
+            0%, 100% { box-shadow: 0 0 18px rgba(52, 152, 219, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(52, 152, 219, 0.6), 0 0 60px rgba(52, 152, 219, 0.3); }
+        }
+        @keyframes accentTrail1 {
+            0% { transform: translate(0, 0) scale(0.5); opacity: 0; }
+            25% { opacity: 1; transform: scale(1.2); }
+            75% { opacity: 1; }
+            100% { transform: translate(180px, -120px) scale(0.3); opacity: 0; }
+        }
+        @keyframes accentTrail2 {
+            0% { transform: translate(0, 0) scale(0.4); opacity: 0; }
+            30% { opacity: 1; transform: scale(1.3); }
+            70% { opacity: 1; }
+            100% { transform: translate(-160px, 100px) scale(0.2); opacity: 0; }
+        }
+        @keyframes accentTrail3 {
+            0% { transform: translate(0, 0) scale(0.6); opacity: 0; }
+            35% { opacity: 1; transform: scale(1.1); }
+            65% { opacity: 1; }
+            100% { transform: translate(200px, -160px) scale(0.1); opacity: 0; }
+        }
+        @keyframes connectPulse1 {
+            0%, 100% { opacity: 0.3; transform: rotate(45deg) scaleX(0.8); }
+            50% { opacity: 0.8; transform: rotate(45deg) scaleX(1.2); }
+        }
+        @keyframes connectPulse2 {
+            0%, 100% { opacity: 0.25; transform: rotate(-45deg) scaleX(0.7); }
+            50% { opacity: 0.75; transform: rotate(-45deg) scaleX(1.3); }
+        }
+        @media (hover: hover) {
+            .hero .line-container:hover .animated-line {
+                animation-duration: 1.2s !important;
+                filter: brightness(1.4) saturate(1.2) !important;
+            }
+            .hero .line-container:hover .accent-particle {
+                animation-duration: 3s !important;
+                transform: scale(1.8) !important;
+            }
+        }
+        /* --- END: Animated Line Background for Hero --- */
 
         .hero h1 {
             font-size: 64px;
@@ -221,6 +430,7 @@
         }
 
         .phone-section {
+            margin-top: -150px;
             position: relative;
             padding: 0 0 0 0;
         }
@@ -462,8 +672,8 @@
             color: #222;
         }
 
-        .trade-card-right {
-            /* width: 220px; */
+        /* .trade-card-right {
+            
             height: 220px;
             position: relative;
             background: #eee;
@@ -518,6 +728,62 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        } */
+         .trade-card-right {
+            /* width: 220px; */
+            height: 220px;
+            position: relative;
+            background: #eee;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+        .trade-card-right .person-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .trade-card-right .card-overlay {
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 80px; /* Increased height to accommodate vertical layout */
+            background: #8d294f;
+            opacity: 0.95;
+            z-index: 2;
+            display: flex;
+            align-items: flex-start;
+            padding: 12px;
+        }
+        .trade-card-right .person-info {
+            display: flex;
+            flex-direction: column; /* Changed to column layout */
+            gap: 8px;
+            color: #fff;
+            width: 100%;
+        }
+        .person-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .flag-badge img {
+            width: 22px;
+            height: 16px;
+            border-radius: 2px;
+            margin-right: 6px;
+        }
+        .person-name {
+            font-weight: bold;
+            font-size: 1em;
+        }
+        .person-quote {
+            font-size: 0.85em;
+            opacity: 0.85;
+            line-height: 1.3;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Allow up to 2 lines */
+            -webkit-box-orient: vertical;
         }
 
         /* Ratings */
@@ -747,11 +1013,12 @@
         }
 
         .payment-image {
-          flex: 0 0 340px;
+          flex: 0 0 440px;
           display: flex;
           align-items: center;
           justify-content: center;
           min-height: 220px;
+          margin-top: -150px;
         }
 
         .payment-stack {
@@ -761,6 +1028,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          
           /* animation: floatCardStack 3.5s ease-in-out infinite alternate; */
         }
 
@@ -770,10 +1038,11 @@
           display: block;
           filter: drop-shadow(0 8px 32px rgba(44,185,150,0.18)) drop-shadow(0 2px 8px rgba(0,0,0,0.08));
           transition: transform 0.3s;
+          
         }
 
         .pal-img {
-          width: 540px;
+          width: 640px;
           height: auto;
           display: block;
           filter: drop-shadow(0 8px 32px rgba(44,185,150,0.18)) drop-shadow(0 2px 8px rgba(0,0,0,0.08));
@@ -797,10 +1066,10 @@
           cursor: pointer;
           transition: background 0.2s;
         }
-        .payment-btn:hover {
+        /* .payment-btn:hover {
           background: #2bb996;
           color: #fff;
-        }
+        } */
 
         /* @media (max-width: 900px) {
           .payment-flex {
@@ -860,9 +1129,9 @@
                 grid-template-columns: 1fr;
             }
 
-            .payment-content {
+            /* .payment-content {
                 grid-template-columns: 1fr;
-            }
+            } */
 
             .ratings {
                 flex-direction: column;
@@ -874,6 +1143,265 @@
                 font-size: 40px;
             }
             
+            
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .hero {
+                padding: 60px 0 0 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            .hero p {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+
+            .download-buttons {
+                gap: 15px;
+                margin-bottom: 50px;
+            }
+
+            .download-btn {
+                width: 160px;
+                height: 48px;
+            }
+
+            .phone-section {
+                margin-top: -100px;
+            }
+
+            .phone-mockup-img {
+                width: 100%;
+                max-width: 500px !important;
+            }
+
+            .banner {
+                padding: 30px 15px;
+                border-radius: 16px;
+                margin-top: -150px;
+                margin-bottom: 30px;
+            }
+
+            .banner .title {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            .banner .subtitle {
+                font-size: 1.0rem;
+                margin-bottom: 40px;
+            }
+
+            .flags-container {
+                height: 60px;
+            }
+
+            .flags-track {
+                gap: 20px;
+            }
+
+            .flag {
+                width: 50px;
+                height: 35px;
+            }
+
+            .country-name {
+                font-size: 0.9em;
+            }
+
+            .trade-section {
+                padding: 60px 0;
+            }
+
+            .trade-section h2 {
+                font-size: 32px;
+                margin-bottom: 15px;
+            }
+
+            .trade-section > p {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+
+            .trade-cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding-bottom: 0;
+            }
+
+            .trade-card {
+                width: 100%;
+                max-width: 380px;
+            }
+
+            .trade-card-left h1,
+            .trade-card-left .currency {
+                font-size: 2.2em;
+            }
+
+            .trade-card-right .card-overlay {
+                height: 100px;
+                padding: 10px;
+            }
+
+            .person-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .person-name {
+                font-size: 0.9em;
+            }
+
+            .person-quote {
+                font-size: 0.75em;
+                -webkit-line-clamp: 3;
+            }
+
+            .trade-cards-rating {
+                flex-direction: column;
+                gap: 30px;
+                margin-top: 30px;
+            }
+
+            .rating-left, .rating-right {
+                width: 100%;
+                max-width: 380px;
+            }
+
+            .stars {
+                font-size: 1em;
+            }
+
+            .rating-text {
+                font-size: 0.85em;
+            }
+
+            .payment-section, .virtual-cards-section {
+                padding: 40px 0;
+            }
+
+            .payment-title, .virtual-cards-title {
+                font-size: 2em;
+            }
+
+            .payment-headline, .virtual-cards-headline {
+                font-size: 2em;
+                margin-bottom: 0.8em;
+            }
+
+            .payment-subtitle, .virtual-cards-subtitle {
+                font-size: 1em;
+                margin-bottom: 30px;
+            }
+
+            .payment-flex, .virtual-cards-flex {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                margin-top: 30px;
+            }
+
+            .payment-features, .virtual-cards-features {
+                max-width: 100%;
+                padding: 0 15px;
+            }
+
+            .payment-features li, .virtual-cards-features li {
+                font-size: 1em;
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            .payment-features .checkmark, .virtual-cards-features .checkmark {
+                width: 28px;
+                height: 28px;
+                min-width: 28px;
+                min-height: 28px;
+            }
+
+            .payment-image, .virtual-card-visual {
+                flex: none;
+                width: 100%;
+                max-width: 300px;
+                margin-top: 0;
+            }
+
+            .pal-img, .pal-cards-img {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .payment-btn {
+                font-size: 1em;
+                padding: 0.8em 2em;
+                margin-top: 20px;
+            }
+
+            .security-section-bg {
+                padding: 40px 0;
+            }
+
+            .security-card {
+                padding: 25px 15px;
+                border-radius: 20px;
+            }
+
+            .security-headline {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+
+            .security-desc {
+                font-size: 0.9em;
+                line-height: 1.5;
+            }
+
+            .pal-footer-main {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 30px 15px 15px 15px;
+                gap: 20px;
+            }
+
+            .pal-footer-brand {
+                font-size: 2.2em;
+            }
+
+            .pal-footer-title {
+                font-size: 1em;
+            }
+
+            .pal-footer-col ul li {
+                font-size: 0.9em;
+            }
+
+            .pal-footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 15px;
+                font-size: 0.85em;
+                gap: 5px;
+            }
         }
 
         .banner {
@@ -900,7 +1428,7 @@
             margin-right: auto;
             left: 0;
             right: 0;
-            margin-top: -200px; /* Pulls the banner up to overlap the video */
+            margin-top: -350px; /* Pulls the banner up to overlap the video */
             position: relative;
             z-index: 10;
             /* z-index: 5; */
@@ -1756,6 +2284,262 @@
         }
         
     </style>
+    <style>
+        /* Floating Download Button - Only visible on mobile */
+        .floating-download-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: none; /* Hidden by default, shown only on mobile */
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: floatAround 8s infinite linear;
+        }
+
+        .floating-download-btn:hover {
+            animation-play-state: paused;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .floating-download-btn:active {
+            transform: translateY(0) scale(0.95);
+        }
+
+        .download-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 20px;
+            max-width: 90%;
+            width: 350px;
+            text-align: center;
+            transform: scale(0.9);
+            animation: modalSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .modal p {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .platform-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .platform-btn {
+            flex: 1;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .platform-btn.android {
+            background: #34A853;
+            color: white;
+        }
+
+        .platform-btn.android:hover {
+            background: #2d8f47;
+            transform: translateY(-2px);
+        }
+
+        .platform-btn.ios {
+            background: #007AFF;
+            color: white;
+        }
+
+        .platform-btn.ios:hover {
+            background: #0056cc;
+            transform: translateY(-2px);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #999;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        /* Mobile Detection */
+        @media (max-width: 768px) {
+            .floating-download-btn {
+                display: flex !important;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: scale(0.9) translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes floatAround {
+            0% {
+                bottom: 20px;
+                right: 20px;
+            }
+            12.5% {
+                bottom: 50%;
+                right: 20px;
+                transform: translateY(50%);
+            }
+            25% {
+                bottom: calc(100vh - 80px);
+                right: 20px;
+            }
+            37.5% {
+                bottom: calc(100vh - 80px);
+                right: 50%;
+                transform: translateX(50%);
+            }
+            50% {
+                bottom: calc(100vh - 80px);
+                right: calc(100vw - 200px);
+            }
+            62.5% {
+                bottom: 50%;
+                right: calc(100vw - 200px);
+                transform: translateY(50%);
+            }
+            75% {
+                bottom: 20px;
+                right: calc(100vw - 200px);
+            }
+            87.5% {
+                bottom: 20px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            100% {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Slower floating animation for better UX */
+        @keyframes floatAroundSlow {
+            0% {
+                bottom: 20px;
+                right: 20px;
+            }
+            16.66% {
+                bottom: 40%;
+                right: 20px;
+            }
+            33.33% {
+                bottom: calc(100vh - 100px);
+                right: 50%;
+                transform: translateX(50%);
+            }
+            50% {
+                bottom: calc(100vh - 100px);
+                right: calc(100vw - 180px);
+            }
+            66.66% {
+                bottom: 40%;
+                right: calc(100vw - 180px);
+            }
+            83.33% {
+                bottom: 20px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            100% {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Platform Icons */
+        .platform-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
           const menuToggle = document.querySelector('.menu-toggle');
@@ -1820,6 +2604,23 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="line-container">
+            <!-- Main elegant lines -->
+            <div class="animated-line elegant-line-1"></div>
+            <div class="animated-line elegant-line-2"></div>
+            <div class="animated-line elegant-line-3"></div>
+            <div class="animated-line elegant-line-4"></div>
+            <!-- Sophisticated flowing lines -->
+            <div class="animated-line flow-line-1"></div>
+            <div class="animated-line flow-line-2"></div>
+            <!-- Accent particles -->
+            <div class="animated-line accent-particle accent-1"></div>
+            <div class="animated-line accent-particle accent-2"></div>
+            <div class="animated-line accent-particle accent-3"></div>
+            <!-- Connecting lines -->
+            <div class="animated-line connect-line-1"></div>
+            <div class="animated-line connect-line-2"></div>
+        </div>
         <div class="container">
             <h1><span class="highlight">Business Wallet</span> that make<br>trade happen</h1>
             <p>From Lagos to Yaoundé, Benin Republic, Niamey, and beyond — <strong>hold, send, and receive payments</strong> in any African currency with ease.</p>
@@ -1837,10 +2638,11 @@
         <div class="phone-section">
             <div class="phone-glow"></div>
              <div class="phone-mockup-wrapper" style="position: relative; display: inline-block;">
-                <video autoplay loop muted playsinline class="phone-mockup-img" style="width:140%; max-width:100%; display:block; margin:0 auto; position:relative; z-index:2;">
+               <img src="assets/img/phone4.png" alt="PAL Mobile App" class="phone-mockup-img" style="width: 1000px;; max-width:1200px; display:block; margin:0 auto; position:relative; z-index:2;">
+                <!-- <video autoplay loop muted playsinline class="phone-mockup-img" style="width:140%; max-width:100%; display:block; margin:0 auto; position:relative; z-index:2;">
                     <source src="assets/img/gif1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
-                </video>
+                </video> -->
                 <!-- <img src="assets/img/Subtract.png" alt="Decor" class="phone-mockup-decor"
                     style="
                         position: absolute;
@@ -1993,7 +2795,6 @@
                 <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
                 <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
                 <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
-                <div class="flag" style="background: [FLAG_PLACEHOLDER]"></div>
             </div>
         </div>
     </section> -->
@@ -2019,16 +2820,28 @@
                     <h1>Hold & SWAP</h1>
                     <div class="currency">XAF</div>
                 </div>
-                <div class="trade-card trade-card-right">
+                <!-- <div class="trade-card trade-card-right">
                     <img class="person-image" src="assets/img/aisha-bakari.png" alt="Aicha Bakari">
                     <div class="card-overlay">
                         <div class="person-info">
                             <span class="flag-badge"><img src="assets/img/flags/bj.png" alt="Benin" /></span>
                             <span class="person-name">Aicha Bakari</span>
-                        <div class="person-quote">I am artisant that makes clothes look fresh</div>
+                        <div class="person-quote">Before using PAL, I had to carry cash in naira, which was risky. Now, with the PAL Wallet, I make instant and secure digital payments to my suppliers.</div>
                         </div>
                     </div>
+                </div> -->
+                <div class="trade-card trade-card-right">
+                <img class="person-image" src="assets/img/aisha-bakari.png" alt="Aicha Bakari">
+                <div class="card-overlay">
+                    <div class="person-info">
+                        <div class="person-header">
+                            <span class="flag-badge"><img src="https://flagcdn.com/w40/bj.png" alt="Benin" /></span>
+                            <span class="person-name">Aicha Bakari</span>
+                        </div>
+                        <div class="person-quote">Before using PAL, I had to carry cash in naira, which was risky. Now, with the PAL Wallet, I make instant and secure digital payments to my suppliers.</div>
+                    </div>
                 </div>
+            </div>
             </div>
 
             <br>
@@ -2072,7 +2885,7 @@
         <h1 class="payment-headline">Get paid easy</h1>
         <div class="payment-subtitle">
                 Create your payment link and share it with anyone.<br>
-                Get paid in multiple currencies — even if your customers don’t use PAL.
+                Get paid in multiple currencies — even if your customers don't use PAL.
                             </div>
         <div class="payment-flex">
           <ul class="payment-features">
@@ -2108,7 +2921,7 @@
         </div>
                     </div>
     </section>
-    <div class="feature-tags-section">
+    <!-- <div class="feature-tags-section">
       <div class="feature-tags-marquee">
         <div class="feature-tags-row">
           <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
@@ -2123,9 +2936,9 @@
           <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
           <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
           <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
-          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
-          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
           <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
           <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
           <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
           <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
@@ -2135,7 +2948,7 @@
           <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
         </div>
         <div class="feature-tags-row">
-          <!-- Repeat the same tags for seamless animation -->
+          <!-- 
           <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
           <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
           <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
@@ -2160,20 +2973,20 @@
           <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
         </div>
         <div class="feature-tags-row">
-          <!-- Third row, opposite direction -->
+          
           <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
           <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
           <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
           <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
           <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
           <span class="tag tag-orange"><span class="tag-emoji">😎</span> @PAL.</span>
-          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
           <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> PAL.</span>
           <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
           <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
           <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
           <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
-          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
           <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
           <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
           <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
@@ -2185,7 +2998,7 @@
           <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
         </div>
         <div class="feature-tags-row">
-          <!-- Fourth row, opposite direction -->
+          
           <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
           <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
           <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
@@ -2210,7 +3023,7 @@
           <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
         </div>
       </div>
-    </div>
+    </div> -->
     <script>
 const leftCards = document.querySelectorAll('.trade-card-left');
 let currentLeft = 0;
@@ -2237,7 +3050,7 @@ showLeftCard(currentLeft);
         <h1 class="virtual-cards-headline">for a cashless world.</h1>
         <div class="virtual-cards-subtitle">
           Create your papayment link and share it with anyone<br>
-          Get paid in different currencies even if your customers doesn’t have PAL.
+          Get paid in different currencies even if your customers doesn't have PAL.
         </div>
         <div class="virtual-cards-flex">
           <ul class="virtual-cards-features">
@@ -2316,6 +3129,105 @@ showLeftCard(currentLeft);
       We use 2-Factor Authentication (2FA) to implement additional layers of authentication to verify the payer's identity during a transaction. We also utilize secure communication protocols, like SSL and secure network configurations to protect transmitted data.
     </div>
   </div>
+</section>
+<style>
+  .experience-pesa-section {
+    background-color: #000; /* Dark background */
+    color: #fff; /* White text */
+    padding: 80px 0;
+    text-align: left;
+    position: relative;
+    overflow: hidden; /* To contain the abstract shape */
+    display: flex;
+    align-items: center;
+    min-height: 450px; /* Adjust as needed */
+}
+
+.experience-pesa-section .container {
+    position: relative;
+    z-index: 2; /* Ensure text is above shape */
+}
+
+.experience-pesa-section h2 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    max-width: 600px; /* Adjust based on image */
+    padding-left: 20px; /* Add some padding on left */
+}
+
+.open-account-btn {
+    background: linear-gradient(90deg, #4b7bec, #3a5ed8); /* Blue gradient */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px; /* Align with text */
+}
+
+.open-account-btn:hover {
+    background: linear-gradient(90deg, #3a5ed8, #2e4aaa);
+}
+
+.open-account-btn .arrow {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.abstract-shape {
+    position: absolute;
+    right: -100px; /* Adjust position */
+    top: 50%;
+    transform: translateY(-50%) rotate(-20deg); /* Rotate for abstract look */
+    width: 600px; /* Adjust size */
+    height: 600px; /* Adjust size */
+    background: linear-gradient(135deg, rgba(120, 150, 200, 0.3), rgba(80, 100, 150, 0.6));
+    border-radius: 50%; /* Make it circular initially */
+    filter: blur(100px); /* Blur to make it abstract */
+    opacity: 0.7;
+    z-index: 1;
+    overflow: hidden; /* Ensure this shape doesn't cause overflow itself */
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .experience-pesa-section {
+        padding: 60px 0;
+        text-align: center; /* Center content on mobile */
+    }
+
+    .experience-pesa-section h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        padding-left: 0; /* Remove left padding */
+    }
+
+    .open-account-btn {
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .abstract-shape {
+        width: 300px;
+        height: 300px;
+        right: -50px;
+        filter: blur(50px);
+    }
+}
+</style>
+<section class="experience-pesa-section">
+  <div class="container">
+      <h2>Ready to<br>Experience Pal?</h2>
+      <button class="open-account-btn">Open a free account <span class="arrow">&#8594;</span></button>
+  </div>
+  <div class="abstract-shape"></div>
 </section>
 
 <footer class="pal-footer">

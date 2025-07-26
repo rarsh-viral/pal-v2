@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="assets/css/flag-carousel-animation.css" />
     <link rel="stylesheet" href="assets/css/gradient-background.css" />
     <link rel="stylesheet" href="assets/css/others/animate.css" />
+    <link rel="stylesheet" href="assets/css/mobile-download.css" />
     <style>
         /* Add to your CSS file or <style> block */
         .flags-container {
@@ -553,15 +554,16 @@
             }
     
             .profile-section {
+               
                 display: flex;
-                align-items: center;
+                /* align-items: center; */
                 justify-content: space-between;
                 margin-bottom: 40px;
             }
     
             .profile-left {
                 display: flex;
-                align-items: center;
+                /* align-items: center; */
                 gap: 20px;
             }
     
@@ -718,7 +720,7 @@
 
             /* Card 1 - Different background */
             .wallet-container.card1 {
-                background-color: #252f40;
+                background-color: #131e32;
                 background-image: url(assets/img/noise.png);
                 background-blend-mode: difference;
             }
@@ -728,22 +730,22 @@
            } */
     
             /* Card 2 - Different background */
-            .wallet-container.card2 {
+            /* .wallet-container.card2 {
                 background-color: #2d3748;
             }
     
             .wallet-container.card2::before {
                 background: linear-gradient(90deg, rgba(45, 55, 72, 0.9) 0%, rgba(45, 55, 72, 0.3) 100%);
-            }
+            } */
     
             /* Card 3 - Different background */
-            .wallet-container.card3 {
+            /* .wallet-container.card3 {
                 background-color: #1a202c;
             }
     
             .wallet-container.card3::before {
                 background: linear-gradient(90deg, rgba(26, 32, 44, 0.9) 0%, rgba(26, 32, 44, 0.3) 100%);
-            }
+            } */
     
             /* Mobile Responsive Styles */
             @media (max-width: 768px) {
@@ -765,7 +767,7 @@
                 }
     
                 .animation-background {
-                    width: 40%;
+                    width: 100%;
                 }
     
                 .header {
@@ -823,7 +825,7 @@
                 }
             }
     
-            @media (max-width: 480px) {
+            /* @media (max-width: 480px) {
                 .wallet-container {
                     padding: 20px;
                     min-height: 350px;
@@ -878,8 +880,8 @@
                     width: 18px;
                     height: 12px;
                 }
-            }
-            @media (max-width: 768px) {
+            } */
+            /* @media (max-width: 768px) {
             .carousel-container {
                 max-width: 98vw;
                 padding: 8px;
@@ -916,7 +918,7 @@
                 width: 16px;
                 height: 10px;
             }
-            }
+            } */
         </style>
     </head>
     <body>
@@ -941,7 +943,7 @@
                                 </h2>
                                 <p id="country-message">
                                     I am able to pay Nigerian exporters with PAL app 
-                                    <span id="country-emoji" class="peace-sign">✌️</span>
+                                    <!-- <span id="country-emoji" class="peace-sign">✌️</span> -->
                                 </p>
                             </div>
                         </div>
@@ -1317,203 +1319,511 @@
                 </div>
             </section>
             <section class="disburse-section my-5">
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <div class="disburse-card p-0" style="background:none;box-shadow:none;">
-                    <img src="assets/img/image2.png" alt="Business Card" style="width:100%;border-radius:18px;display:block;">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="disburse-info">
-                    <h2 class="disburse-title-main">Disburse</h2>
-                    <p class="disburse-desc-main">
-                        Withdraw, convert, or pay anyone—anywhere—with real-time, multi-currency payouts.
-                    </p>
-                    <ul class="disburse-list">
-                        <li>
-                            <span class="disburse-list-icon"><i class="bi bi-check-circle-fill"></i></span>
-                            Withdraw in XOF, NGN, XAF, and more
-                        </li>
-                        <li>
-                            <span class="disburse-list-icon"><i class="bi bi-check-circle-fill"></i></span>
-                            Send payouts via Bank transfer, mobile money, Merchant Account, and more.
-                        </li>
-                    </ul>
-                    <div class="disburse-btns mt-4">
-                        <a href="https://dashboard.pals.africa/auth/login" target="_blank" class="btn btn-dark disburse-btn">Get Api Key</a>
-                        <a href="https://dashboard.pals.africa/auth/register/step1" target="_blank" class="btn disburse-btn disburse-btn-light">Open account - it’s free</a>
+                <div class="container">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-lg-6 mb-4 mb-lg-0">
+                            <div class="disburse-card p-0" style="background:none;box-shadow:none;">
+                                <img src="assets/img/image2.png" alt="Business Card" style="width:100%;height:100%;border-radius:18px;display:block;">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="disburse-info">
+                                <h2 class="disburse-title-main">Disburse</h2>
+                                <p class="disburse-desc-main">
+                                    Withdraw, convert, or pay anyone—anywhere—with real-time, multi-currency payouts.
+                                </p>
+                                <ul class="disburse-list">
+                                    <li>
+                                        <span class="disburse-list-icon"><i class="bi bi-check-circle-fill"></i></span>
+                                        Withdraw in XOF, NGN, XAF, and more
+                                    </li>
+                                    <li>
+                                        <span class="disburse-list-icon"><i class="bi bi-check-circle-fill"></i></span>
+                                        Send payouts via Bank transfer, mobile money, Merchant Account, and more.
+                                    </li>
+                                </ul>
+                                <div class="disburse-btns mt-4">
+                                    <a href="https://dashboard.pals.africa/auth/login" target="_blank" class="btn btn-dark disburse-btn">Get Api Key</a>
+                                    <a href="https://dashboard.pals.africa/auth/register/step1" target="_blank" class="btn disburse-btn disburse-btn-light">Open account - it's free</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-<style>
-.disburse-section {
-    /* background: #f5f5f5; */
-    border-radius: 20px;
-    padding: 40px 0;
-}
-.disburse-card {
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 2px 16px rgba(44,185,150,0.08);
-    padding: 32px 28px;
-    min-width: 320px;
-    max-width: 420px;
-    margin: auto;
-}
-.disburse-header {
-    font-size: 15px;
-    font-weight: 500;
-    color: #bdbdbd;
-    background: #ededed;
-    border-radius: 8px;
-    padding: 6px 18px;
-    display: inline-block;
-    margin-bottom: 18px;
-    letter-spacing: 0.04em;
-}
-.disburse-flow {
-    font-size: 17px;
-    color: #222;
-}
-.disburse-step {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 2px;
-    margin-top: 8px;
-}
-.disburse-icon {
-    color: #2BB996;
-    font-size: 22px;
-}
-.pal-title {
-    font-weight: bold;
-    font-size: 22px;
-    color: #2BB996;
-    letter-spacing: 0.03em;
-}
-.disburse-title {
-    font-weight: 600;
-    font-size: 18px;
-    color: #222;
-}
-.disburse-desc {
-    font-size: 15px;
-    color: #666;
-    margin-bottom: 2px;
-    margin-left: 32px;
-}
-.disburse-label {
-    font-size: 13px;
-    color: #bdbdbd;
-    margin-left: 2px;
-}
-.disburse-arrow {
-    text-align: left;
-    font-size: 22px;
-    color: #bdbdbd;
-    margin: 8px 0 0 32px;
-}
-.disburse-currencies {
-    display: flex;
-    gap: 18px;
-    font-weight: 700;
-    font-size: 17px;
-    color: #222;
-    margin: 8px 0 0 32px;
-    margin-bottom: 8px;
-}
-.disburse-wallets {
-    display: flex;
-    gap: 22px;
-    margin: 10px 0 0 32px;
-}
-.wallet-logo {
-    height: 32px;
-    width: auto;
-    object-fit: contain;
-    background: none;
-}
-.disburse-info {
-    padding-left: 18px;
-}
-.disburse-title-main {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #222;
-}
-.disburse-desc-main {
-    font-size: 18px;
-    color: #444;
-    margin-bottom: 18px;
-}
-.disburse-list {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0;
-}
-.disburse-list li {
-    font-size: 17px;
-    color: #222;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.disburse-list-icon {
-    color: #2BB996;
-    font-size: 20px;
-}
-.disburse-btns {
-    display: flex;
-    gap: 18px;
-    margin-top: 30px;
-}
-.disburse-btn {
-    font-size: 20px;
-    font-weight: 500;
-    padding: 10px 32px;
-    border-radius: 8px;
-    border: none;
-    box-shadow: none;
-    transition: background 0.2s;
-}
-.disburse-btn-light {
-    background: #ededed;
-    color: #222;
-}
-.disburse-btn-light:hover {
-    background: #e0e0e0;
-}
-@media (max-width: 991px) {
-    .disburse-section {
-        padding: 20px 0;
-    }
-    .disburse-info {
-        padding-left: 0;
-        margin-top: 28px;
-    }
-}
-@media (max-width: 600px) {
-    .disburse-card {
-        padding: 18px 8px;
-        min-width: 0;
-        max-width: 100%;
-    }
-    .disburse-title-main {
-        font-size: 22px;
-    }
-    .disburse-btn {
-        font-size: 16px;
-        padding: 8px 18px;
-    }
-}
-</style>
+            </section>
+            <style>
+            .disburse-section {
+                /* background: #f5f5f5; */
+                border-radius: 20px;
+                padding: 40px 0;
+            }
+            .disburse-card {
+                background: #fff;
+                border-radius: 18px;
+                box-shadow: 0 2px 16px rgba(44,185,150,0.08);
+                padding: 32px 28px;
+                min-width: 320px;
+                max-width: 820px;
+                margin: auto;
+            }
+            .disburse-header {
+                font-size: 15px;
+                font-weight: 500;
+                color: #bdbdbd;
+                background: #ededed;
+                border-radius: 8px;
+                padding: 6px 18px;
+                display: inline-block;
+                margin-bottom: 18px;
+                letter-spacing: 0.04em;
+            }
+            .disburse-flow {
+                font-size: 17px;
+                color: #222;
+            }
+            .disburse-step {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 2px;
+                margin-top: 8px;
+            }
+            .disburse-icon {
+                color: #2BB996;
+                font-size: 22px;
+            }
+            .pal-title {
+                font-weight: bold;
+                font-size: 22px;
+                color: #2BB996;
+                letter-spacing: 0.03em;
+            }
+            .disburse-title {
+                font-weight: 600;
+                font-size: 18px;
+                color: #222;
+            }
+            .disburse-desc {
+                font-size: 15px;
+                color: #666;
+                margin-bottom: 2px;
+                margin-left: 32px;
+            }
+            .disburse-label {
+                font-size: 13px;
+                color: #bdbdbd;
+                margin-left: 2px;
+            }
+            .disburse-arrow {
+                text-align: left;
+                font-size: 22px;
+                color: #bdbdbd;
+                margin: 8px 0 0 32px;
+            }
+            .disburse-currencies {
+                display: flex;
+                gap: 18px;
+                font-weight: 700;
+                font-size: 17px;
+                color: #222;
+                margin: 8px 0 0 32px;
+                margin-bottom: 8px;
+            }
+            .disburse-wallets {
+                display: flex;
+                gap: 22px;
+                margin: 10px 0 0 32px;
+            }
+            .wallet-logo {
+                height: 32px;
+                width: auto;
+                object-fit: contain;
+                background: none;
+            }
+            .disburse-info {
+                padding-left: 18px;
+            }
+            .disburse-title-main {
+                font-size: 32px;
+                font-weight: 600;
+                margin-bottom: 10px;
+                color: #222;
+            }
+            .disburse-desc-main {
+                font-size: 18px;
+                color: #444;
+                margin-bottom: 18px;
+            }
+            .disburse-list {
+                list-style: none;
+                padding-left: 0;
+                margin-bottom: 0;
+            }
+            .disburse-list li {
+                font-size: 17px;
+                color: #222;
+                margin-bottom: 12px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .disburse-list-icon {
+                color: #2BB996;
+                font-size: 20px;
+            }
+            .disburse-btns {
+                display: flex;
+                gap: 18px;
+                margin-top: 30px;
+            }
+            .disburse-btn {
+                font-size: 20px;
+                font-weight: 500;
+                padding: 10px 32px;
+                border-radius: 8px;
+                border: none;
+                box-shadow: none;
+                transition: background 0.2s;
+            }
+            .disburse-btn-light {
+                background: #ededed;
+                color: #222;
+            }
+            .disburse-btn-light:hover {
+                background: #e0e0e0;
+            }
+            /* @media (max-width: 991px) {
+                .disburse-section {
+                    padding: 20px 0;
+                }
+                .disburse-info {
+                    padding-left: 0;
+                    margin-top: 28px;
+                }
+            } */
+            @media (max-width: 600px) {
+                .disburse-card {
+                    padding: 18px 8px;
+                    min-width: 0;
+                    max-width: 100%;
+                }
+                .disburse-title-main {
+                    font-size: 22px;
+                }
+                .disburse-btn {
+                    font-size: 16px;
+                    padding: 8px 18px;
+                }
+            }
+            </style>
+            <section class="integration-section">
+                <div class="integration-container">
+                  <div class="integration-left">
+                    <div class="integration-bar"></div>
+                    <h2>
+                      <span class="integration-bold">Seamless <span class="integration-green">integration</span>.</span><br>
+                      Designed with developers in mind.
+                    </h2>
+                    <p class="integration-desc">
+                      Our reliable processing engine makes collecting, disbursing, and<br>
+                      settling effortless and highly adaptable.
+                    </p>
+                    <a href="#" class="integration-btn">Explore the Doc <span class="integration-arrow">&#9654;</span></a>
+                  </div>
+                  <div class="integration-right">
+                    <!-- You can put an image, video, or leave it blank for now -->
+                  </div>
+                </div>
+              </section>
+              <style>
+                .integration-section {
+                background: #393939;
+                background-image: url(assets/img/noise.png);
+                background-blend-mode: difference;
+                padding: 60px 0;
+                }
+
+                .integration-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                max-width: 1200px;
+                margin: 0 auto;
+                gap: 40px;
+                }
+
+                .integration-left {
+                flex: 1 1 0;
+                color: #fff;
+                padding: 0 24px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                }
+
+                .integration-bar {
+                width: 60px;
+                height: 6px;
+                background: #fff;
+                border-radius: 3px;
+                margin-bottom: 32px;
+                }
+
+                .integration-left h2 {
+                font-size: 2.8em;
+                font-weight: 400;
+                margin-bottom: 18px;
+                line-height: 1.1;
+                }
+
+                .integration-bold {
+                font-weight: 700;
+                }
+
+                .integration-green {
+                color: #2bb996;
+                font-weight: 700;
+                }
+
+                .integration-desc {
+                font-size: 1.1em;
+                color: #e0e0e0;
+                margin-bottom: 32px;
+                margin-top: 12px;
+                }
+
+                .integration-btn {
+                display: inline-block;
+                background: #000;
+                width: 50%;
+                color: #fff;
+                font-size: 1.1em;
+                font-weight: 500;
+                padding: 12px 28px;
+                border-radius: 8px;
+                text-decoration: none;
+                margin-top: 12px;
+                transition: background 0.2s;
+                }
+
+                .integration-btn:hover {
+                background: #3f3e3e;
+                color: #fff;
+                }
+
+                .integration-arrow {
+                margin-left: 8px;
+                font-size: 1.2em;
+                vertical-align: middle;
+                }
+
+                .integration-right {
+                flex: 1 1 0;
+                min-width: 320px;
+                min-height: 340px;
+                background: #fff;
+                height: 640px;
+                border-radius: 0;
+                /* You can add a box-shadow if you want */
+                }
+                
+
+
+                @media (max-width: 900px) {
+                .integration-container {
+                    flex-direction: column;
+                    gap: 32px;
+                    padding: 0 8px;
+                }
+                .integration-right {
+                    min-width: 220px;
+                    min-height: 180px;
+                    width: 100%;
+                }
+                .integration-left h2 {
+                    font-size: 2em;
+                }
+            }
+              </style>
+              <section class="security-trust-section">
+                <div class="security-trust-header">
+                  <img src="assets/img/secure-document.png" alt="Security Illustration" class="security-trust-illustration" />
+                  <h2><span class="security-bold">A Security You</span> Can Trust</h2>
+                  <p class="security-trust-subtitle">Over 10,000 users trust us with their finances, and here's why</p>
+                </div>
+                <div class="security-trust-features">
+                  <div class="security-trust-card">
+                    <div class="security-trust-card-title">Cold Storage</div>
+                    <img src="assets/img/cold-storage.png" alt="Cold Storage" class="security-trust-card-img" />
+                    <div class="security-trust-card-desc">
+                      You can transact with confidence because we have one of the best security in the business.
+                    </div>
+                  </div>
+                  <div class="security-trust-card">
+                    <div class="security-trust-card-desc">
+                      You can transact with confidence because we have one of the best security in the business.
+                    </div>
+                    <div class="security-trust-card-title security-trust-card-extra">We Go the Extra Mile</div>
+                    <img src="assets/img/p-s.png" alt="Extra Mile" class="security-trust-card-img" />
+                  </div>
+                  <div class="security-trust-card">
+                    <div class="security-trust-card-title">Real-Time Notifications</div>
+                    <img src="assets/img/notification.png" alt="Notifications" class="security-trust-card-img" />
+                    <div class="security-trust-card-desc">
+                      You get email and notifications to monitor your account transactions.
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="security-trust-link">
+                  <b>https://roqqu.com/</b>
+                </div> -->
+              </section>
+              <style>
+                .security-trust-section {
+                    /* background: #f7f7f7; */
+                    padding: 60px 0 40px 0;
+                    width: 100%;
+                    /* max-width: 1200px; */
+                    height: auto;
+                    text-align: center;
+                    font-family: 'Inter', Arial, sans-serif;
+                 }
+
+                    .security-trust-header {
+                        width: 100%;
+                    margin-bottom: 32px;
+                    }
+
+                    .security-trust-illustration {
+                    /* width: 110px; */
+                    width: 20%;
+                    margin-bottom: 18px;
+                    }
+
+                    .security-trust-header h2 {
+                    font-size: 2.3em;
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                    }
+
+                    .security-bold {
+                    font-weight: 900;
+                    color: #222;
+                    }
+
+                    .security-trust-subtitle {
+                    color: #444;
+                    font-size: 1.1em;
+                    margin-bottom: 32px;
+                    }
+
+                    .security-trust-features {
+                    display: flex;
+                    justify-content: center;
+                    gap: 32px;
+                    margin-bottom: 32px;
+                    flex-wrap: wrap;
+                    }
+
+                    .security-trust-card {
+                    background: linear-gradient(180deg, #b8c6c7 40%, #f7f7f7 100%);
+                    border-radius: 18px;
+                    box-shadow: 0 2px 12px rgba(44,185,150,0.06);
+                    padding: 32px 24px 24px 24px;
+                    min-width: 240px;
+                    max-width: 320px;
+                    height: 440px;
+                    flex: 1 1 260px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 66px;
+                    /* align-items: center; */
+                    }
+
+                    .security-trust-card-title {
+                    font-size: 1.25em;
+                    font-weight: 700;
+                    margin-bottom: 12px;
+                    color: #222;
+                    }
+
+                    .security-trust-card-extra {
+                    font-size: 1.15em;
+                    font-weight: 700;
+                    margin-top: 18px;
+                    margin-bottom: 8px;
+                    color: #222;
+                    }
+
+                    .security-trust-card-img {
+                    width: 50%;
+                    /* height: 54px; */
+                    margin-bottom: 16px;
+                    }
+
+                    .security-trust-card-desc {
+                    color: #222;
+                    font-size: 1em;
+                    margin-bottom: 0;
+                    }
+
+                    .security-trust-link {
+                    font-size: 2em;
+                    font-weight: 700;
+                    margin-top: 18px;
+                    color: #222;
+                    letter-spacing: 1px;
+                    }
+
+                    .security-trust-section {
+                    /* background: #f7f7f7; */
+                    padding: 60px 0 40px 0;
+                    width: 100%;
+                    opacity: 0;
+                    transform: translateY(50px);
+                    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+                }
+
+                .security-trust-section.visible {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                    @media (max-width: 900px) {
+                    .security-trust-features {
+                        /* flex-direction: column; */
+                        gap: 18px;
+                        align-items: center;
+                    }
+                    /* .security-trust-card {
+                        max-width: 30vw;
+                        min-width: 0;
+                    } */
+
+                 }
+              </style>
+              <script>
+                // Intersection Observer for scroll animations
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            // Optional: Unobserve after animation plays once
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1 // Trigger when 10% of the element is visible
+                });
+
+                // Observe the security trust section
+                document.addEventListener('DOMContentLoaded', () => {
+                    const securitySection = document.querySelector('.security-trust-section');
+                    if (securitySection) {
+                        observer.observe(securitySection);
+                    }
+                });
+            </script>
             <footer class="style-3 bg-dark text-white pt-5" id="developers">
                 <div class="container">
                     <div class="row gx-0 justify-content-between">
@@ -1610,7 +1920,7 @@
                             © PAL Africa. 2023 All rights reserved
                         </small>
                         <div class="col">
-                            <ul class="row" style="">
+                            <ul class="row">
                                 <li class="col" style="list-style: disc; list-style-position: inside;"><a
                                         href="./service-terme.html" target="_blank">Terms of Service</a></li>
                                 <li class="col" style="list-style: disc; list-style-position: inside;"><a
@@ -1624,7 +1934,37 @@
     </div>
 
 
-    <!-- ====== request ====== -->
+    <!-- Floating Download Button (Mobile Only) -->
+    <button class="floating-download-btn" id="downloadBtn">
+        <svg class="download-icon" viewBox="0 0 24 24">
+            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
+        </svg>
+        Download App
+    </button>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <h2>Download Our App</h2>
+            <p>Choose your platform to download our mobile app</p>
+            <div class="platform-buttons">
+                <button class="platform-btn android" id="androidBtn">
+                    <svg class="platform-icon" viewBox="0 0 24 24">
+                        <path d="M17.523,15.3414C17.0099,15.3414 16.592,14.9244 16.592,14.4124C16.592,13.8984 17.0099,13.4834 17.523,13.4834C18.0351,13.4834 18.453,13.8984 18.453,14.4124C18.453,14.9244 18.0351,15.3414 17.523,15.3414M6.477,15.3414C5.9649,15.3414 5.547,14.9244 5.547,14.4124C5.547,13.8984 5.9649,13.4834 6.477,13.4834C6.9891,13.4834 7.407,13.8984 7.407,14.4124C7.407,14.9244 6.9891,15.3414 6.477,15.3414M12,2.05L13.025,4.088C13.119,4.287 13.099,4.526 12.979,4.706C12.859,4.886 12.659,5 12.445,5H11.555C11.341,5 11.141,4.886 11.021,4.706C10.901,4.526 10.881,4.287 10.975,4.088L12,2.05M6.8,11.55C6.8,11.55 8.55,11.55 12,11.55C15.45,11.55 17.2,11.55 17.2,11.55V5.6C17.2,5.6 17.2,4.2 16.6,3.6C16,3 14.6,3 12,3C9.4,3 8,3 7.4,3.6C6.8,4.2 6.8,5.6 6.8,5.6V11.55Z"/>
+                    </svg>
+                    Android
+                </button>
+                <button class="platform-btn ios" id="iosBtn">
+                    <svg class="platform-icon" viewBox="0 0 24 24">
+                        <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.09997,22C7.78997,22.05 6.79997,20.68 5.95997,19.47C4.24997,17 2.93997,12.45 4.69997,9.39C5.56997,7.87 7.13997,6.91 8.85997,6.88C10.15,6.86 11.36,7.75 12.11,7.75C12.85,7.75 14.28,6.73 15.87,6.84C16.5,6.87 18.27,7.12 19.35,8.29C19.27,8.35 17.94,9.25 17.96,11.09C17.98,13.25 19.93,14.01 20,14.02C19.99,14.07 19.67,15.16 18.71,19.5Z"/>
+                    </svg>
+                    iOS
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/lib/jquery-3.0.0.min.js"></script>
     <script src="assets/js/lib/jquery-migrate-3.0.0.min.js"></script>
     <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
@@ -1640,6 +1980,7 @@
     <script src="assets/js/jquery.fittext.js"></script>
     <script src="assets/js/jquery.lettering.js"></script>
     <script src="assets/js/jquery.textillate.js"></script>
+    <script src="assets/js/mobile-download.js"></script>
     <script>$('.tlt').textillate({
             loop: true,
             out: {
@@ -1767,41 +2108,41 @@
             name: "Benin",
             city: "Benin, Cotonou",
             flagClass: "benin",
-            message: "I am able to pay Nigerian exporters with PAL app",
-            emoji: "✌️",
-            img: "assets/img/Ellipse.png"
+            message: "Making payments to my Nigerian suppliers has never been easier—PAL simplified the entire process of importing my goods from Nigeria. Thank you!",
+            // emoji: "✌️",
+            img: "assets/img/Ellipse7.png"
         },
         {
             name: "Nigeria",
             city: "Nigeria, Lagos",
             flagClass: "nigeria",
-            message: "Export goods to West African countries easily",
-            emoji: "🚀",
-            img: "assets/img/Eclipse2.jpg"
+            message: "Using PAL to get paid from my exporters in Ivory Coast, Cameroun and Niger has significantly streamlined my export process. It's made cross-border trade much more convenient.",
+            // emoji: "🚀",
+            img: "assets/img/Ellipse8.png"
         },
-        {
-            name: "Ghana",
-            city: "Ghana, Accra",
-            flagClass: "ghana",
-            message: "Connect with traders across Africa seamlessly",
-            emoji: "⭐",
-            img: "assets/img/Eclipse3.jpg"
-        },
-        {
-            name: "Chad",
-            city: "Chad, N'Djamena",
-            flagClass: "chad",
-            message: "Trade securely with PAL across borders",
-            emoji: "🌍",
-            img: "assets/img/Eclipse4.jpg"
-        },
+        // {
+        //     name: "Ghana",
+        //     city: "Ghana, Accra",
+        //     flagClass: "ghana",
+        //     message: "Connect with traders across Africa seamlessly",
+        //     emoji: "⭐",
+        //     img: "assets/img/Eclipse3.jpg"
+        // },
+        // {
+        //     name: "Chad",
+        //     city: "Chad, N'Djamena",
+        //     flagClass: "chad",
+        //     message: "Trade securely with PAL across borders",
+        //     emoji: "🌍",
+        //     img: "assets/img/Eclipse4.jpg"
+        // },
         {
             name: "Cameroon",
-            city: "Cameroon, Yaoundé",
+            city: "Cameroon, Onitsha",
             flagClass: "cameroon",
-            message: "PAL connects Cameroon to West Africa",
-            emoji: "💼",
-            img: "assets/img/Eclipse5.jpg"
+            message: "Thanks to PAL, we can now make seamless payments to our Nigerian suppliers, greatly improving the efficiency of our import operations",
+            // emoji: "💼",
+            img: "assets/img/Ellipse9.png"
         }
     ];
 
@@ -1819,7 +2160,7 @@
         const profile = countryProfiles[idx];
         countryCity.textContent = profile.city;
         countryFlag.className = "flag " + profile.flagClass;
-        countryMessage.innerHTML = profile.message + ' <span id="country-emoji" class="peace-sign">' + profile.emoji + '</span>';
+        countryMessage.innerHTML = profile.message;
         profileImg.src = profile.img;
     }
 
