@@ -1,0 +1,670 @@
+/* ===============================================================
+   MOBILE OPTIMIZATION STYLES
+   =============================================================== */
+
+/* ====== GLOBAL MOBILE OPTIMIZATIONS ====== */
+@media (max-width: 768px) {
+    /* Improve overall mobile experience */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    /* Better container spacing on mobile */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Improve text readability */
+    h1, h2, h3, h4, h5, h6 {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    /* Better button sizing for mobile */
+    .btn {
+        padding: 12px 24px;
+        font-size: 16px;
+        min-height: 44px; /* iOS touch target minimum */
+    }
+}
+
+/* ====== HEADER SECTION MOBILE OPTIMIZATION ====== */
+@media (max-width: 768px) {
+    /* Hero section mobile improvements */
+    header.style-1 .content {
+        padding: 20px 0;
+    }
+    
+    header.style-1 .info {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    header.style-1 .info .section-head strong {
+        font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+    
+    header.style-1 .info .text {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+    
+    /* Hero images mobile layout */
+    header.style-1 .col-lg-5 {
+        order: -1;
+        margin-bottom: 30px;
+    }
+    
+    /* Stack hero images vertically on mobile */
+    header.style-1 .col-lg-5 > div {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    header.style-1 .col-lg-5 img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    /* Button improvements for mobile */
+    header.style-1 .info .bttns {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    header.style-1 .info .bttns .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+}
+
+/* ====== WALLET CAROUSEL MOBILE OPTIMIZATION ====== */
+@media (max-width: 768px) {
+    .carousel-container {
+        margin: 20px 0;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    
+    .wallet-container {
+        padding: 20px;
+        min-height: 350px;
+    }
+    
+    .wallet-container::before {
+        width: 100%;
+        opacity: 0.3;
+    }
+    
+    .animation-background {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .animation-background iframe {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .header {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .profile-left {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .profile-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .profile-info h2 {
+        font-size: 18px;
+        justify-content: center;
+    }
+    
+    .profile-info p {
+        font-size: 14px;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .download-section {
+        margin-top: 30px;
+        text-align: center;
+    }
+    
+    .download-link {
+        font-size: 18px;
+        padding: 12px 24px;
+        display: inline-block;
+        background: rgba(0, 191, 165, 0.1);
+        border-radius: 8px;
+        border: 1px solid #00bfa5;
+    }
+}
+
+/* ====== FLAG CAROUSEL MOBILE OPTIMIZATION ====== */
+@media (max-width: 768px) {
+    .flags-container {
+        height: 60px;
+        margin-top: 15px;
+    }
+    
+    .flags-track {
+        gap: 15px;
+    }
+    
+    .flag {
+        width: 50px;
+        height: 35px;
+    }
+    
+    .flag-label {
+        padding: 6px 12px;
+        margin-right: 8px;
+    }
+    
+    .country-name {
+        font-size: 0.9em;
+        padding: 2px 8px;
+    }
+}
+
+/* ====== API SECTION MOBILE OPTIMIZATION ====== */
+@media (max-width: 768px) {
+    .new-section {
+        padding: 30px 0;
+    }
+    
+    .new-section h2 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .new-section .row {
+        flex-direction: column-reverse;
+    }
+    
+    .new-section .col-md-6 {
+        margin-bottom: 30px;
+    }
+    
+    .new-section .col-md-6:last-child {
+        margin-bottom: 0;
+    }
+    
+    .new-section h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .new-section p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .new-section ul {
+        margin-bottom: 25px;
+    }
+    
+    .new-section ul li {
+        font-size: 15px;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .new-section ul li i {
+        margin-top: 2px;
+        flex-shrink: 0;
+    }
+    
+    .new-section img {
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+}
+
+/* ====== DISBURSE SECTION MOBILE OPTIMIZATION ====== */
+@media (max-width: 768px) {
+    .disburse-section {
+        padding: 30px 0;
+    }
+    
+    .disburse-section .row {
+        flex-direction: column-reverse;
+    }
+    
+    .disburse-section .col-lg-6 {
+        margin-bottom: 30px;
+    }
+    
+    .disburse-section .col-lg-6:last-child {
+        margin-bottom: 0;
+    }
+    
+    .disburse-info {
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .disburse-title-main {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .disburse-desc-main {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .disburse-list {
+        text-align: left;
+        margin-bottom: 25px;
+    }
+    
+    .disburse-list li {
+        font-size: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .disburse-list-icon {
+        margin-top: 2px;
+        flex-shrink: 0;
+    }
+    
+    .disburse-btns {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .disburse-btn {
+        width: 100%;
+        max-width: 280px;
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+    
+    .disburse-card img {
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+}
+
+/* ====== NAVBAR MOBILE OPTIMIZATION ====== */
+@media (max-width: 768px) {
+    .navbar.style-1 {
+        padding: 15px 0;
+    }
+    
+    .navbar.style-1 .navbar-brand img {
+        height: 40px;
+    }
+    
+    .navbar.style-1 .navbar-collapse {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        margin-top: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    .navbar.style-1 .navbar-nav {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .navbar.style-1 .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+    
+    .navbar.style-1 .navbar-nav .nav-item .nav-link {
+        font-size: 16px;
+        padding: 12px 20px;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+    }
+    
+    .navbar.style-1 .navbar-nav .nav-item .nav-link:hover,
+    .navbar.style-1 .navbar-nav .nav-item .nav-link.active {
+        background-color: rgba(43, 185, 150, 0.1);
+    }
+    
+    .navbar.style-1 .nav-side {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .navbar.style-1 .nav-side .btn {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+    
+    /* Improve navbar toggler */
+    .navbar-toggler {
+        border: none;
+        padding: 8px;
+        border-radius: 8px;
+        background: rgba(43, 185, 150, 0.1);
+    }
+    
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.2rem rgba(43, 185, 150, 0.25);
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2843, 185, 150, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+}
+
+/* ====== SMALL MOBILE OPTIMIZATIONS (480px and below) ====== */
+@media (max-width: 480px) {
+    /* Even smaller text and spacing for very small screens */
+    header.style-1 .info .section-head strong {
+        font-size: 24px;
+    }
+    
+    header.style-1 .info .text {
+        font-size: 15px;
+    }
+    
+    .wallet-container {
+        padding: 15px;
+        min-height: 300px;
+    }
+    
+    .header {
+        font-size: 20px;
+    }
+    
+    .profile-image {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .profile-info h2 {
+        font-size: 16px;
+    }
+    
+    .profile-info p {
+        font-size: 13px;
+    }
+    
+    .download-link {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    
+    .new-section h2 {
+        font-size: 22px;
+    }
+    
+    .disburse-title-main {
+        font-size: 24px;
+    }
+    
+    .disburse-desc-main {
+        font-size: 15px;
+    }
+    
+    .disburse-list li {
+        font-size: 14px;
+    }
+    
+    .disburse-btn {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+    
+    /* Improve touch targets */
+    .btn, .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Better spacing for very small screens */
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .section-padding {
+        padding: 40px 0;
+    }
+    
+    /* Optimize flag carousel for very small screens */
+    .flags-container {
+        height: 50px;
+    }
+    
+    .flag {
+        width: 40px;
+        height: 28px;
+    }
+    
+    .flag-label {
+        padding: 4px 8px;
+        margin-right: 6px;
+    }
+    
+    .country-name {
+        font-size: 0.8em;
+        padding: 1px 6px;
+    }
+    
+    /* Optimize floating download button for very small screens */
+    .floating-download-btn {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .download-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ====== LANDSCAPE MOBILE OPTIMIZATIONS ====== */
+@media (max-width: 768px) and (orientation: landscape) {
+    /* Optimize for landscape mobile */
+    header.style-1 .content {
+        padding: 15px 0;
+    }
+    
+    header.style-1 .info .section-head strong {
+        font-size: 24px;
+    }
+    
+    .wallet-container {
+        min-height: 250px;
+    }
+    
+    .header {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .profile-section {
+        margin-bottom: 15px;
+    }
+    
+    .download-section {
+        margin-top: 20px;
+    }
+}
+
+/* ====== TABLET OPTIMIZATIONS ====== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet-specific optimizations */
+    header.style-1 .info .section-head strong {
+        font-size: 32px;
+    }
+    
+    header.style-1 .info .text {
+        font-size: 18px;
+    }
+    
+    .wallet-container {
+        padding: 30px;
+        min-height: 400px;
+    }
+    
+    .header {
+        font-size: 28px;
+    }
+    
+    .new-section h2 {
+        font-size: 28px;
+    }
+    
+    .disburse-title-main {
+        font-size: 30px;
+    }
+}
+
+/* ====== ACCESSIBILITY IMPROVEMENTS ====== */
+@media (max-width: 768px) {
+    /* Improve focus states for better accessibility */
+    .btn:focus,
+    .nav-link:focus,
+    .download-link:focus {
+        outline: 2px solid #2BB996;
+        outline-offset: 2px;
+    }
+    
+    /* Better color contrast for mobile */
+    .text {
+        color: #333;
+    }
+    
+    /* Improve readability with better line spacing */
+    p, li {
+        line-height: 1.6;
+    }
+    
+    /* Ensure sufficient touch targets */
+    a, button, input, select, textarea {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* ====== PERFORMANCE OPTIMIZATIONS ====== */
+@media (max-width: 768px) {
+    /* Reduce animations on mobile for better performance */
+    .wallet-container {
+        animation: none;
+    }
+    
+    .flags-track {
+        animation-duration: 30s; /* Slower animation on mobile */
+    }
+    
+    /* Optimize images for mobile */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Reduce box shadows on mobile for better performance */
+    .disburse-card,
+    .wallet-container {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+}
+
+/* ====== FOOTER MOBILE OPTIMIZATION ====== */
+@media (max-width: 768px) {
+    footer .container {
+        padding: 20px 15px;
+    }
+    
+    footer .row {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    footer .col-sm-8,
+    footer .col {
+        margin-bottom: 15px;
+    }
+    
+    footer ul.row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    footer ul.row li {
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    
+    footer small {
+        font-size: 14px;
+        display: block;
+        margin-bottom: 15px;
+    }
+}
+
+/* ====== PRINT STYLES ====== */
+@media print {
+    /* Hide non-essential elements for printing */
+    .navbar,
+    .floating-download-btn,
+    .flags-container {
+        display: none !important;
+    }
+    
+    /* Ensure good contrast for printing */
+    body {
+        color: #000;
+        background: #fff;
+    }
+    
+    /* Remove backgrounds and shadows for printing */
+    .wallet-container,
+    .disburse-card {
+        background: #fff !important;
+        box-shadow: none !important;
+        border: 1px solid #ccc;
+    }
+} 

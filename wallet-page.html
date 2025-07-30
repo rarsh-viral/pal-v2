@@ -22,8 +22,11 @@
         }
 
         .page-bg {
-            background-image: url(assets/img/noise.png);
-            background-blend-mode: difference;
+          
+            background-image: url(assets/img/noise3.png);
+            background-color: #f5f5f5;
+            /* background-blend-mode: difference; */
+
         }
 
         .container {
@@ -172,6 +175,7 @@
         .hero {
             text-align: center;
             padding: 80px 0 0 0;
+            overflow: hidden;
             position: relative; /* Ensure hero is relative for absolute children */
         }
         /* --- BEGIN: Animated Line Background for Hero --- */
@@ -397,7 +401,7 @@
         }
 
         .hero p {
-            font-size: 16px;
+            /* font-size: 16px; */
             color: #666;
             max-width: 500px;
             margin: 0 auto 50px;
@@ -413,6 +417,13 @@
             display: flex;
             gap: 20px;
             justify-content: center;
+            margin-bottom: 80px;
+        }
+        .download-buttons1 {
+            display: flex;
+            gap: 20px;
+            margin-left: 20px;
+            /* justify-content: start; */
             margin-bottom: 80px;
         }
 
@@ -730,18 +741,19 @@
             text-overflow: ellipsis;
         } */
          .trade-card-right {
-            /* width: 220px; */
-            height: 220px;
             position: relative;
-            background: #eee;
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-end;
+            overflow: hidden;
+            height: 220px;
+            padding: 0;
+            margin: 0;
         }
         .trade-card-right .person-image {
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             object-fit: cover;
+            z-index: 1;
+            display: block;
         }
         .trade-card-right .card-overlay {
             position: absolute;
@@ -789,7 +801,7 @@
         /* Ratings */
         .ratings {
             display: flex;
-            justify-content: center;
+            /* justify-content: center; */
             gap: 100px;
         }
 
@@ -961,9 +973,9 @@
 
         .payment-flex {
           display: flex;
-          justify-content: center;
+          /* justify-content: center; */
           align-items: flex-start;
-          gap: 48px;
+          gap: 250px;
           margin-top: 48px;
         }
 
@@ -980,6 +992,7 @@
           align-items: flex-start;
           gap: 18px;
           font-size: 1.18em;
+          font-weight: bold;
           color: #444;
           margin-bottom: 36px;
           text-align: left;
@@ -1023,8 +1036,8 @@
 
         .payment-stack {
           position: relative;
-          width: 340px;
-          height: 220px;
+          width: 440px;
+          height: 320px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1057,15 +1070,20 @@
         .payment-btn {
           background: #222;
           color: #fff;
-          font-size: 1.25em;
-          font-weight: 600;
-          border: none;
-          border-radius: 1em;
-          padding: 0.9em 2.2em;
-          margin-top: 32px;
-          cursor: pointer;
-          transition: background 0.2s;
+          padding: 12px 30px;
+          position: relative;
+          overflow: hidden;
+          text-align: center;
+          font-weight: 500;
+          display: -webkit-inline-box;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          text-align: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center; 
         }
+        
         /* .payment-btn:hover {
           background: #2bb996;
           color: #fff;
@@ -1101,6 +1119,9 @@
             }
         } */
 
+        /* .download-btn1 img {
+          background-color: white;
+        } */
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -1112,6 +1133,11 @@
             }
 
             .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .download-buttons1 {
                 flex-direction: column;
                 align-items: center;
             }
@@ -1178,10 +1204,20 @@
                 margin-bottom: 50px;
             }
 
+            .download-buttons1 {
+                gap: 15px;
+                margin-bottom: 50px;
+            }
+
             .download-btn {
                 width: 160px;
                 height: 48px;
             }
+
+            /* .download-btn1 {
+                width: 160px;
+                height: 80px;
+            } */
 
             .phone-section {
                 margin-top: -100px;
@@ -1231,176 +1267,97 @@
             }
 
             .trade-section h2 {
-                font-size: 32px;
-                margin-bottom: 15px;
+                font-size: 2.5rem; /* Slightly larger than before, but smaller than desktop */
             }
 
             .trade-section > p {
                 font-size: 14px;
-                margin-bottom: 30px;
+                max-width: 90vw; /* Adjust max-width for better fit */
+                margin-left: auto; /* Center the paragraph */
+                margin-right: auto;
             }
 
             .trade-cards {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-                padding-bottom: 0;
+                flex-direction: row; /* Keep as row for desktop-like layout */
+                flex-wrap: nowrap; /* Prevent wrapping */
+                overflow-x: auto; /* Allow horizontal scrolling if cards don't fit */
+                justify-content: flex-start; /* Align to start for scrolling */
+                gap: 16px;
+                padding-bottom: 12px;
+                scroll-snap-type: x mandatory; /* Optional: adds snap effect for scrolling */
             }
 
             .trade-card {
-                width: 100%;
-                max-width: 380px;
+                min-width: calc(50% - 24px); /* Two cards per row with gap */
+                max-width: calc(50% - 24px);
+                width: auto; /* Override previous fixed width */
             }
 
             .trade-card-left h1,
             .trade-card-left .currency {
-                font-size: 2.2em;
+                font-size: 1.8em; /* Reduce font size for smaller cards */
+            }
+
+            .trade-card-right {
+                height: 220px; /* Maintain consistent height */
+                min-height: 220px;
             }
 
             .trade-card-right .card-overlay {
-                height: 100px;
-                padding: 10px;
-            }
-
-            .person-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
+                height: 80px; /* Adjust height as needed */
             }
 
             .person-name {
-                font-size: 0.9em;
+                font-size: 0.8em; /* Smaller font for name */
             }
 
             .person-quote {
-                font-size: 0.75em;
-                -webkit-line-clamp: 3;
+                font-size: 0.65em; /* Smaller font for quote */
+                -webkit-line-clamp: 3; /* Allow more lines if needed */
             }
 
             .trade-cards-rating {
-                flex-direction: column;
-                gap: 30px;
-                margin-top: 30px;
+                flex-direction: row; /* Keep ratings side-by-side */
+                gap: 12px;
+                justify-content: center; /* Center the rating blocks */
             }
 
             .rating-left, .rating-right {
-                width: 100%;
-                max-width: 380px;
+                width: calc(50% - 12px); /* Each rating takes half width with gap */
+                max-width: 250px; /* Prevent them from becoming too large */
             }
 
-            .stars {
-                font-size: 1em;
-            }
-
-            .rating-text {
-                font-size: 0.85em;
-            }
-
-            .payment-section, .virtual-cards-section {
-                padding: 40px 0;
-            }
-
-            .payment-title, .virtual-cards-title {
-                font-size: 2em;
-            }
-
-            .payment-headline, .virtual-cards-headline {
-                font-size: 2em;
-                margin-bottom: 0.8em;
-            }
-
-            .payment-subtitle, .virtual-cards-subtitle {
-                font-size: 1em;
-                margin-bottom: 30px;
-            }
-
-            .payment-flex, .virtual-cards-flex {
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
-                margin-top: 30px;
-            }
-
-            .payment-features, .virtual-cards-features {
-                max-width: 100%;
-                padding: 0 15px;
-            }
-
-            .payment-features li, .virtual-cards-features li {
-                font-size: 1em;
-                gap: 12px;
-                margin-bottom: 20px;
-            }
-
-            .payment-features .checkmark, .virtual-cards-features .checkmark {
-                width: 28px;
-                height: 28px;
-                min-width: 28px;
-                min-height: 28px;
-            }
-
-            .payment-image, .virtual-card-visual {
-                flex: none;
-                width: 100%;
-                max-width: 300px;
-                margin-top: 0;
-            }
-
-            .pal-img, .pal-cards-img {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .payment-btn {
-                font-size: 1em;
-                padding: 0.8em 2em;
-                margin-top: 20px;
-            }
-
-            .security-section-bg {
-                padding: 40px 0;
-            }
-
-            .security-card {
-                padding: 25px 15px;
-                border-radius: 20px;
-            }
-
-            .security-headline {
+            /* Adjust for even smaller screens */
+            @media (max-width: 480px) {
+              .trade-section h2 {
+                font-size: 2rem;
+              }
+              .trade-section > p {
+                font-size: 13px;
+              }
+              .trade-card {
+                min-width: calc(50% - 16px); /* Adjust for smaller gap */
+                max-width: calc(50% - 16px);
+              }
+              .trade-card-left h1,
+              .trade-card-left .currency {
                 font-size: 1.5em;
-                margin-bottom: 20px;
-            }
-
-            .security-desc {
-                font-size: 0.9em;
-                line-height: 1.5;
-            }
-
-            .pal-footer-main {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 30px 15px 15px 15px;
-                gap: 20px;
-            }
-
-            .pal-footer-brand {
-                font-size: 2.2em;
-            }
-
-            .pal-footer-title {
-                font-size: 1em;
-            }
-
-            .pal-footer-col ul li {
-                font-size: 0.9em;
-            }
-
-            .pal-footer-bottom {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 10px 15px;
-                font-size: 0.85em;
-                gap: 5px;
+              }
+              .person-name {
+                font-size: 0.75em;
+              }
+              .person-quote {
+                font-size: 0.6em;
+                -webkit-line-clamp: 4;
+              }
+              .trade-cards-rating {
+                flex-direction: column; /* Stack ratings on very small screens */
+                gap: 10px;
+              }
+              .rating-left, .rating-right {
+                  width: 100%; /* Take full width on very small screens */
+                  max-width: 300px; /* Optional: limit overall max width */
+              }
             }
         }
 
@@ -1443,6 +1400,11 @@
             font-weight: 300;
             color: #e0e0e0;
             white-space: normal;
+        }
+
+        .sub{
+          font-size: 1.4rem;
+          font-weight: 300;
         }
 
         .hero .banner .title {
@@ -1489,6 +1451,15 @@
             max-width: 900px;
             margin: 0 auto 60px auto;
             line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .sub {
+            font-size: 1.4rem;
+            /* color: #e0e0e0;
+            max-width: 900px;
+            margin: 0 auto 60px auto;
+            line-height: 1.6; */
             font-weight: 300;
         }
 
@@ -1718,6 +1689,10 @@
             .subtitle {
                 font-size: 1.1rem;
             }
+
+            .sub {
+                font-size: 1.1rem;
+            }
             
             .flag {
                 width: 60px;
@@ -1858,11 +1833,69 @@
        
      
 
-.virtual-cards-section {
-  padding: 64px 0 64px 0;
+        .virtual-cards-section {
+  
+          padding: 60px 0;
+        }
+.vc-container {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.vc-left {
+  flex: 1;
+  display: flex;
+  
+  align-items: center;
+}
+.vc-main-image {
+  width: 100%;
+  height: auto;
+  max-width: 520px;
+  border-radius: 32px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+}
+.vc-right {
+  flex: 1;
+  max-width: 420px;
+}
+.vc-coming-soon {
+  font-size: 13px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.vc-title {
+  font-size: 38px;
+  font-weight: 400;
+  margin-bottom: 28px;
+  color: #222;
+}
+.vc-title b {
+  font-weight: 700;
+}
+.vc-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.vc-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  margin-bottom: 18px;
+  color: #555;
+}
+.vc-check {
+  width: 22px;
+  height: 22px;
+  background: url('assets/img/checkmark.svg') no-repeat center/contain;
+  margin-right: 12px;
 }
 
 .virtual-cards-content {
@@ -2202,7 +2235,7 @@
 
 .pal-footer-social-link svg {
   vertical-align: middle;
-  color: blue;
+  /* color: blue; */
   transition: color 0.2s;
 }
 .pal-footer-social-link:hover svg {
@@ -2284,261 +2317,423 @@
         }
         
     </style>
+    <!-- Responsive improvements for security animation -->
     <style>
-        /* Floating Download Button - Only visible on mobile */
-        .floating-download-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 16px 24px;
-            font-size: 16px;
-            font-weight: 600;
-            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
-            cursor: pointer;
-            z-index: 1000;
-            transition: all 2s cubic-bezier(0.4, 0, 0.2, 1);
-            display: none; /* Hidden by default, shown only on mobile */
-            align-items: center;
-            gap: 8px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: floatAround 8s infinite linear;
+@media (max-width: 600px) {
+  .animation-container {
+    width: 98vw !important;
+    max-width: 320px !important;
+    height: 220px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+  }
+  .floating-element {
+    font-size: 13px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+  }
+  .shield, .money, .lock, .certificate, .vault, .key {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    font-size: 18px !important;
+  }
+  .trust-center {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 9px !important;
+    border-width: 2px !important;
+  }
+  .certificate::before {
+    top: -2px !important;
+    left: -2px !important;
+    right: -2px !important;
+    bottom: -2px !important;
+    border-width: 1px !important;
+  }
+  .connection-line {
+    height: 1px !important;
+  }
+}
+</style>
+    <!-- MOBILE OPTIMIZATION STYLES -->
+    <style>
+      @media (max-width: 900px) {
+        .container {
+          max-width: 100vw;
+          padding: 0 10px;
+        }
+        .header {
+          padding: 10px 0;
+        }
+        .nav-links {
+          display: none !important;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .nav-right {
+          gap: 8px;
+        }
+        .navbar-brand img {
+          height: 40px !important;
+        }
+      }
+      @media (max-width: 900px) {
+        .navbar-collapse {
+          background: rgba(255,255,255,0.98);
+          border-radius: 12px;
+          margin-top: 10px;
+          padding: 10px;
+        }
+        .navbar-nav {
+          text-align: center;
+        }
+        .navbar-nav .nav-item {
+          margin-bottom: 10px;
+        }
+        .navbar-nav .nav-link {
+          font-size: 16px;
+          padding: 12px 20px;
+          border-radius: 8px;
+        }
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:hover {
+          background: #e6f7f4;
+        }
+        .nav-side {
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+        }
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 6px;
+        }
+        .hero {
+          padding: 40px 0 0 0;
+        }
+        .hero h1 {
+          font-size: 2rem;
+          margin-bottom: 16px;
+        }
+        .hero p {
+          font-size: 1rem;
+          margin-bottom: 24px;
+        }
+        .download-buttons {
+          flex-direction: column;
+          gap: 12px;
+          margin-bottom: 32px;
         }
 
-        .floating-download-btn:hover {
-            animation-play-state: paused;
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.6);
+        .download-buttons1 {
+          flex-direction: column;
+          gap: 12px;
+          margin-bottom: 32px;
         }
 
-        .floating-download-btn:active {
-            transform: translateY(0) scale(0.95);
+        .download-btn img {
+          height: 40px !important;
+          max-width: 120px;
+        }
+        .download-btn1 img {
+          height: 73px !important;
+          /* height: 120px; */
+          /* max-width: 100px; */
         }
 
-        .download-icon {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
+        .phone-section {
+          margin-top: -40px;
         }
-
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            animation: fadeIn 0.3s ease-out;
+        .phone-mockup-img {
+          width: 100vw !important;
+          max-width: 100vw !important;
         }
-
-        .modal {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 20px;
-            max-width: 90%;
-            width: 350px;
-            text-align: center;
-            transform: scale(0.9);
-            animation: modalSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        .banner {
+          padding: 20px 8px;
+          border-radius: 14px;
+          margin-top: -210px;
         }
-
-        .modal h2 {
-            color: #333;
-            margin-bottom: 1rem;
-            font-size: 24px;
-            font-weight: 700;
+        .banner .title {
+          font-size: 1.5rem;
+          margin-bottom: 16px;
         }
-
-        .modal p {
-            color: #666;
-            margin-bottom: 2rem;
-            font-size: 16px;
-            line-height: 1.5;
+        .banner .subtitle {
+          font-size: 1rem;
+          margin-bottom: 20px;
         }
-
-        .platform-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
+        .sub{
+          font-size: 1rem;
+          /* margin-bottom: 18px; */
         }
-
-        .platform-btn {
-            flex: 1;
-            padding: 16px 20px;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+        .flags-container {
+          height: 40px;
+          margin-top: 10px;
         }
-
-        .platform-btn.android {
-            background: #34A853;
-            color: white;
+        .flags-track {
+          gap: 10px;
         }
-
-        .platform-btn.android:hover {
-            background: #2d8f47;
-            transform: translateY(-2px);
+        .flag {
+          width: 32px;
+          height: 22px;
         }
-
-        .platform-btn.ios {
-            background: #007AFF;
-            color: white;
+        .flag-label {
+          padding: 4px 8px;
+          margin-right: 4px;
         }
-
-        .platform-btn.ios:hover {
-            background: #0056cc;
-            transform: translateY(-2px);
+        .country-name {
+          font-size: 0.8em;
+          padding: 1px 4px;
         }
-
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: #999;
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all 0.3s ease;
+        .trade-section {
+          padding: 30px 0;
         }
-
-        .close-btn:hover {
-            background: #f5f5f5;
-            color: #333;
+        .trade-section h2 {
+          font-size: 1.5rem;
         }
-
-        /* Mobile Detection */
+        .trade-section > p {
+          font-size: 1rem;
+        }
+        .trade-cards {
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          overflow-x: visible;
+        }
+        .trade-card {
+          width: 100%;
+          max-width: 350px;
+          min-height: 180px;
+        }
+        .trade-card-left h1, .trade-card-left .currency {
+          font-size: 1.2em;
+        }
+        .trade-card-right .person-image {
+          /* height: 230px; */
+          height: 100%;
+        }
+        .trade-card-right  {
+          height: 260px;
+          /* padding: 6px; */
+        }
+        .person-header {
+          flex-direction: row;
+          gap: 4px;
+        }
+        .person-name {
+          font-size: 0.9em;
+        }
+        .person-quote {
+          font-size: 0.75em;
+        }
+        .trade-cards-rating {
+          flex-direction: column;
+          gap: 12px;
+          margin-top: 12px;
+        }
+        .rating {
+          max-width: 350px;
+        }
+        .stars {
+          font-size: 1em;
+        }
+        .rating-text {
+          font-size: 0.9em;
+        }
+        .payment-section, .virtual-cards-section, .security-section-bg {
+          padding: 24px 0;
+        }
+        .payment-content, .virtual-cards-content {
+          padding: 0 4px;
+        }
+        .payment-title, .virtual-cards-title, .payment-headline, .virtual-cards-headline {
+          font-size: 1.3em;
+        }
+        .payment-subtitle, .virtual-cards-subtitle {
+          font-size: 1em;
+          margin-bottom: 18px;
+        }
+        .sub{
+          font-size: 1em;
+         
+        }
         @media (max-width: 768px) {
-            .floating-download-btn {
-                display: flex !important;
-            }
+  .virtual-cards-section {
+    padding: 32px 0 24px 0;
+  }
+  .vc-container {
+    flex-direction: column;
+    gap: 32px;
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+  .vc-left, .vc-right {
+    flex: unset;
+    max-width: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .vc-main-image {
+    max-width: 340px;
+    width: 90vw;
+    margin: 0 auto 18px auto;
+    border-radius: 18px;
+  }
+  .vc-title {
+    font-size: 1.7em;
+    margin-bottom: 18px;
+  }
+  .vc-coming-soon {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .vc-features li {
+    font-size: 1.2em;
+   
+    font-size: 1em;
+    margin-bottom: 14px;
+    justify-content: center;
+  }
+  .vc-check {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+}
+@media (max-width: 480px) {
+  .vc-main-image {
+    max-width: 180px;
+    border-radius: 12px;
+  }
+  .vc-title {
+    font-size: 1.2em;
+  }
+  .vc-features li {
+    font-size: 0.98em;
+  }
+}
+
+        .payment-flex, .virtual-cards-flex {
+          flex-direction: column;
+          gap: 16px;
+          margin-top: 16px;
+        }
+        .payment-features, .virtual-cards-features {
+          max-width: 100%;
+          padding: 0 4px;
+        }
+        .payment-features li, .virtual-cards-features li {
+          font-size: 1em;
+          gap: 8px;
+          margin-bottom: 12px;
+        }
+        .payment-image, .virtual-card-visual {
+          max-width: 220px;
+          margin: 0 auto;
+        }
+        .pal-img, .pal-cards-img {
+          max-width: 480px;
+        }
+        .payment-btn, .open-account-btn {
+          font-size: 1em;
+          padding: 0.7em 1.5em;
+          margin-top: 12px;
+        }
+        .security-card {
+          width: 100%;
+          padding: 16px 4px;
+          border-radius: 12px;
+        }
+        .security-headline {
+          font-size: 1.1em;
+        }
+        .security-desc {
+          font-size: 0.95em;
+        }
+        .pal-footer-main {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+          padding: 18px 4px 4px 4px;
+        }
+        .pal-footer-col {
+          min-width: 120px;
+        }
+        .pal-footer-brand {
+          font-size: 1.5em;
+        }
+        .pal-footer-title {
+          font-size: 1em;
+        }
+        .pal-footer-col ul li {
+          font-size: 0.95em;
+        }
+        .pal-footer-bottom {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4px;
+          font-size: 0.95em;
+          padding: 8px 4px;
+        }
+        .pal-footer-note {
+          font-size: 0.9em;
+          padding: 0 4px;
+        }
+      }
+      @media (max-width: 480px) {
+        .container {
+          padding: 0 2px;
+        }
+        .hero {
+          padding: 20px 0 0 0;
+        }
+        .hero h1 {
+          font-size: 1.2rem;
+        }
+        .banner {
+          padding: 10px 2px;
+          border-radius: 8px;
+        }
+        .banner .title {
+          font-size: 1.1rem;
+        }
+        .banner .subtitle {
+          font-size: 0.9rem;
+        }
+        .sub{
+          font-size: 0.9rem;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .flags-container {
+          height: 28px;
         }
-
-        @keyframes modalSlideIn {
-            from {
-                transform: scale(0.9) translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1) translateY(0);
-                opacity: 1;
-            }
+        .flag {
+          width: 18px;
+          height: 12px;
         }
-
-        @keyframes floatAround {
-            0% {
-                bottom: 20px;
-                right: 20px;
-            }
-            12.5% {
-                bottom: 50%;
-                right: 20px;
-                transform: translateY(50%);
-            }
-            25% {
-                bottom: calc(100vh - 80px);
-                right: 20px;
-            }
-            37.5% {
-                bottom: calc(100vh - 80px);
-                right: 50%;
-                transform: translateX(50%);
-            }
-            50% {
-                bottom: calc(100vh - 80px);
-                right: calc(100vw - 200px);
-            }
-            62.5% {
-                bottom: 50%;
-                right: calc(100vw - 200px);
-                transform: translateY(50%);
-            }
-            75% {
-                bottom: 20px;
-                right: calc(100vw - 200px);
-            }
-            87.5% {
-                bottom: 20px;
-                right: 50%;
-                transform: translateX(50%);
-            }
-            100% {
-                bottom: 20px;
-                right: 20px;
-            }
+        .flag-label {
+          padding: 2px 4px;
         }
-
-        /* Slower floating animation for better UX */
-        @keyframes floatAroundSlow {
-            0% {
-                bottom: 20px;
-                right: 20px;
-            }
-            16.66% {
-                bottom: 40%;
-                right: 20px;
-            }
-            33.33% {
-                bottom: calc(100vh - 100px);
-                right: 50%;
-                transform: translateX(50%);
-            }
-            50% {
-                bottom: calc(100vh - 100px);
-                right: calc(100vw - 180px);
-            }
-            66.66% {
-                bottom: 40%;
-                right: calc(100vw - 180px);
-            }
-            83.33% {
-                bottom: 20px;
-                right: 50%;
-                transform: translateX(50%);
-            }
-            100% {
-                bottom: 20px;
-                right: 20px;
-            }
+        .country-name {
+          font-size: 0.7em;
         }
-
-        /* Platform Icons */
-        .platform-icon {
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
+        .trade-card {
+          min-height: 100px;
         }
+        .payment-btn, .open-account-btn {
+          font-size: 0.95em;
+          padding: 0.5em 1em;
+        }
+        .pal-footer-brand {
+          font-size: 1.1em;
+        }
+      }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -2623,14 +2818,14 @@
         </div>
         <div class="container">
             <h1><span class="highlight">Business Wallet</span> that make<br>trade happen</h1>
-            <p>From Lagos to Yaoundé, Benin Republic, Niamey, and beyond — <strong>hold, send, and receive payments</strong> in any African currency with ease.</p>
+            <p class="sub">From Lagos to Yaoundé, Benin Republic, Niamey, and beyond — <strong>hold, send, and receive payments</strong> in any African currency with ease.</p>
             
             <div class="download-buttons">
                 <a href="https://play.google.com/store/apps/details?id=com.moworri.pal " class="download-btn">
                     <img src="assets/img/Google_Play_Store.png" alt="Google Play" style="height:52px; width:auto; display:block;">
                 </a>
                  <a href="https://apps.apple.com/gh/app/noworri-pal-swap-pay/id6475628514 " class="download-btn">
-                    <img src="assets/img/App-Store.png" alt="App Store" style="height:102px; width:auto; display:block;">
+                    <img src="assets/img/App-Store.png" alt="App Store" style="height:52px; width:auto; display:block;">
                 </a>
             </div>
         </div>
@@ -2638,7 +2833,7 @@
         <div class="phone-section">
             <div class="phone-glow"></div>
              <div class="phone-mockup-wrapper" style="position: relative; display: inline-block;">
-               <img src="assets/img/phone4.png" alt="PAL Mobile App" class="phone-mockup-img" style="width: 1000px;; max-width:1200px; display:block; margin:0 auto; position:relative; z-index:2;">
+               <img src="assets/img/phone5.png" alt="PAL Mobile App" class="phone-mockup-img" style="width: 1000px;; max-width:1200px; display:block; margin:0 auto; position:relative; z-index:2;">
                 <!-- <video autoplay loop muted playsinline class="phone-mockup-img" style="width:140%; max-width:100%; display:block; margin:0 auto; position:relative; z-index:2;">
                     <source src="assets/img/gif1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
@@ -2803,7 +2998,7 @@
     <section class="trade-section" id="trade-section">
         <div class="container">
             <h2>Let's make<br><span class="highlight">Trade moves.</span></h2>
-            <p>Join thousands of African importers who trust PAL for fast, secure, and <br>
+            <p class="sub">Join thousands of African importers who trust PAL for fast, secure, and 
             free transaction with Nigeria exporters.</p>
             <br>
             
@@ -2831,16 +3026,8 @@
                     </div>
                 </div> -->
                 <div class="trade-card trade-card-right">
-                <img class="person-image" src="assets/img/aisha-bakari.png" alt="Aicha Bakari">
-                <div class="card-overlay">
-                    <div class="person-info">
-                        <div class="person-header">
-                            <span class="flag-badge"><img src="https://flagcdn.com/w40/bj.png" alt="Benin" /></span>
-                            <span class="person-name">Aicha Bakari</span>
-                        </div>
-                        <div class="person-quote">Before using PAL, I had to carry cash in naira, which was risky. Now, with the PAL Wallet, I make instant and secure digital payments to my suppliers.</div>
-                    </div>
-                </div>
+                <img class="person-image" src="assets/img/aisha1.png" alt="Aicha Bakari">
+                
             </div>
             </div>
 
@@ -2890,30 +3077,34 @@
         <div class="payment-flex">
           <ul class="payment-features">
             <li>
-                    <span class="step-icon">◍</span>
+                    <span class="step-icon">1.</span>
               <span>
-                Get your payment Link<br>
-                Download the PAL app and get your payment link for free
+                Get your payment Link
+                <!-- Download the PAL app and get your payment link for free -->
               </span>
             </li>
+            <br>
             <li>
-              <span class="step-icon">◍</span>
+              <span class="step-icon">2.</span>
               <span>
-                Share your Link<br>
-                Share your link to anyone on social media or offline. They can pay you with momo, Visa/Mastercard and bank transfer
+                Share your Link
+                <!-- Share your link to anyone on social media or offline. They can pay you with momo, Visa/Mastercard and bank transfer -->
               </span>
+              
             </li>
+            <br>
             <li>
-              <span class="step-icon">◍</span>
+              <span class="step-icon">3.</span>
               <span>
-                Get Paid in NGN, XOF, XAF and more<br>
-                Instant settlement in the same currency your customer pays you.
+                Get Paid in NGN, XOF, XAF and more
+                <!-- Instant settlement in the same currency your customer pays you. -->
               </span>
+              
             </li>
           </ul>
           <div class="payment-image">
             <div class="payment-stack">
-              <img src="assets/img/woman4.png" alt="Smiling woman with phone" class="pal-img" />
+              <img src="assets/img/woman.png" alt="Smiling woman with phone" class="pal-img" />
                     </div>
                 </div>
             </div>
@@ -2962,6 +3153,156 @@
           <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
           <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
           <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
+        <div class="feature-tags-row">
+          
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @PAL.</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> PAL.</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
+        <div class="feature-tags-row">
+          
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @PAL.</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> PAL.</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
+        <div class="feature-tags-row">
+          
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @PAL.</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> PAL.</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
+        <div class="feature-tags-row">
+          
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @PAL.</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> PAL.</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
+        <div class="feature-tags-row">
+          
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @PAL.</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> PAL.</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
+        <div class="feature-tags-row">
+          
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @PAL.</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> PAL.</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
           <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
           <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
           <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
@@ -3043,54 +3384,26 @@ setInterval(() => {
 showLeftCard(currentLeft);
 </script>
     <section class="virtual-cards-section" id="virtual-card">
-      <div class="container">
-      <div class="virtual-cards-content">
-        <div class="coming-soon">COMING SOON</div>
-        <h2 class="virtual-cards-title">Virtual cards</h2>
-        <h1 class="virtual-cards-headline">for a cashless world.</h1>
-        <div class="virtual-cards-subtitle">
-          Create your papayment link and share it with anyone<br>
-          Get paid in different currencies even if your customers doesn't have PAL.
+      <div class="vc-container">
+        <div class="vc-left">
+          <img src="assets/img/visual-card.png" alt="Virtual Card Visual" class="vc-main-image" />
         </div>
-        <div class="virtual-cards-flex">
-          <ul class="virtual-cards-features">
-            <li>
-              <span style="color: #2BB996; font-size: 1.2em; vertical-align: middle;">
-                  <i class="bi bi-check-circle-fill"></i>
-              </span>
-              <span>
-                Request your virtual dollar<br>
-                card in minutes
-              </span>
-            </li>
-            <li>
-              <span style="color: #2BB996; font-size: 1.2em; vertical-align: middle;">
-                  <i class="bi bi-check-circle-fill"></i>
-              </span>
-              <span>
-                Spend safely online with<br>
-                your Mastercard
-              </span>
-            </li>
-            <li>
-              <span style="color: #2BB996; font-size: 1.2em; vertical-align: middle;">
-                  <i class="bi bi-check-circle-fill"></i>
-              </span>
-              <span>
-                Customize your card to<br>
-                match your taste
-              </span>
-            </li>
+        <div class="vc-right">
+          <div class="vc-coming-soon">COMING SOON</div>
+          <h2 class="vc-title">Virtual cards<br><span>for a <b>cashless world.</b></span></h2>
+          <ul class="vc-features">
+            <li><span style="color: #2BB996; font-size: 1.2em; vertical-align: middle;">
+              <i class="bi bi-check-circle-fill"></i>
+          </span> Request your virtual dollar card in minutes</li>
+            <li><span style="color: #2BB996; font-size: 1.2em; vertical-align: middle;">
+              <i class="bi bi-check-circle-fill"></i>
+          </span> Spend safely online with your Mastercard</li>
+            <li><span style="color: #2BB996; font-size: 1.2em; vertical-align: middle;">
+              <i class="bi bi-check-circle-fill"></i>
+          </span> Customize your card to match your taste</li>
           </ul>
-          <!-- <div class="px-3 w-5"></div> -->
-          <div class="virtual-card-visual">
-            <div class="virtual-card-stack">
-              <img src="assets/img/Card.png" alt="PAL Virtual Cards" class="pal-cards-img" />
-                </div>
-            </div>
         </div>
       </div>
-    
     </section>
     <section class="security-section-bg">
   <div class="security-card">
@@ -3197,6 +3510,48 @@ showLeftCard(currentLeft);
     overflow: hidden; /* Ensure this shape doesn't cause overflow itself */
 }
 
+.security-animation-svg {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 340px;
+  height: 340px;
+  z-index: 2;
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .security-animation-svg {
+    width: 180px;
+    height: 180px;
+  }
+  .security-animation-svg svg {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.interactive-blob {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 600px;
+  max-width: 90vw;
+  max-height: 90vw;
+  z-index: 1;
+  pointer-events: none; /* So it doesn't block clicks */
+}
+
+@media (max-width: 900px) {
+  .interactive-blob {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
     .experience-pesa-section {
@@ -3214,6 +3569,7 @@ showLeftCard(currentLeft);
         margin-left: 0; /* Remove left margin */
     }
 
+
     .abstract-shape {
         width: 300px;
         height: 300px;
@@ -3225,57 +3581,403 @@ showLeftCard(currentLeft);
 <section class="experience-pesa-section">
   <div class="container">
       <h2>Ready to<br>Experience Pal?</h2>
-      <button class="open-account-btn">Open a free account <span class="arrow">&#8594;</span></button>
+      <!-- <button class="open-account-btn">Open a free account <span class="arrow">&#8594;</span></button> -->
+      <div class="download-buttons1">
+        <a href="https://play.google.com/store/apps/details?id=com.moworri.pal " class="download-btn">
+            <img src="assets/img/Google_Play_Store.png" alt="Google Play" style="height:52px; width:auto; display:block;">
+        </a>
+         <a href="https://apps.apple.com/gh/app/noworri-pal-swap-pay/id6475628514 " class="download-btn">
+            <img src="assets/img/App-Store.png" alt="App Store" style="height:52px; background-color: white; width:auto; display:block;">
+        </a>
+    </div>
   </div>
   <div class="abstract-shape"></div>
+  <!-- Security & Trust Animation (replaces .security-animation-svg) -->
+  <div class="animation-container" style="position:relative;width:400px;height:500px;flex-shrink:0;">
+      <!-- Connection lines -->
+      <div class="connection-line line-1"></div>
+      <div class="connection-line line-2"></div>
+      <div class="connection-line line-3"></div>
+      <!-- Floating security elements -->
+      <div class="floating-element shield">🛡️</div>
+      <div class="floating-element money">💰</div>
+      <div class="floating-element lock">🔒</div>
+      <div class="floating-element certificate">✓</div>
+      <div class="floating-element vault">🏦</div>
+      <div class="floating-element key">🔑</div>
+      <!-- Central trust indicator -->
+      <div class="trust-center">TRUSTED<br>SECURE</div>
+  </div>
 </section>
 
-<footer class="pal-footer">
-    <div class="pal-footer-main">
-      <div class="pal-footer-col pal-footer-logo">
-        <div class="pal-footer-brand">PAL.</div>
-      </div>
-      <div class="pal-footer-col">
-        <div class="pal-footer-title">Products</div>
-        <ul>
-          <li>Business Wallet</li>
-          <li>API for businesses</li>
-          <li>Earn as agent</li>
-          <li>Pay with Link</li>
-          <li>Virtual Card</li>
-        </ul>
-      </div>
-      <div class="pal-footer-col">
-        <div class="pal-footer-title">Developer</div>
-        <ul>
-          <li>API Doc</li>
-        </ul>
-      </div>
-      <div class="pal-footer-col">
-        <div class="pal-footer-title">Get in touch</div>
-        <ul>
-          <li><a href="mailto:contact@pals.africa">contact@pals.africa</a></li>
-          <li class="pal-footer-socials">
+<!-- Security & Trust Animation Styles -->
+<style>
+.animation-container {
+    position: relative;
+    /* width: 300px;
+    height: 300px; */
+    flex-shrink: 0;
+}
+.floating-element {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.shield {
+    width: 80px;
+    height: 90px;
+    top: 15%;
+    left: 15%;
+    animation: floatShield 3.5s;
+    background: linear-gradient(45deg, rgba(34, 193, 195, 0.4), rgba(45, 253, 221, 0.4));
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    font-size: 30px;
+}
+.money {
+    width: 70px;
+    height: 70px;
+    top: 25%;
+    right: 20%;
+    animation: floatMoney 3s;
+    background: linear-gradient(45deg, rgba(255, 193, 7, 0.4), rgba(255, 235, 59, 0.4));
+    border-radius: 50%;
+    font-size: 28px;
+    color: #FFD700;
+}
+.lock {
+    width: 60px;
+    height: 75px;
+    top: 50%;
+    left: 25%;
+    animation: floatLock 4s;
+    background: linear-gradient(45deg, rgba(76, 175, 80, 0.4), rgba(139, 195, 74, 0.4));
+    border-radius: 15px 15px 25px 25px;
+    font-size: 26px;
+}
+.certificate {
+    width: 85px;
+    height: 85px;
+    top: 35%;
+    left: 55%;
+    animation: floatCertificate 3.8s;
+    background: linear-gradient(45deg, rgba(156, 39, 176, 0.4), rgba(233, 30, 99, 0.4));
+    border-radius: 50%;
+    font-size: 24px;
+    position: relative;
+}
+.certificate::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: rotateBorder 8s linear infinite;
+}
+.vault {
+    width: 90px;
+    height: 70px;
+    bottom: 25%;
+    right: 15%;
+    animation: floatVault 3.3s;
+    background: linear-gradient(45deg, rgba(96, 125, 139, 0.4), rgba(120, 144, 156, 0.4));
+    border-radius: 10px;
+    font-size: 22px;
+}
+.key {
+    width: 75px;
+    height: 35px;
+    bottom: 15%;
+    left: 40%;
+    animation: floatKey 4.2s;
+    background: linear-gradient(45deg, rgba(255, 152, 0, 0.4), rgba(255, 193, 7, 0.4));
+    border-radius: 20px;
+    font-size: 20px;
+}
+.trust-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(76, 175, 80, 0.3), rgba(56, 142, 60, 0.1));
+    border: 3px solid rgba(76, 175, 80, 0.5);
+    border-radius: 50%;
+    animation: trustPulse 2.5s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #4CAF50;
+    font-weight: bold;
+    text-align: center;
+}
+.security-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(76, 175, 80, 0.8);
+    border-radius: 50%;
+    animation: securityFloat 4s ease-in-out infinite;
+}
+@keyframes floatShield {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-25px) rotate(5deg); }
+}
+@keyframes floatMoney {
+    0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+    50% { transform: translateY(-20px) rotate(-8deg) scale(1.05); }
+}
+@keyframes floatLock {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(3deg); }
+}
+@keyframes floatCertificate {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-22px) rotate(10deg); }
+}
+@keyframes floatVault {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-18px) rotate(-5deg); }
+}
+@keyframes floatKey {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-28px) rotate(15deg); }
+}
+@keyframes trustPulse {
+    0%, 100% { 
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+    }
+    50% { 
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0 0 40px rgba(76, 175, 80, 0.6);
+    }
+}
+@keyframes rotateBorder {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes securityFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) translateX(0);
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px) translateX(20px);
+    }
+}
+.connection-line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.5), transparent);
+    animation: connectionPulse 3s ease-in-out infinite;
+}
+.line-1 {
+    top: 30%;
+    left: 25%;
+    width: 100px;
+    transform: rotate(45deg);
+    animation-delay: 0s;
+}
+.line-2 {
+    top: 45%;
+    right: 30%;
+    width: 80px;
+    transform: rotate(-30deg);
+    animation-delay: 1s;
+}
+.line-3 {
+    bottom: 35%;
+    left: 35%;
+    width: 90px;
+    transform: rotate(60deg);
+    animation-delay: 2s;
+}
+@keyframes connectionPulse {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+.floating-element:hover {
+    transform: scale(1.15);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+@media (max-width: 768px) {
+    .animation-container {
+        width: 300px;
+        height: 300px;
+    }
+    .floating-element {
+        font-size: 18px;
+    }
+}
+</style>
+<!-- Security & Trust Animation Script -->
+<script>
+// Add interactive behavior
+const elements = document.querySelectorAll('.floating-element');
+elements.forEach((element, index) => {
+    element.style.animationDelay = `${index * 0.4}s`;
+    // Security-themed click interactions
+    element.addEventListener('click', function() {
+        // Flash security confirmation
+        this.style.background = 'rgba(76, 175, 80, 0.8)';
+        this.style.transform = 'scale(1.2)';
+        this.style.boxShadow = '0 0 30px rgba(76, 175, 80, 0.8)';
+        setTimeout(() => {
+            this.style.background = '';
+            this.style.transform = '';
+            this.style.boxShadow = '';
+        }, 300);
+    });
+    element.addEventListener('mouseenter', function() {
+        this.style.filter = 'brightness(1.4)';
+        this.style.borderColor = 'rgba(76, 175, 80, 0.8)';
+    });
+    element.addEventListener('mouseleave', function() {
+        this.style.filter = 'brightness(1)';
+        this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+    });
+});
+// Security particles system
+function createSecurityParticle() {
+    const particle = document.createElement('div');
+    particle.className = 'security-particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.bottom = '0px';
+    particle.style.animationDelay = Math.random() * 2 + 's';
+    document.querySelector('.animation-container').appendChild(particle);
+    setTimeout(() => {
+        particle.remove();
+    }, 4000);
+}
+setInterval(createSecurityParticle, 1500);
+// Trust center interaction
+const trustCenter = document.querySelector('.trust-center');
+trustCenter.addEventListener('click', function() {
+    // Security confirmation animation
+    this.style.background = 'radial-gradient(circle, rgba(76, 175, 80, 0.8), rgba(56, 142, 60, 0.4))';
+    this.style.transform = 'translate(-50%, -50%) scale(1.3)';
+    this.innerHTML = 'VERIFIED<br>✓';
+    setTimeout(() => {
+        this.style.background = 'radial-gradient(circle, rgba(76, 175, 80, 0.3), rgba(56, 142, 60, 0.1))';
+        this.style.transform = 'translate(-50%, -50%) scale(1)';
+        this.innerHTML = 'TRUSTED<br>SECURE';
+    }, 1000);
+});
+// Add dynamic security status
+const securityStatuses = [
+    '🔐 ENCRYPTED',
+    '✅ VERIFIED', 
+    '🛡️ PROTECTED',
+    '🔒 SECURE'
+];
+let statusIndex = 0;
+setInterval(() => {
+    const randomElement = elements[Math.floor(Math.random() * elements.length)];
+    const originalContent = randomElement.innerHTML;
+    randomElement.innerHTML = securityStatuses[statusIndex];
+    randomElement.style.fontSize = '12px';
+    setTimeout(() => {
+        randomElement.innerHTML = originalContent;
+        randomElement.style.fontSize = '';
+    }, 2000);
+    statusIndex = (statusIndex + 1) % securityStatuses.length;
+}, 5000);
+</script>
 
-            <a href="https://www.linkedin.com/company/72080034/admin/" aria-label="LinkedIn" class="pal-footer-social-link"><svg width="20" height="20" fill="currentColor"><use href="#icon-linkedin"></use></svg></a>
-            <a href="https://twitter.com/Palafrika" aria-label="Twitter" class="pal-footer-social-link"><svg width="20" height="20" fill="currentColor"><use href="#icon-twitter"></use></svg></a>
-          </li>
-        </ul>
+<footer class="pal-footer">
+  <div class="pal-footer-main">
+    <div class="pal-footer-col pal-footer-logo">
+      <div class="pal-footer-brand">PAL.</div>
+    </div>
+    <div class="pal-footer-col">
+      <div class="pal-footer-title">Products</div>
+      <ul>
+        <li>Business Wallet</li>
+        <li>API for Businesses</li>
+        <li>Forex Exchange</li>
+      </ul>
+    </div>
+    <div class="pal-footer-col">
+      <div class="pal-footer-title">Use cases</div>
+      <ul>
+        <li>E–commerce</li>
+        <li>Fintech</li>
+        <li>Remittance</li>
+        <li>Import–Export</li>
+      </ul>
+    </div>
+    <div class="pal-footer-col">
+      <div class="pal-footer-title">Developer</div>
+      <ul>
+        <li>API Document</li>
+      </ul>
+    </div>
+    <div class="pal-footer-col">
+      <div class="pal-footer-title">Legal</div>
+      <ul>
+        <li>Terms of Service</li>
+        <li>Privacy policy</li>
+      </ul>
+    </div>
+    <div class="pal-footer-col" style="min-width:160px;">
+      <div class="pal-footer-title" style="margin-bottom:10px;">FOLLOW US ON</div>
+      <div class="pal-footer-socials" style="gap:10px;">
+        <a href="#" aria-label="Facebook" class="pal-footer-social-link"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram" class="pal-footer-social-link"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="X" class="pal-footer-social-link"><i class="bi bi-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn" class="pal-footer-social-link"><i class="bi bi-linkedin"></i></a>
       </div>
     </div>
-    <div class="pal-footer-note">
-      PAL Africa is not a licensed bank. Banking services on Pal are facilitated through partnerships with licensed financial institutions.
-    </div>
-    <div class="pal-footer-bottom">
-      <span>© <b>PAL Africa. 2025 All rights reserved</b></span>
-      <span>• <a href="#">Terms of Service</a></span>
-      <span>• <a href="#">Privacy policy</a></span>
-    </div>
-    <!-- SVG icons for social links -->
-    <svg style="display:none;">
-      <symbol id="icon-linkedin" viewBox="0 0 32 32"><path d="M29 0h-26c-1.7 0-3 1.3-3 3v26c0 1.7 1.3 3 3 3h26c1.7 0 3-1.3 3-3v-26c0-1.7-1.3-3-3-3zM9.3 27h-4.3v-13h4.3v13zM7.1 12.2c-1.4 0-2.3-1-2.3-2.2 0-1.3 0.9-2.2 2.3-2.2s2.3 0.9 2.3 2.2c0 1.2-0.9 2.2-2.3 2.2zM27 27h-4.3v-6.7c0-1.6-0.6-2.7-2-2.7-1.1 0-1.7 0.7-2 1.4-0.1 0.2-0.1 0.5-0.1 0.8v7.2h-4.3s0.1-11.7 0-13h4.3v1.8c0.6-0.9 1.6-2.2 4-2.2 2.9 0 5 1.9 5 6.1v7.3z"></path></symbol>
-      <symbol id="icon-twitter" viewBox="0 0 32 32"><path d="M32 6.1c-1.2 0.5-2.4 0.8-3.7 1 1.3-0.8 2.3-2 2.8-3.4-1.2 0.7-2.6 1.3-4 1.6-1.1-1.2-2.7-2-4.4-2-3.3 0-6 2.7-6 6 0 0.5 0.1 1 0.2 1.5-5-0.2-9.4-2.6-12.3-6.1-0.5 0.8-0.8 1.7-0.8 2.7 0 1.8 0.9 3.3 2.3 4.2-0.8 0-1.6-0.2-2.3-0.6v0.1c0 2.5 1.8 4.6 4.2 5.1-0.4 0.1-0.8 0.2-1.2 0.2-0.3 0-0.6 0-0.9-0.1 0.6 1.9 2.4 3.3 4.5 3.3-1.7 1.3-3.8 2-6.1 2-0.4 0-0.8 0-1.2-0.1 2.2 1.4 4.8 2.2 7.6 2.2 9.1 0 14.1-7.5 14.1-14.1 0-0.2 0-0.4 0-0.6 1-0.7 1.9-1.7 2.6-2.7z"></path></symbol>
-    </svg>
-  </footer>
+  </div>
+  <div class="pal-footer-note">
+    PAL Africa is not a licensed bank. Banking services on Pal are facilitated through partnerships with licensed financial institutions.
+  </div>
+  <div class="pal-footer-bottom">
+    <span>© PAL Africa. 2025 All rights reserved</span>
+  </div>
+</footer>
 </body>
+<script>
+  // Image swap for .trade-card-right .person-image
+  document.addEventListener('DOMContentLoaded', function() {
+    var img = document.querySelector('.trade-card-right .person-image');
+    if (!img) return;
+    var images = [
+      'assets/img/aisha1.png',
+      'assets/img/aisha2.png'
+    ];
+    var idx = 0;
+    setInterval(function() {
+      idx = (idx + 1) % images.length;
+      img.src = images[idx];
+    }, 20000); // 20 seconds
+  });
+</script>
 </html>
