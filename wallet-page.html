@@ -606,7 +606,7 @@
             
         }
 
-        .trade-section h2 {
+        h2 {
             font-size: 56px;
             font-weight: 400;
             margin-bottom: 20px;
@@ -622,7 +622,7 @@
             font-weight: 700;
         }
 
-        .trade-section h2,
+         h2,
         .trade-section > p {
             text-align: left;
             margin-left: 0;
@@ -949,7 +949,7 @@
           /* text-align: center; */
         }
 
-        .payment-title {
+        .payment-title .vc-title{
           font-size: 2.8em;
           font-weight: 400;
           margin: 0 0 0.1em 0;
@@ -1062,6 +1062,21 @@
           transition: transform 0.3s;
         }
 
+        .step-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          background: #454646;
+          color: #fff;
+          border-radius: 50%;
+          font-size: 1.0em;
+          font-weight: 700;
+          margin-right: 12px;
+          box-shadow: 0 2px 8px rgba(43,185,150,0.10);
+        }
+
         @keyframes floatCardStack {
           0%   { transform: translateY(0) rotate(-2deg) scale(1);}
           100% { transform: translateY(-12px) rotate(2deg) scale(1.03);}
@@ -1164,7 +1179,7 @@
                 gap: 40px;
             }
 
-            .trade-section h2,
+             h2,
             .payment-text h2 {
                 font-size: 40px;
             }
@@ -1266,7 +1281,7 @@
                 padding: 60px 0;
             }
 
-            .trade-section h2 {
+            h2 {
                 font-size: 2.5rem; /* Slightly larger than before, but smaller than desktop */
             }
 
@@ -1329,7 +1344,7 @@
 
             /* Adjust for even smaller screens */
             @media (max-width: 480px) {
-              .trade-section h2 {
+               h2 {
                 font-size: 2rem;
               }
               .trade-section > p {
@@ -1703,6 +1718,7 @@
         .trade-card-left.card1 { background: #b2dfdb; }   /* Teal */
         .trade-card-left.card2 { background: #ffe082; }   /* Light Yellow */
         .trade-card-left.card3 { background: #b39ddb; }   /* Light Purple */
+        .trade-card-left.card4 { background: #f99898; }
 
         .trade-card-left { display: none; }
         .trade-card-left.active { display: flex; }
@@ -2175,21 +2191,30 @@
 
 .pal-footer-main {
   display: flex;
-  justify-content: space-between;
+   flex-direction: column;
+  /* justify-content: space-between; */
   align-items: flex-start;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 48px 24px 24px 24px;
+  /* gap: 32px; */
+  /* flex-wrap: wrap; */
+}
+
+.pal-footer-logo {
+  margin-bottom: 24px;
+}
+
+.pal-footer-cols {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   gap: 32px;
   flex-wrap: wrap;
 }
 
 .pal-footer-col {
   min-width: 180px;
-  flex: 1 1 0;
-}
-
-.pal-footer-logo {
   flex: 1 1 0;
 }
 
@@ -2251,15 +2276,16 @@
 }
 
 .pal-footer-bottom {
+  text-align: center;
+  align-items: center;
   border-top: 1px solid #444;
   margin-top: 32px;
   padding: 18px 24px 12px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* display: flex;
+  justify-content: space-between; */
   font-size: 1.08em;
   background: #181a1b;
-   background-image: url(assets/img/noise.png);
+  background-image: url(assets/img/noise.png);
   background-blend-mode: difference;
   flex-wrap: wrap;
   gap: 12px;
@@ -2274,7 +2300,7 @@
   transition: color 0.2s;
 }
 .pal-footer-bottom a:hover {
-  color: #2bb996;
+  color: #979a99;
 }
 
 @media (max-width: 900px) {
@@ -2285,7 +2311,7 @@
   }
   .pal-footer-bottom {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 8px;
     font-size: 1em;
   }
@@ -2492,7 +2518,7 @@
         .trade-section {
           padding: 30px 0;
         }
-        .trade-section h2 {
+         h2 {
           font-size: 1.5rem;
         }
         .trade-section > p {
@@ -2550,7 +2576,7 @@
         .payment-content, .virtual-cards-content {
           padding: 0 4px;
         }
-        .payment-title, .virtual-cards-title, .payment-headline, .virtual-cards-headline {
+        .payment-title, .virtual-cards-title, .payment-headline, .virtual-cards-headline, .vc-title {
           font-size: 1.3em;
         }
         .payment-subtitle, .virtual-cards-subtitle {
@@ -2639,6 +2665,7 @@
         }
         .pal-img, .pal-cards-img {
           max-width: 480px;
+          margin-bottom: 150px;
         }
         .payment-btn, .open-account-btn {
           font-size: 1em;
@@ -2676,7 +2703,7 @@
         }
         .pal-footer-bottom {
           flex-direction: column;
-          align-items: flex-start;
+          align-items: center;
           gap: 4px;
           font-size: 0.95em;
           padding: 8px 4px;
@@ -3015,6 +3042,10 @@
                     <h1>Hold & SWAP</h1>
                     <div class="currency">XAF</div>
                 </div>
+                <div class="trade-card trade-card-left card4">
+                    <h1>Hold & SWAP</h1>
+                    <div class="currency">CHAD</div>
+                </div>
                 <!-- <div class="trade-card trade-card-right">
                     <img class="person-image" src="assets/img/aisha-bakari.png" alt="Aicha Bakari">
                     <div class="card-overlay">
@@ -3068,16 +3099,16 @@
     <div class="container">
             <div class="payment-content">
         <!-- <div class="coming-soon">FEATURE</div> -->
-        <h2 class="payment-title ">Payment Link</h2>
-        <h1 class="payment-headline">Get paid easy</h1>
+        <h2 class="payment-title">Payment Link<br><span class="highlight">For Commerce</span></h2>
+        <!-- <h2 class="payment-headline">For Commerce</h1> -->
         <div class="payment-subtitle">
                 Create your payment link and share it with anyone.<br>
                 Get paid in multiple currencies — even if your customers don't use PAL.
-                            </div>
+        </div>
         <div class="payment-flex">
           <ul class="payment-features">
             <li>
-                    <span class="step-icon">1.</span>
+              <span class="step-icon">1</span>
               <span>
                 Get your payment Link
                 <!-- Download the PAL app and get your payment link for free -->
@@ -3085,7 +3116,7 @@
             </li>
             <br>
             <li>
-              <span class="step-icon">2.</span>
+              <span class="step-icon">2</span>
               <span>
                 Share your Link
                 <!-- Share your link to anyone on social media or offline. They can pay you with momo, Visa/Mastercard and bank transfer -->
@@ -3094,7 +3125,7 @@
             </li>
             <br>
             <li>
-              <span class="step-icon">3.</span>
+              <span class="step-icon">3</span>
               <span>
                 Get Paid in NGN, XOF, XAF and more
                 <!-- Instant settlement in the same currency your customer pays you. -->
@@ -3104,7 +3135,7 @@
           </ul>
           <div class="payment-image">
             <div class="payment-stack">
-              <img src="assets/img/woman.png" alt="Smiling woman with phone" class="pal-img" />
+              <img src="assets/img/woman7.png" alt="Smiling woman with phone" class="pal-img" />
                     </div>
                 </div>
             </div>
@@ -3390,14 +3421,18 @@ showLeftCard(currentLeft);
         </div>
         <div class="vc-right">
           <div class="vc-coming-soon">COMING SOON</div>
-          <h2 class="vc-title">Virtual cards<br><span>for a <b>cashless world.</b></span></h2>
-          <ul class="vc-features">
+          <h2 >Virtual cards<br><span class="highlight">for a <b>cashless world.</b></span></h2>
+          <ul class="vc-features"
+          >
+          <div class="px-3 py-3"></div>
             <li><span style="color: #2BB996; font-size: 1.2em; vertical-align: middle;">
               <i class="bi bi-check-circle-fill"></i>
           </span> Request your virtual dollar card in minutes</li>
+          <div class="px-3 py-3"></div>
             <li><span style="color: #2BB996; font-size: 1.2em; vertical-align: middle;">
               <i class="bi bi-check-circle-fill"></i>
           </span> Spend safely online with your Mastercard</li>
+          <div class="px-3 py-3"></div>
             <li><span style="color: #2BB996; font-size: 1.2em; vertical-align: middle;">
               <i class="bi bi-check-circle-fill"></i>
           </span> Customize your card to match your taste</li>
@@ -3461,7 +3496,7 @@ showLeftCard(currentLeft);
     z-index: 2; /* Ensure text is above shape */
 }
 
-.experience-pesa-section h2 {
+.experience-pesa-section h1 {
     font-size: 64px;
     font-weight: 700;
     line-height: 1.1;
@@ -3580,14 +3615,14 @@ showLeftCard(currentLeft);
 </style>
 <section class="experience-pesa-section">
   <div class="container">
-      <h2>Ready to<br>Experience Pal?</h2>
+      <h1>Ready to<br>Experience Pal?</h1>
       <!-- <button class="open-account-btn">Open a free account <span class="arrow">&#8594;</span></button> -->
       <div class="download-buttons1">
         <a href="https://play.google.com/store/apps/details?id=com.moworri.pal " class="download-btn">
             <img src="assets/img/Google_Play_Store.png" alt="Google Play" style="height:52px; width:auto; display:block;">
         </a>
          <a href="https://apps.apple.com/gh/app/noworri-pal-swap-pay/id6475628514 " class="download-btn">
-            <img src="assets/img/App-Store.png" alt="App Store" style="height:52px; background-color: white; width:auto; display:block;">
+            <img src="assets/img/Apple-Store.png" alt="App Store" style="height:82px; width:auto; display:block;">
         </a>
     </div>
   </div>
@@ -3913,47 +3948,49 @@ setInterval(() => {
 
 <footer class="pal-footer">
   <div class="pal-footer-main">
-    <div class="pal-footer-col pal-footer-logo">
+    <div class="pal-footer-logo">
       <div class="pal-footer-brand">PAL.</div>
     </div>
-    <div class="pal-footer-col">
-      <div class="pal-footer-title">Products</div>
-      <ul>
-        <li>Business Wallet</li>
-        <li>API for Businesses</li>
-        <li>Forex Exchange</li>
-      </ul>
-    </div>
-    <div class="pal-footer-col">
-      <div class="pal-footer-title">Use cases</div>
-      <ul>
-        <li>E–commerce</li>
-        <li>Fintech</li>
-        <li>Remittance</li>
-        <li>Import–Export</li>
-      </ul>
-    </div>
-    <div class="pal-footer-col">
-      <div class="pal-footer-title">Developer</div>
-      <ul>
-        <li>API Document</li>
-      </ul>
-    </div>
-    <div class="pal-footer-col">
-      <div class="pal-footer-title">Legal</div>
-      <ul>
-        <li>Terms of Service</li>
-        <li>Privacy policy</li>
-      </ul>
-    </div>
-    <div class="pal-footer-col" style="min-width:160px;">
-      <div class="pal-footer-title" style="margin-bottom:10px;">FOLLOW US ON</div>
-      <div class="pal-footer-socials" style="gap:10px;">
-        <a href="#" aria-label="Facebook" class="pal-footer-social-link"><i class="bi bi-facebook"></i></a>
-        <a href="#" aria-label="Instagram" class="pal-footer-social-link"><i class="bi bi-instagram"></i></a>
-        <a href="#" aria-label="X" class="pal-footer-social-link"><i class="bi bi-twitter"></i></a>
-        <a href="#" aria-label="LinkedIn" class="pal-footer-social-link"><i class="bi bi-linkedin"></i></a>
-      </div>
+    <div class="pal-footer-cols">
+        <div class="pal-footer-col">
+          <div class="pal-footer-title">Products</div>
+          <ul>
+            <li>Business Wallet</li>
+            <li>API for Businesses</li>
+            <li>Forex Exchange</li>
+          </ul>
+        </div>
+        <div class="pal-footer-col">
+          <div class="pal-footer-title">Use cases</div>
+          <ul>
+            <li>E–commerce</li>
+            <li>Fintech</li>
+            <li>Remittance</li>
+            <li>Import–Export</li>
+          </ul>
+        </div>
+        <div class="pal-footer-col">
+          <div class="pal-footer-title">Developer</div>
+          <ul>
+            <li>API Document</li>
+          </ul>
+        </div>
+        <div class="pal-footer-col">
+          <div class="pal-footer-title">Legal</div>
+          <ul>
+            <li>Terms of Service</li>
+            <li>Privacy policy</li>
+          </ul>
+        </div>
+        <div class="pal-footer-col" style="min-width:160px;">
+          <div class="pal-footer-title" style="margin-bottom:10px;">FOLLOW US ON</div>
+          <div class="pal-footer-socials" style="gap:10px;">
+            <a href="#" aria-label="Facebook" class="pal-footer-social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram" class="pal-footer-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="X" class="pal-footer-social-link"><i class="bi bi-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="pal-footer-social-link"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
     </div>
   </div>
   <div class="pal-footer-note">

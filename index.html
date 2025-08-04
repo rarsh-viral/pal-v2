@@ -307,83 +307,162 @@
             </div>
         </div>
         <!-- ====== start header ====== -->
-        <header class="mt-5 style-1">
-            <div class="container">
-                <div class="content">
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <div class="info">
-                                <div class="section-head mb-20">
-                                    <strong class="text-bold">
-                                        Payment rail for intra-Africa trade.
-                                    </strong>
-                                </div>
-                                <div class="text">
-                                    <!-- PAL is an electronic e-money distributor and liquidity provider acting as an
-                                    off-ramp for remittance and African Businesses wanting to innovate cost-effectively
-                                    within the Francophone Africa market. -->
-                                    Powering Nigerian SMEs with instant, secure cross-border payments from buyers across West Africa — including <span id="country-typewriter" style="color: #2BB996;"></span>
-                                </div>
-                                <div class="bttns mt-5">
-                                    <!-- <a target="_blank" href="https://dashboard.pals.africa/auth/login"
-                                        class="btn btn-dark mr-5">
-                                        <span>Get Api Key</span>
-                                    </a> -->
-                                    <!-- <div class="px-3 w-5"></div> -->
-                                    <a target="_blank" href="https://dashboard.pals.africa/auth/register/step1"
-                                        class="btn signup-btn rounded">
-                                        <span>Open account - it's free</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5">
-
-                            <!-- Replace single image with two hero images side by side -->
-                            <div style="display: flex; gap: 10px;">
-                                <img id="hero-img-1" style="height: 100%; width: 50%; object-fit: contain;" src="assets/img/hero1.png" alt="Hero 1">
-                                <img id="hero-img-2" style="height: 100%; width: 50%; object-fit: contain;" src="assets/img/hero2.png" alt="Hero 2">
-                            </div>
-                            <script>
-                            const heroImages = [
-                                "assets/img/hero1.png",
-                                "assets/img/hero2.png",
-                                "assets/img/hero3.png",
-                                "assets/img/hero4.png"
-                            ];
-
-                            function getRandomImage(exclude) {
-                                let filtered = heroImages.filter(img => img !== exclude);
-                                return filtered[Math.floor(Math.random() * filtered.length)];
-                            }
-
-                            function updateHeroImages() {
-                                const img1 = document.getElementById("hero-img-1");
-                                const img2 = document.getElementById("hero-img-2");
-                                let current1 = img1.src.split('/').pop();
-                                let current2 = img2.src.split('/').pop();
-
-                                // Pick two different images at random
-                                let newImg1 = heroImages[Math.floor(Math.random() * heroImages.length)];
-                                let newImg2 = getRandomImage(newImg1);
-
-                                img1.src = newImg1;
-                                img2.src = newImg2;
-                            }
-
-                            setInterval(updateHeroImages, 2500); // Change images every 2.5 seconds
-                            </script>
-
-                        </div>
-                    </div>
-                </div>
+        <!-- Hero Section Start -->
+        <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-left">
+            <h1>Payment rail for intra-<br />Africa trade.</h1>
+            <p class="hero-subtitle">
+                Powering Nigerian SMEs with instant, secure cross-border payments from buyers across West Africa.
+            </p>
+            <a href="#" class="hero-cta">Open account – it’s free</a>
             </div>
-        </header>
+            <div class="hero-right">
+            <img src="assets/img/heroimage.png" alt="PAL Hero" style="max-width:100%;border-radius:24px;box-shadow:0 4px 32px rgba(44,185,150,0.10);" />
+            </div>
+        </div>
+        </section>
+        <!-- Hero Section End -->
+
+        <style>
+        .hero-section {
+        /* background: #f7f7f7; */
+        padding: 60px 0 40px 0;
+        }
+        .hero-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 40px;
+        }
+        .hero-left {
+        flex: 1 1 0;
+        padding-right: 24px;
+        }
+        .hero-left h1 {
+        font-size: 2.8em;
+        font-weight: 700;
+        margin-bottom: 18px;
+        line-height: 1.1;
+        }
+        .hero-subtitle {
+        font-size: 1.1em;
+        color: #444;
+        margin-bottom: 32px;
+        }
+        .hero-cta {
+        display: inline-block;
+        background: #D9D9D9;
+        color: #000000;
+        font-size: 1.1em;
+        font-weight: 500;
+        padding: 14px 32px;
+        border-radius: 8px;
+        text-decoration: none;
+        margin-top: 12px;
+        transition: background 0.2s;
+        }
+        .hero-cta:hover {
+        background: #bdbdbd;
+        color: #393939;
+        }
+        .hero-right {
+        flex: 1 1 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .hero-card {
+        position: relative;
+        background: #fff;
+        border-radius: 24px;
+        box-shadow: 0 4px 32px rgba(44,185,150,0.10);
+        padding: 32px 24px;
+        width: 340px;
+        min-height: 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+        .hero-user-img {
+        width: 180px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 18px;
+        margin-bottom: 16px;
+        }
+        .floating-ui {
+        position: absolute;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(44,185,150,0.10);
+        padding: 8px 16px;
+        font-size: 0.95em;
+        font-weight: 500;
+        color: #222;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        }
+        .recommended-time {
+        top: 18px;
+        right: -40px;
+        background: #f5f5f5;
+        color: #2bb996;
+        font-size: 0.85em;
+        text-align: center;
+        }
+        .likes {
+        top: 18px;
+        left: -40px;
+        background: #fff;
+        color: #e74c3c;
+        font-size: 0.95em;
+        }
+        .likes img {
+        width: 20px;
+        height: 20px;
+        }
+        .chat {
+        bottom: 60px;
+        left: -60px;
+        background: #f5f5f5;
+        color: #222;
+        font-size: 0.95em;
+        }
+        .cta {
+        bottom: 18px;
+        right: -40px;
+        background: #2bb996;
+        color: #fff;
+        font-size: 0.95em;
+        cursor: pointer;
+        }
+        .linee {
+            display: block;
+            width: 85px;
+            height: 7px;
+            background: #000000;
+            border-radius: 2px;
+            margin: 10px 0 16px 0;
+        }
+        @media (max-width: 900px) {
+        .hero-container {
+            flex-direction: column;
+            gap: 32px;
+            padding: 0 8px;
+        }
+        .hero-right {
+            width: 100%;
+        }
+        }
+        </style>
         <!-- ====== end header ====== -->
         <!--Contents-->
         <main>
             <!-- ====== start about ====== -->
-            <section class="about style-1">
                 <div class="slider my-5" style="color: white;">
                     <div class="slide-track-1">
                         <a href="#" class="slide">
@@ -455,571 +534,324 @@
                    
 <!-- ====== start about ====== -->
  <section class="about style-1">
-    <div class="slider my-5" style="color: white;">
+    <style>
+      .about-hero-section {
+        /* background: #f7f7f7; */
+        padding: 60px 0 0 0;
+        position: relative;
+        overflow: visible;
+      }
+      .about-hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      .about-hero-row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 32px;
+      }
        
-    </div>
-    <div class="container">
-        <div class="row mb-4">
-            <h2 class="text-clignote">
-                <span class="line"></span>&nbsp;Trade freely, Pay flexibly
-                <span class="text-success">
-                    <div class="tlt">
-                   
-                    </div>
-                </span>
-            </h2>
-        </div> 
+      .about-hero-left {
+        flex: 1 1 0;
+        min-width: 320px;
+        margin-bottom: 42px;
+      }
+      .about-hero-right {
+        min-width: 320px;
+        justify-content: flex-start;
+        justify-items: end;
 
-        <!-- REPLACE THIS BLOCK -->
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-    
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                background-color: #f5f5f5;
-                padding: 20px;
-            }
-    
-            .carousel-container {
-                max-width: 1200px;
-                margin: 0 auto;
-                position: relative;
-                overflow: hidden;
-                border-radius: 20px;
-                /* Remove overflow: hidden; since no sliding */
-            }
-    
-            .wallet-container {
-                min-width: 100%;
-                /* background-color: #4a4a4a; */
-                padding: 40px;
-                color: white;
-                flex-shrink: 0;
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                min-height: 500px;
-            }
-    
-            .wallet-container::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 50%;
-                height: 100%;
-                /* background: linear-gradient(90deg, rgba(43, 54, 72, 0.9) 0%, rgba(43, 53, 71, 0.3) 100%); */
-                z-index: 1;
-                pointer-events: none;
-            }
-    
-            .animation-background {
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 50%;
-                height: 100%;
-                z-index: 0;
-            }
-    
-            .animation-background iframe {
-                width: 110%;
-                height: 600px;
-                border: none;
-                object-fit: cover;
-            }
-    
-            .content-wrapper {
-                position: relative;
-                z-index: 2;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                height: 100%;
-            }
-    
-            .header {
-                font-size: 48px;
-                font-weight: 300;
-                margin-bottom: 60px;
-            }
-    
-            .header span:first-child {
-                font-weight: 600;
-            }
-    
-            .profile-section {
-               
-                display: flex;
-                /* align-items: center; */
-                justify-content: space-between;
-                margin-bottom: 40px;
-            }
-    
-            .profile-left {
-                display: flex;
-                /* align-items: center; */
-                gap: 20px;
-            }
-    
-            .profile-image {
-                width: 90px;
-                height: 90px;
-                border-radius: 50%;
-                border: 3px solid #00bfa5;
-                overflow: hidden;
-            }
-    
-            .profile-image img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-    
-            .profile-info h2 {
-                font-size: 28px;
-                font-weight: 400;
-                margin-bottom: 8px;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-    
-            .flag {
-                width: 24px;
-                height: 16px;
-                border-radius: 2px;
-                position: relative;
-            }
-    
-            .flag.benin {
-                background: linear-gradient(to bottom, #009e49 33%, white 33%, white 66%, #009e49 66%);
-            }
-    
-            .flag.benin::before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 40%;
-                height: 100%;
-                background: linear-gradient(to bottom, #009e49 33%, white 33%, white 66%, #e31e24 66%);
-            }
-    
-            .flag.nigeria {
-                background: linear-gradient(to right, #009e49 33%, white 33%, white 66%, #009e49 66%);
-            }
-    
-            .flag.ghana {
-                background: linear-gradient(to bottom, #e31e24 33%, #ffcd00 33%, #ffcd00 66%, #009e49 66%);
-            }
-    
-            .flag.ghana::before {
-                content: '★';
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                color: black;
-                font-size: 8px;
-            }
-    
-            .profile-info p {
-                font-size: 18px;
-                font-weight: 300;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                max-width: 350px;
-            }
-    
-            .website-url {
-                font-size: 18px;
-                color: #cccccc;
-                font-weight: 300;
-                max-width: 200px;
-                word-break: break-word;
-            }
-    
-            .download-section {
-                /* display: flex; */
-                justify-content: flex-start;
-                margin-top: 150px;
-            }
-    
-            .download-link {
-                color: #00bfa5;
-                text-decoration: none;
-                font-size: 24px;
-                font-weight: 400;
-                border-bottom: 1px solid #00bfa5;
-                padding-bottom: 2px;
-            }
-    
-            .download-link:hover {
-                opacity: 0.8;
-            }
-    
-            .peace-sign {
-                font-size: 20px;
-            }
-    
-            /* Navigation Controls */
-            .carousel-nav {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background: rgba(0, 0, 0, 0.5);
-                color: white;
-                border: none;
-                padding: 15px 20px;
-                font-size: 18px;
-                cursor: pointer;
-                border-radius: 50%;
-                z-index: 10;
-                transition: background 0.3s ease;
-            }
-    
-            .carousel-nav:hover {
-                background: rgba(0, 0, 0, 0.8);
-            }
-    
-            .carousel-nav.prev {
-                left: 20px;
-            }
-    
-            .carousel-nav.next {
-                right: 20px;
-            }
-    
-            /* Dots Indicator */
-            .carousel-dots {
-                display: flex;
-                justify-content: center;
-                gap: 10px;
-                margin-top: 20px;
-            }
-    
-            .dot {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background: rgba(0, 0, 0, 0.3);
-                cursor: pointer;
-                transition: background 0.3s ease;
-            }
-    
-            .dot.active {
-                background: #00bfa5;
-            }
+        }
+      .about-hero-title {
+        font-size: 2.5em;
+        font-weight: 700;
+        margin-bottom: 10px;
+        line-height: 1.1;
+      }
+      .about-hero-title .pay-flex {
+        font-weight: 900;
+      }
+      .about-hero-subtext {
+        font-size: 1.1em;
+        color: #444;
+        margin-bottom: 32px;
+        margin-top: 8px;
+      }
+      .about-hero-center {
+        flex: 2 1 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        min-width: 340px;
+      }
+      .about-hero-map {
+        width: 100%;
+        max-width: 500px;
+        min-width: 320px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      .about-hero-map img {
+        width: 100%;
+        opacity: 0.18;
+        display: block;
+      }
+      .about-hero-card {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -60%);
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 32px rgba(44,185,150,0.10);
+        padding: 32px 28px 24px 28px;
+        min-width: 320px;
+        max-width: 340px;
+        z-index: 2;
+        text-align: left;
+      }
+      .about-hero-card .user-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .about-hero-card .user-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #2bb996;
+      }
+      .about-hero-card .user-info {
+        display: flex;
+        flex-direction: column;
+      }
+      .about-hero-card .user-name {
+        font-weight: 700;
+        font-size: 1.1em;
+        margin-bottom: 2px;
+      }
+      .about-hero-card .user-bank {
+        font-size: 0.95em;
+        color: #888;
+        margin-bottom: 2px;
+      }
+      .about-hero-card .user-country {
+        font-size: 0.95em;
+        color: #2bb996;
+        font-weight: 600;
+      }
+      .about-hero-card .user-amounts {
+        display: flex;
+        justify-content: space-between;
+        margin: 18px 0 10px 0;
+      }
+      .about-hero-card .amount-label {
+        font-size: 0.95em;
+        color: #888;
+      }
+      .about-hero-card .amount-value {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #222;
+      }
+      .about-hero-card .user-flag {
+        width: 32px;
+        height: 22px;
+        border-radius: 4px;
+        object-fit: cover;
+        margin-top: 8px;
+      }
+      .about-hero-card .pay-btn {
+        display: block;
+        width: 100%;
+        background: #2bb996;
+        color: #fff;
+        font-size: 1.1em;
+        font-weight: 600;
+        padding: 12px 0;
+        border-radius: 8px;
+        border: none;
+        margin-top: 18px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .about-hero-card .pay-btn:hover {
+        background: #1fa07d;
+      }
+      /* Floating avatars */
+      .about-hero-avatar {
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #fff;
+        box-shadow: 0 2px 8px rgba(44,185,150,0.10);
+        background: #fff;
+        z-index: 3;
+      }
+      .about-hero-avatar.avatar1 {
+        left: -40px;
+        top: 30%;
+      }
+      .about-hero-avatar.avatar2 {
+        right: -40px;
+        top: 10%;
+      }
+      .about-hero-avatar.avatar3 {
+        left: 10%;
+        bottom: -30px;
+      }
+      .about-hero-feature-row {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 60px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+      .about-hero-feature-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 2px 16px rgba(44,185,150,0.08);
+        padding: 28px 22px 22px 22px;
+        min-width: 260px;
+        max-width: 320px;
+        flex: 1 1 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border: 1px solid #f0f0f0;
+      }
+      .about-hero-feature-card .feature-icon {
+        width: 38px;
+        height: 38px;
+        margin-bottom: 12px;
+      }
+      .about-hero-feature-card .feature-title {
+        font-weight: 700;
+        font-size: 1.1em;
+        margin-bottom: 6px;
+        color: #222;
+      }
+      .about-hero-feature-card .feature-desc {
+        font-size: 0.98em;
+        color: #666;
+      }
+      .about-hero-feature-card.feature-card-img {
+        padding: 0;
+        background: none;
+        border: none;
+        box-shadow: none;
+        min-width: 260px;
+        max-width: 320px;
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+        height: 220px; /* Adjust as needed */
+     }
 
-            /* Card 1 - Different background */
-            .wallet-container.card1 {
-                background-color: #131e32;
-                background-image: url(assets/img/noise.png);
-                background-blend-mode: difference;
-            }
-    
-            /* .wallet-container.card1::before {
-               background: linear-gradient(90deg, rgba(45, 55, 72, 0.9) 0%, rgba(45, 55, 72, 0.3) 100%);
-           } */
-    
-            /* Card 2 - Different background */
-            /* .wallet-container.card2 {
-                background-color: #2d3748;
-            }
-    
-            .wallet-container.card2::before {
-                background: linear-gradient(90deg, rgba(45, 55, 72, 0.9) 0%, rgba(45, 55, 72, 0.3) 100%);
-            } */
-    
-            /* Card 3 - Different background */
-            /* .wallet-container.card3 {
-                background-color: #1a202c;
-            }
-    
-            .wallet-container.card3::before {
-                background: linear-gradient(90deg, rgba(26, 32, 44, 0.9) 0%, rgba(26, 32, 44, 0.3) 100%);
-            } */
-    
-            /* Mobile Responsive Styles */
-            @media (max-width: 768px) {
-                body {
-                    padding: 10px;
-                }
-    
-                .carousel-container {
-                    border-radius: 15px;
-                }
-    
-                .wallet-container {
-                    padding: 25px;
-                    min-height: 400px;
-                }
-    
-                .wallet-container::before {
-                    width: 40%;
-                }
-    
-                .animation-background {
-                    width: 100%;
-                }
-    
-                .header {
-                    font-size: 32px;
-                    margin-bottom: 40px;
-                }
-    
-                .profile-section {
-                    margin-bottom: 30px;
-                }
-    
-                .profile-left {
-                    gap: 15px;
-                }
-    
-                .profile-image {
-                    width: 70px;
-                    height: 70px;
-                }
-    
-                .profile-info h2 {
-                    font-size: 22px;
-                }
-    
-                .profile-info p {
-                    font-size: 15px;
-                    max-width: 250px;
-                }
-    
-                .website-url {
-                    font-size: 15px;
-                    max-width: 150px;
-                }
-    
-                .download-link {
-                    font-size: 20px;
-                }
-    
-                .carousel-nav {
-                    padding: 10px 15px;
-                    font-size: 16px;
-                }
-    
-                .carousel-nav.prev {
-                    left: 10px;
-                }
-    
-                .carousel-nav.next {
-                    right: 10px;
-                }
-    
-                .flag {
-                    width: 20px;
-                    height: 13px;
-                }
-            }
-    
-            /* @media (max-width: 480px) {
-                .wallet-container {
-                    padding: 20px;
-                    min-height: 350px;
-                }
-    
-                .wallet-container::before {
-                    width: 35%;
-                }
-    
-                .animation-background {
-                    width: 35%;
-                }
-    
-                .header {
-                    font-size: 26px;
-                    margin-bottom: 30px;
-                }
-    
-                .profile-left {
-                    gap: 12px;
-                }
-    
-                .profile-image {
-                    width: 60px;
-                    height: 60px;
-                }
-    
-                .profile-info h2 {
-                    font-size: 18px;
-                }
-    
-                .profile-info p {
-                    font-size: 13px;
-                    max-width: 200px;
-                }
-    
-                .website-url {
-                    font-size: 13px;
-                    max-width: 120px;
-                }
-    
-                .download-link {
-                    font-size: 18px;
-                }
-    
-                .carousel-nav {
-                    padding: 8px 12px;
-                    font-size: 14px;
-                }
-    
-                .flag {
-                    width: 18px;
-                    height: 12px;
-                }
-            } */
-            /* @media (max-width: 768px) {
-            .carousel-container {
-                max-width: 98vw;
-                padding: 8px;
-                border-radius: 10px;
-            }
-            .wallet-container {
-                padding: 16px;
-                min-height: 220px;
-            }
-            .header {
-                font-size: 1.3em;
-                margin-bottom: 18px;
-            }
-            .profile-image {
-                width: 44px;
-                height: 44px;
-            }
-            .profile-info h2 {
-                font-size: 1em;
-            }
-            .profile-info p,
-            .website-url {
-                font-size: 0.95em;
-                max-width: 120px;
-            }
-            .download-link {
-                font-size: 1em;
-            }
-            .carousel-nav {
-                padding: 6px 10px;
-                font-size: 1em;
-            }
-            .flag {
-                width: 16px;
-                height: 10px;
-            }
-            } */
-        </style>
-    </head>
-    <body>
-        <div class="carousel-container">
-            <div class="wallet-container card1">
-                <div class="animation-background">
-                    <iframe src="https://cdn.lottielab.com/l/5cKf19UrLGpsHK.html" allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="content-wrapper">
-                    <div class="header">
-                        <span>Business</span> Wallet for African
-                    </div>
-                    <div class="profile-section">
-                        <div class="profile-left" id="profile-left">
-                            <div class="profile-image">
-                                <img id="profile-img" src="assets/img/Ellipse.png" alt="Profile">
-                            </div>
-                            <div class="profile-info">
-                                <h2>
-                                    <span id="country-city">Benin, Cotonou</span>
-                                    <div id="country-flag" class="flag benin"></div>
-                                </h2>
-                                <p id="country-message">
-                                    I am able to pay Nigerian exporters with PAL app 
-                                    <!-- <span id="country-emoji" class="peace-sign">✌️</span> -->
-                                </p>
-                            </div>
-                        </div>
-                        <div class="website-url"></div>
-                    </div>
-                    <div class="download-section">
-                        <a href="wallet-page.html" class="download-link">Download Your Wallet</a>
+        .about-hero-feature-card.feature-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+        display: block;
+      }
+      .about-hero-cta-row {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 32px;
+      }
+      .about-hero-cta-btn {
+        background: #D9D9D9;
+        color: #222;
+        font-size: 1.1em;
+        font-weight: 600;
+        padding: 14px 38px;
+        border: 2px solid #b6ffad;
+        border-radius: 8px;
+        box-shadow: none;
+        transition: background 0.2s;
+        cursor: pointer;
+      }
+      .about-hero-cta-btn:hover {
+        background: #cdcdcd;
+        color: #1f1f1f;
+      }
+      .about-arrow {
+        margin-left: 8px;
+        font-size: 1.2em;
+        vertical-align: middle;
+        color: #77D656;
+       }
+      @media (max-width: 900px) {
+        .about-hero-row {
+          flex-direction: column;
+          gap: 18px;
+        }
+        .about-hero-center {
+          min-width: 0;
+        }
+        .about-hero-map {
+          max-width: 98vw;
+        }
+        .about-hero-card {
+          min-width: 0;
+          max-width: 98vw;
+        }
+        .about-hero-feature-row {
+          gap: 18px;
+        }
+      }
+    </style>
+    <section class="about-hero-section">
+        <div class="about-hero-container">
+            <div class="about-hero-row">
+                <div class="about-hero-left">
+                    <div class="about-hero-title">
+                    Trade freely, <span class="pay-flex">Pay flexibly</span>
                     </div>
                 </div>
+                
+                <div class="about-hero-right">
+                    <div class="about-hero-subtext">
+                    <div class="linee" style="justify-items: end;"></div>
+                    PAL makes trade from Nigeria to buyers across<br>
+                    Africa faster and easier.
+                    </div>
+                </div>
+          
+            </div>
+            <div class="about-hero-center">
+                <!-- <div class="about-hero-map"> -->
+                <img src="assets/img/map1.png" alt="PAL Map" style="width:100%;display:block;" />
             </div>
         </div>
-    
-        <script>
-            let currentSlideIndex = 0;
-            const totalSlides = 3;
-    
-            function showSlide(index) {
-                const wrapper = document.getElementById('carouselWrapper');
-                const dots = document.querySelectorAll('.dot');
-                
-                // Ensure index is within bounds
-                if (index >= totalSlides) currentSlideIndex = 0;
-                else if (index < 0) currentSlideIndex = totalSlides - 1;
-                else currentSlideIndex = index;
-                
-                // Move carousel
-                wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
-                
-                // Update dots
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === currentSlideIndex);
-                });
-            }
-    
-            function nextSlide() {
-                showSlide(currentSlideIndex + 1);
-            }
-    
-            function prevSlide() {
-                showSlide(currentSlideIndex - 1);
-            }
-    
-            function currentSlide(index) {
-                showSlide(index - 1);
-            }
-    
-            // Auto-play carousel (optional)
-            setInterval(nextSlide, 5000);
-    
-            // Touch/swipe support for mobile
-            let startX = 0;
-            let endX = 0;
-    
-            document.addEventListener('touchstart', (e) => {
-                startX = e.changedTouches[0].screenX;
-            });
-    
-            document.addEventListener('touchend', (e) => {
-                endX = e.changedTouches[0].screenX;
-                handleSwipe();
-            });
-    
-            function handleSwipe() {
-                const threshold = 50;
-                const diff = startX - endX;
-                
-                if (Math.abs(diff) > threshold) {
-                    if (diff > 0) {
-                        nextSlide();
-                    } else {
-                        prevSlide();
-                    }
-                }
-            }
-        </script>
-        <!-- END REPLACEMENT -->
+        <div class="about-hero-feature-row">
+          <div class="about-hero-feature-card feature-card-img">
+            <img src="assets/img/trade1.png" alt="Trade 1" />
+        </div>
+        <div class="about-hero-feature-card feature-card-img">
+            <img src="assets/img/trade2.png" alt="Trade 2" />
+        </div>
+        <div class="about-hero-feature-card feature-card-img">
+            <img src="assets/img/trade3.png" alt="Trade 3" />
+        </div>
+        </div>
+        <div class="about-hero-cta-row">
+          <a class="about-hero-cta-btn" href="wallet-page.html">Pay or get paid – it’s free <span class="about-arrow">&#9654;</span></a>
+        </div>
+      </div>
+    </section>
                     <!-- <div class="d-md-flex justify-content-between px-5">
                         <div>
                             <div>
@@ -1177,35 +1009,37 @@
             <section class="new-section my-5">
                 <div class="container">
                     <h2 class="text-clignote mb--1">
-                        <span class="line"></span>&nbsp;API For Businesses
+                        API For Businesses
                     </h2>
                     <div class="row">
                         <div class="col-md-6 ">
                             <div class="px-3 py-3"></div>
-                            <div class="px-3 py-3"></div>
-                            <h2>
+                            <!-- <div class="px-3 py-3"></div> -->
+                            <h4>
                                 Collect
-                            </h2>
+                                <!-- <div class="px-1 py-1"></div> -->
+                                <span class="linee"></span>
+                            </h4>
                            <div class="px-3 py-3"></div>
                             <p>
                                 Fund your account or collect customer payments. PAL simplifies global capital flow into your business, whether you're topping up for outbound transfers or accepting payments at scale.
                             </p>
-                            <div class="px-1 py-1"></div>
-                            <ul style="list-style: none; padding-left: 0;">
+                           <div class="px-3 py-3"></div>
+                            <ul style="list-style: none; gap: 50px; padding-left: 0;">
                                 <li style="margin-bottom: 8px;">
                                     <span style="color: #2BB996; font-size: 1.2em; vertical-align: middle;">
                                         <i class="bi bi-check-circle-fill"></i>
                                     </span>
                                     Accept deposits in XOF, XAF, NGN, and more
                                 </li>
-                                <div class="px-1 py-1"></div>
+                                <div class="px-3 py-3"></div>
                                 <li style="margin-bottom: 8px;">
                                     <span style="color: #2BB996; font-size: 1.2em; vertical-align: middle;">
                                         <i class="bi bi-check-circle-fill"></i>
                                     </span>
                                     Stablecoin onramps via USDC, USDT, PYUSD
                                 </li>
-                                <div class="px-1 py-1"></div>
+                                <div class="px-3 py-3"></div>
                                 <li>
                                     <span style="color: #2BB996; font-size: 1.2em; vertical-align: middle;">
                                         <i class="bi bi-check-circle-fill"></i>
@@ -1222,102 +1056,7 @@
                    
                 </div>
             </section>
-            <section class="">
-                <div class="flag-slider bg-black dark" style="color: white;">
-                    <div class="flags-container">
-                        <div class="flags-track">
-                            <div class="flag-label">
-                            <div class="flag cote-divoire"></div>
-                            <span class="country-name">Côte d'Ivoire</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag togo"></div>
-                            <span class="country-name">Togo</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag maldives"></div>
-                            <span class="country-name">Maldives</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag mali"></div>
-                            <span class="country-name">Mali</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag nigeria"></div>
-                            <span class="country-name">Nigeria</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag ireland"></div>
-                            <span class="country-name">Ireland</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag togo2"></div>
-                            <span class="country-name">Togo</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag burkina-faso"></div>
-                            <span class="country-name">Burkina Faso</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag chad"></div>
-                            <span class="country-name">Chad</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag nigeria2"></div>
-                            <span class="country-name">Nigeria</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag burkina-faso2"></div>
-                            <span class="country-name">Burkina Faso</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag cote-divoire"></div>
-                            <span class="country-name">Côte d'Ivoire</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag togo"></div>
-                            <span class="country-name">Togo</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag maldives"></div>
-                            <span class="country-name">Maldives</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag mali"></div>
-                            <span class="country-name">Mali</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag nigeria"></div>
-                            <span class="country-name">Nigeria</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag ireland"></div>
-                            <span class="country-name">Ireland</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag togo2"></div>
-                            <span class="country-name">Togo</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag burkina-faso"></div>
-                            <span class="country-name">Burkina Faso</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag chad"></div>
-                            <span class="country-name">Chad</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag nigeria2"></div>
-                            <span class="country-name">Nigeria</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag burkina-faso2"></div>
-                            <span class="country-name">Burkina Faso</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
             <section class="disburse-section my-5">
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
@@ -1329,6 +1068,7 @@
                         <div class="col-lg-6">
                             <div class="disburse-info">
                                 <h2 class="disburse-title-main">Disburse</h2>
+                                <span class="linee"></span>
                                 <p class="disburse-desc-main">
                                     Withdraw, convert, or pay anyone—anywhere—with real-time, multi-currency payouts.
                                 </p>
@@ -1342,10 +1082,10 @@
                                         Send payouts via Bank transfer, mobile money, Merchant Account, and more.
                                     </li>
                                 </ul>
-                                <div class="disburse-btns mt-4">
+                                <!-- <div class="disburse-btns mt-4">
                                     <a href="https://dashboard.pals.africa/auth/login" target="_blank" class="btn btn-dark disburse-btn">Get Api Key</a>
                                     <a href="https://dashboard.pals.africa/auth/register/step1" target="_blank" class="btn disburse-btn disburse-btn-light">Open account - it's free</a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -1486,11 +1226,11 @@
                 transition: background 0.2s;
             }
             .disburse-btn-light {
-                background: #ededed;
+                background: #D9D9D9;
                 color: #222;
             }
             .disburse-btn-light:hover {
-                background: #e0e0e0;
+                background: #c7c6c6;
             }
             /* @media (max-width: 991px) {
                 .disburse-section {
@@ -1516,6 +1256,105 @@
                 }
             }
             </style>
+            
+
+            <section class="">
+                <div class="flag-slider bg-black dark" style="color: white; height: 90px;">
+                    <div class="flags-container">
+                        <div class="flags-track">
+                            <div class="flag-label">
+                            <div class="flag cote-divoire"></div>
+                            <span class="country-name">Côte d'Ivoire</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag togo"></div>
+                            <span class="country-name">Togo</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag maldives"></div>
+                            <span class="country-name">Maldives</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag mali"></div>
+                            <span class="country-name">Mali</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag nigeria"></div>
+                            <span class="country-name">Nigeria</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag ireland"></div>
+                            <span class="country-name">Ireland</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag togo2"></div>
+                            <span class="country-name">Togo</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag burkina-faso"></div>
+                            <span class="country-name">Burkina Faso</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag chad"></div>
+                            <span class="country-name">Chad</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag nigeria2"></div>
+                            <span class="country-name">Nigeria</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag burkina-faso2"></div>
+                            <span class="country-name">Burkina Faso</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag cote-divoire"></div>
+                            <span class="country-name">Côte d'Ivoire</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag togo"></div>
+                            <span class="country-name">Togo</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag maldives"></div>
+                            <span class="country-name">Maldives</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag mali"></div>
+                            <span class="country-name">Mali</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag nigeria"></div>
+                            <span class="country-name">Nigeria</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag ireland"></div>
+                            <span class="country-name">Ireland</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag togo2"></div>
+                            <span class="country-name">Togo</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag burkina-faso"></div>
+                            <span class="country-name">Burkina Faso</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag chad"></div>
+                            <span class="country-name">Chad</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag nigeria2"></div>
+                            <span class="country-name">Nigeria</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag burkina-faso2"></div>
+                            <span class="country-name">Burkina Faso</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br><br>
             <section class="integration-section">
                 <div class="integration-container">
                   <div class="integration-left">
@@ -1529,10 +1368,44 @@
                       settling effortless and highly adaptable.
                     </p>
                     <a href="#" class="integration-btn">Explore the Doc <span class="integration-arrow">&#9654;</span></a>
+                    <img src="assets/img/secure-image.png" alt="Integration" style="width: 25%; height: auto; margin-top: 20px; border-radius: 8px;">
                   </div>
                   <div class="integration-right">
-                    <!-- You can put an image, video, or leave it blank for now -->
-                  </div>
+                    <pre class="integration-code">
+                    <span class="code-comment">// Import PAL SDK</span>
+                    <span class="code-key">const</span> <span class="code-var">pal</span> = <span class="code-func">require</span>(<span class="code-str">'pal-sdk'</span>);
+
+                    <span class="code-comment">// Send a payment</span>
+                    <span class="code-key">async function</span> <span class="code-func">sendPayment</span>() {
+                    <span class="code-key">await</span> <span class="code-var">pal</span>.<span class="code-func">transfer</span>({
+                        <span class="code-prop">from</span>: <span class="code-str">'NGN'</span>,
+                        <span class="code-prop">to</span>: <span class="code-str">'XOF'</span>,
+                        <span class="code-prop">amount</span>: <span class="code-num">100000</span>
+                    });
+                    }
+
+                    <span class="code-comment">// Check balance</span>
+                    <span class="code-key">async function</span> <span class="code-func">getBalance</span>() {
+                    <span class="code-key">const</span> <span class="code-var">balance</span> = <span class="code-key">await</span> <span class="code-var">pal</span>.<span class="code-func">balance</span>();
+                    <span class="code-func">console</span>.log(<span class="code-str">'Balance:'</span>, <span class="code-var">balance</span>);
+                    }
+
+                    <span class="code-comment">// List transactions</span>
+                    <!-- <span class="code-key">async function</span> <span class="code-func">listTransactions</span>() {
+                    <span class="code-key">const</span> <span class="code-var">txs</span> = <span class="code-key">await</span> <span class="code-var">pal</span>.<span class="code-func">transactions</span>();
+                    <span class="code-func">console</span>.log(<span class="code-str">'Transactions:'</span>, <span class="code-var">txs</span>);
+                    }
+
+                    <span class="code-comment">// Run all</span> -->
+                    <!-- <span class="code-key">async function</span> <span class="code-func">main</span>() {
+                    <span class="code-key">await</span> <span class="code-func">sendPayment</span>();
+                    <span class="code-key">await</span> <span class="code-func">getBalance</span>();
+                    <span class="code-key">await</span> <span class="code-func">listTransactions</span>();
+                    }
+
+                    <span class="code-func">main</span>(); -->
+                    </pre>
+                </div>
                 </div>
               </section>
               <style>
@@ -1595,7 +1468,7 @@
                 .integration-btn {
                 display: inline-block;
                 background: #000;
-                width: 50%;
+                width: 40%;
                 color: #fff;
                 font-size: 1.1em;
                 font-weight: 500;
@@ -1618,15 +1491,37 @@
                 }
 
                 .integration-right {
-                flex: 1 1 0;
-                min-width: 320px;
+                background: #181818;
+                color: #fff;
+                font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+                display: flex;
+                align-items: flex-start;
+                justify-content: start;
+                padding: 32px; 
+                border-radius: 16px;
                 min-height: 340px;
-                background: #fff;
-                height: 640px;
-                border-radius: 0;
-                /* You can add a box-shadow if you want */
+                height: 600px;
+               
                 }
-                
+
+                .integration-code {
+                background: transparent;
+                color: #fff;
+                font-size: 1.1em;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                border: none;
+                white-space: pre;
+                }
+
+                .code-key   { color: #2bb996; }
+                .code-var   { color: #e1e1e1; }
+                .code-func  { color: #82aaff; }
+                .code-str   { color: #ecc48d; }
+                .code-num   { color: #f78c6c; }
+                .code-prop  { color: #c3e88d; }
+                .code-comment { color: #7f8c8d; font-style: italic; }                     
 
 
                 @media (max-width: 900px) {
@@ -1696,11 +1591,12 @@
 
                     .security-trust-illustration {
                     /* width: 110px; */
-                    width: 20%;
+                    width: 30%;
                     margin-bottom: 18px;
                     }
 
                     .security-trust-header h2 {
+                    color: #fafafa;
                     font-size: 2.3em;
                     font-weight: 700;
                     margin-bottom: 8px;
@@ -1708,11 +1604,11 @@
 
                     .security-bold {
                     font-weight: 900;
-                    color: #222;
+                    color: #fafafa;
                     }
 
                     .security-trust-subtitle {
-                    color: #444;
+                    color: #d4d4d4;
                     font-size: 1.1em;
                     margin-bottom: 32px;
                     }
@@ -1726,7 +1622,7 @@
                     }
 
                     .security-trust-card {
-                    background: linear-gradient(180deg, #b8c6c7 40%, #f7f7f7 100%);
+                    background: linear-gradient(180deg, #3e3f3f 40%, #282424 100%);
                     border-radius: 18px;
                     box-shadow: 0 2px 12px rgba(44,185,150,0.06);
                     padding: 32px 24px 24px 24px;
@@ -1744,7 +1640,7 @@
                     font-size: 1.25em;
                     font-weight: 700;
                     margin-bottom: 12px;
-                    color: #222;
+                    color: #aea8a8;
                     }
 
                     .security-trust-card-extra {
@@ -1752,7 +1648,7 @@
                     font-weight: 700;
                     margin-top: 18px;
                     margin-bottom: 8px;
-                    color: #222;
+                    color: #d2d1d1;
                     }
 
                     .security-trust-card-img {
@@ -1762,7 +1658,7 @@
                     }
 
                     .security-trust-card-desc {
-                    color: #222;
+                    color: #c0c0c0;
                     font-size: 1em;
                     margin-bottom: 0;
                     }
@@ -1776,7 +1672,10 @@
                     }
 
                     .security-trust-section {
-                    /* background: #f7f7f7; */
+                    background: #393939;
+                    background-image: url(assets/img/noise.png);
+                    background-blend-mode: difference;
+                    padding: 60px 0;
                     padding: 60px 0 40px 0;
                     width: 100%;
                     opacity: 0;
@@ -1824,146 +1723,204 @@
                     }
                 });
             </script>
-            <footer class="style-3 bg-dark text-white pt-5" id="developers">
-                <div class="container">
-                    <div class="row gx-0 justify-content-between">
-                        <div class="col-md-2">
-                            <a class="navbar-brand" style="font-size: 48; font-weight: bolder;" href="#">
-                                PAL.
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <div class="">
-                                <div class="title text-bold mb-3">
-                                    Produits
-                                </div>
-                                <ul>
-                                    <li class="text mb-10 d-block text-gray2">
-                                        Wallet Transfer
-                                    </li>
-                                    <li class="text mb-10 d-block text-gray2">
-                                        Transfer Bancaire
-                                    </li>
-                                    <li class="text mb-10 d-block text-gray2">
-                                        Cash sur demande
-                                    </li>
-                                    <li class="text mb-10 d-block text-gray2">
-                                        POS Pour les Agents deDistribution
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <div class="">
-                                <div class="title text-bold mb-3">
-                                    Developpeur
-                                </div>
-                                <ul>
-                                    <li class="text mb-10 d-block text-gray2">
-                                        Documentation API
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6">
-                            <div class="">
-                                <div class="title text-bold mb-3">
-                                    Industries
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="text mb-10 d-block text-gray2"> Transfert d'Argent </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="text mb-10 d-block text-gray2"> Fintech </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="text mb-10 d-block text-gray2"> Petites & Moyennes Entreprises </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="text mb-10 d-block text-gray2"> Agents de Distribution (Mobile Money) </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6">
-                            <div class="">
-                                <div class="title text-bold mb-3">
-                                    Contactez-nous
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="mailto:contact@pals.africa" class="text mb-10 d-block text-gray2">
-                                            contact@pals.africa </a>
-                                    </li>
-                                </ul>
-                                <div>
-                                    <a href="https://www.linkedin.com/company/72080034/admin/" target="_blank"
-                                        class="text-white mx-1">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-                                    <a href="https://twitter.com/Palafrika" target="_blank" class="text-white mx-1">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr class="hr hr-blurry" />
-                <div class="container pb-3">
-                    <div class="row" style="@media screen (max-width: 480px){
-                    display: flex;
-                    flex-direction: column;
-                }">
-                        <small class="col-sm-8 col-10 small">
-                            © PAL Africa. 2023 All rights reserved
-                        </small>
-                        <div class="col">
-                            <ul class="row">
-                                <li class="col" style="list-style: disc; list-style-position: inside;"><a
-                                        href="./service-terme.html" target="_blank">Terms of Service</a></li>
-                                <li class="col" style="list-style: disc; list-style-position: inside;"><a
-                                        href="./privacy-policy.html" target="_blank">Privacy policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <img src="assets/img/contact_globe.svg" alt="" class="contact_globe">
-            </footer>
+            <footer class="pal-footer">
+  <div class="pal-footer-main">
+    <div class="pal-footer-logo">
+      <div class="pal-footer-brand">PAL.</div>
     </div>
-
-
-    <!-- Floating Download Button (Mobile Only) -->
-    <button class="floating-download-btn" id="downloadBtn">
-        <svg class="download-icon" viewBox="0 0 24 24">
-            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
-        </svg>
-        Download App
-    </button>
-
-    <!-- Modal -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal">
-            <button class="close-btn" id="closeBtn">&times;</button>
-            <h2>Download Our App</h2>
-            <p>Choose your platform to download our mobile app</p>
-            <div class="platform-buttons">
-                <button class="platform-btn android" id="androidBtn">
-                    <svg class="platform-icon" viewBox="0 0 24 24">
-                        <path d="M17.523,15.3414C17.0099,15.3414 16.592,14.9244 16.592,14.4124C16.592,13.8984 17.0099,13.4834 17.523,13.4834C18.0351,13.4834 18.453,13.8984 18.453,14.4124C18.453,14.9244 18.0351,15.3414 17.523,15.3414M6.477,15.3414C5.9649,15.3414 5.547,14.9244 5.547,14.4124C5.547,13.8984 5.9649,13.4834 6.477,13.4834C6.9891,13.4834 7.407,13.8984 7.407,14.4124C7.407,14.9244 6.9891,15.3414 6.477,15.3414M12,2.05L13.025,4.088C13.119,4.287 13.099,4.526 12.979,4.706C12.859,4.886 12.659,5 12.445,5H11.555C11.341,5 11.141,4.886 11.021,4.706C10.901,4.526 10.881,4.287 10.975,4.088L12,2.05M6.8,11.55C6.8,11.55 8.55,11.55 12,11.55C15.45,11.55 17.2,11.55 17.2,11.55V5.6C17.2,5.6 17.2,4.2 16.6,3.6C16,3 14.6,3 12,3C9.4,3 8,3 7.4,3.6C6.8,4.2 6.8,5.6 6.8,5.6V11.55Z"/>
-                    </svg>
-                    Android
-                </button>
-                <button class="platform-btn ios" id="iosBtn">
-                    <svg class="platform-icon" viewBox="0 0 24 24">
-                        <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.09997,22C7.78997,22.05 6.79997,20.68 5.95997,19.47C4.24997,17 2.93997,12.45 4.69997,9.39C5.56997,7.87 7.13997,6.91 8.85997,6.88C10.15,6.86 11.36,7.75 12.11,7.75C12.85,7.75 14.28,6.73 15.87,6.84C16.5,6.87 18.27,7.12 19.35,8.29C19.27,8.35 17.94,9.25 17.96,11.09C17.98,13.25 19.93,14.01 20,14.02C19.99,14.07 19.67,15.16 18.71,19.5Z"/>
-                    </svg>
-                    iOS
-                </button>
-            </div>
+    <div class="pal-footer-cols">
+        <div class="pal-footer-col">
+          <div class="pal-footer-title">Products</div>
+          <ul>
+            <li>Business Wallet</li>
+            <li>API for Businesses</li>
+            <li>Forex Exchange</li>
+          </ul>
+        </div>
+        <div class="pal-footer-col">
+          <div class="pal-footer-title">Use cases</div>
+          <ul>
+            <li>E–commerce</li>
+            <li>Fintech</li>
+            <li>Remittance</li>
+            <li>Import–Export</li>
+          </ul>
+        </div>
+        <div class="pal-footer-col">
+          <div class="pal-footer-title">Developer</div>
+          <ul>
+            <li>API Document</li>
+          </ul>
+        </div>
+        <div class="pal-footer-col">
+          <div class="pal-footer-title">Legal</div>
+          <ul>
+            <li>Terms of Service</li>
+            <li>Privacy policy</li>
+          </ul>
+        </div>
+        <div class="pal-footer-col" style="min-width:160px;">
+          <div class="pal-footer-title" style="margin-bottom:10px;">FOLLOW US ON</div>
+          <div class="pal-footer-socials" style="gap:10px;">
+            <a href="#" aria-label="Facebook" class="pal-footer-social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram" class="pal-footer-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="X" class="pal-footer-social-link"><i class="bi bi-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="pal-footer-social-link"><i class="bi bi-linkedin"></i></a>
+          </div>
         </div>
     </div>
+  </div>
+  <div class="pal-footer-note">
+    PAL Africa is not a licensed bank. Banking services on Pal are facilitated through partnerships with licensed financial institutions.
+  </div>
+  <div class="pal-footer-bottom">
+    <span>© PAL Africa. 2025 All rights reserved</span>
+  </div>
+</footer>
+<style>
+    .pal-footer {
+  background: rgba(24, 26, 27, 0.98);
+  background-image: url(assets/img/noise.png);
+  background-blend-mode: difference;
+  color: #fff;
+  /* border-top: 3px solid #2bb996; */
+  font-family: 'Inter', Arial, sans-serif;
+  margin-top: 0;
+}
+
+.pal-footer-main {
+  display: flex;
+   flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 24px 24px;
+  /* gap: 32px; */
+  /* flex-wrap: wrap; */
+}
+
+.pal-footer-logo {
+  margin-bottom: 24px;
+}
+
+.pal-footer-cols {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.pal-footer-col {
+  min-width: 180px;
+  flex: 1 1 0;
+}
+
+.pal-footer-brand {
+  font-size: 2.8em;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+}
+
+.pal-footer-title {
+  font-size: 1.18em;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.pal-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pal-footer-col ul li {
+  margin-bottom: 12px;
+  font-size: 1.08em;
+  color: #e0e0e0;
+}
+
+.pal-footer-col ul li a {
+  color: #e0e0e0;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.pal-footer-col ul li a:hover {
+  color: #2bb996;
+}
+
+.pal-footer-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.pal-footer-social-link svg {
+  vertical-align: middle;
+  /* color: blue; */
+  transition: color 0.2s;
+}
+.pal-footer-social-link:hover svg {
+  color: #fff;
+}
+
+.pal-footer-note {
+  text-align: center;
+  color: #bdbdbd;
+  font-size: 1em;
+  margin: 24px 0 0 0;
+  padding: 0 24px;
+}
+
+.pal-footer-bottom {
+  text-align: center;
+  align-items: center;
+  border-top: 1px solid #444;
+  margin-top: 32px;
+  padding: 18px 24px 12px 24px;
+  /* display: flex;
+  justify-content: space-between; */
+  font-size: 1.08em;
+  background: #181a1b;
+  background-image: url(assets/img/noise.png);
+  background-blend-mode: difference;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pal-footer-bottom a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 8px;
+  margin-right: 8px;
+  transition: color 0.2s;
+}
+.pal-footer-bottom a:hover {
+  color: #979a99;
+}
+
+@media (max-width: 900px) {
+  .pal-footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .pal-footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 1em;
+  }
+}
+</style>
+    </div>
+
+
+    
+    
 
     <script src="assets/js/lib/jquery-3.0.0.min.js"></script>
     <script src="assets/js/lib/jquery-migrate-3.0.0.min.js"></script>
