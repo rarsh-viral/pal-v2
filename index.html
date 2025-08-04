@@ -315,7 +315,7 @@
             <p class="hero-subtitle">
                 Powering Nigerian SMEs with instant, secure cross-border payments from buyers across West Africa.
             </p>
-            <a href="#" class="hero-cta">Open account – it’s free</a>
+            <a  target="_blank" href="#" class="hero-cta">Open account – it’s free</a>
             </div>
             <div class="hero-right">
             <img src="assets/img/heroimage.png" alt="PAL Hero" style="max-width:100%;border-radius:24px;box-shadow:0 4px 32px rgba(44,185,150,0.10);" />
@@ -848,7 +848,7 @@
         </div>
         </div>
         <div class="about-hero-cta-row">
-          <a class="about-hero-cta-btn" href="wallet-page.html">Pay or get paid – it’s free <span class="about-arrow">&#9654;</span></a>
+          <a  target="_blank" class="about-hero-cta-btn" href="wallet-page.html">Pay or get paid – it’s free <span class="about-arrow">&#9654;</span></a>
         </div>
       </div>
     </section>
@@ -1367,7 +1367,7 @@
                       Our reliable processing engine makes collecting, disbursing, and<br>
                       settling effortless and highly adaptable.
                     </p>
-                    <a href="#" class="integration-btn">Explore the Doc <span class="integration-arrow">&#9654;</span></a>
+                    <a  target="_blank" href="#" class="integration-btn">Explore the Doc <span class="integration-arrow">&#9654;</span></a>
                     <img src="assets/img/secure-image.png" alt="Integration" style="width: 25%; height: auto; margin-top: 20px; border-radius: 8px;">
                   </div>
                   <div class="integration-right">
@@ -1723,199 +1723,301 @@
                     }
                 });
             </script>
+            <div class="mobile-app-download-bar">
+            <div class="mobile-app-download-content">
+                <span class="mobile-app-download-title">Download the App:</span>
+                <div class="download-buttons1">
+                    <a  target="_blank" href="https://play.google.com/store/apps/details?id=com.moworri.pal" class="download-btn">
+                        <img src="assets/img/Google_Play_Store.png" alt="Google Play" style="height:42px; width:auto; display:block;">
+                    </a>
+                    <a  target="_blank" href="https://apps.apple.com/gh/app/noworri-pal-swap-pay/id6475628514" class="download-btn">
+                        <img src="assets/img/app-store1.png" alt="App Store" style="height:42px; width:auto; display:block;">
+                    </a>
+                </div>
+            </div>
+            <style>
+                .mobile-app-download-bar {
+                display: none;
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 9999;
+                background: rgba(255,255,255,0.85); /* semi-transparent */
+                backdrop-filter: blur(6px);
+                box-shadow: 0 -2px 16px rgba(0,0,0,0.07);
+                padding: 12px 0;
+                }
+
+                .mobile-app-download-content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 98vw;
+                margin: 0 auto;
+                gap: 16px;
+                padding: 0 16px;
+                }
+
+                .mobile-app-download-title {
+                font-size: 1.2em;
+                font-weight: 500;
+                color: #111;
+                white-space: nowrap;
+                }
+
+                .mobile-app-download-btns {
+                display: flex;
+                gap: 16px;
+                }
+
+                .mobile-app-btn {
+                display: inline-block;
+                background: #ddd;
+                border-radius: 4px;
+                padding: 8px 18px;
+                text-align: center;
+                color: #111;
+                font-size: 1em;
+                text-decoration: none;
+                font-family: inherit;
+                min-width: 110px;
+                }
+
+                .mobile-app-btn-logo {
+                display: block;
+                font-size: 1em;
+                font-weight: 400;
+                line-height: 1.1;
+                }
+
+                /* Only show on mobile */
+                /* @media (max-width: 600px) {
+                .mobile-app-download-bar {
+                    display: block;
+                }
+                } */
+                 @media (max-width: 1024px) {
+                    .mobile-app-download-bar {
+                        display: block;
+                    }
+                 }
+                 @media (max-width: 600px) {
+                    .download-buttons1 img {
+                        height: 32px !important;
+                        max-width: 90px;
+                    }
+                    }
+                    @media (max-width: 400px) {
+                    .download-buttons1 img {
+                        height: 24px !important;
+                        max-width: 60px;
+                    }
+                    }
+                    @media (max-width: 600px) {
+                        .mobile-app-download-title {
+                            font-size: 0.85em;
+                        }
+                        .download-btn {
+                            font-size: 0.85em;
+                            padding: 2px 6px;
+                        }
+                    }
+            </style>
+            </div>
             <footer class="pal-footer">
-  <div class="pal-footer-main">
-    <div class="pal-footer-logo">
-      <div class="pal-footer-brand">PAL.</div>
-    </div>
-    <div class="pal-footer-cols">
-        <div class="pal-footer-col">
-          <div class="pal-footer-title">Products</div>
-          <ul>
-            <li>Business Wallet</li>
-            <li>API for Businesses</li>
-            <li>Forex Exchange</li>
-          </ul>
-        </div>
-        <div class="pal-footer-col">
-          <div class="pal-footer-title">Use cases</div>
-          <ul>
-            <li>E–commerce</li>
-            <li>Fintech</li>
-            <li>Remittance</li>
-            <li>Import–Export</li>
-          </ul>
-        </div>
-        <div class="pal-footer-col">
-          <div class="pal-footer-title">Developer</div>
-          <ul>
-            <li>API Document</li>
-          </ul>
-        </div>
-        <div class="pal-footer-col">
-          <div class="pal-footer-title">Legal</div>
-          <ul>
-            <li>Terms of Service</li>
-            <li>Privacy policy</li>
-          </ul>
-        </div>
-        <div class="pal-footer-col" style="min-width:160px;">
-          <div class="pal-footer-title" style="margin-bottom:10px;">FOLLOW US ON</div>
-          <div class="pal-footer-socials" style="gap:10px;">
-            <a href="#" aria-label="Facebook" class="pal-footer-social-link"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="Instagram" class="pal-footer-social-link"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="X" class="pal-footer-social-link"><i class="bi bi-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn" class="pal-footer-social-link"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-    </div>
-  </div>
-  <div class="pal-footer-note">
-    PAL Africa is not a licensed bank. Banking services on Pal are facilitated through partnerships with licensed financial institutions.
-  </div>
-  <div class="pal-footer-bottom">
-    <span>© PAL Africa. 2025 All rights reserved</span>
-  </div>
-</footer>
-<style>
-    .pal-footer {
-  background: rgba(24, 26, 27, 0.98);
-  background-image: url(assets/img/noise.png);
-  background-blend-mode: difference;
-  color: #fff;
-  /* border-top: 3px solid #2bb996; */
-  font-family: 'Inter', Arial, sans-serif;
-  margin-top: 0;
-}
+            <div class="pal-footer-main">
+                <div class="pal-footer-logo">
+                <div class="pal-footer-brand">PAL.</div>
+                </div>
+                <div class="pal-footer-cols">
+                    <div class="pal-footer-col">
+                    <div class="pal-footer-title">Products</div>
+                    <ul>
+                        <li>Business Wallet</li>
+                        <li>API for Businesses</li>
+                        <li>Forex Exchange</li>
+                    </ul>
+                    </div>
+                    <div class="pal-footer-col">
+                    <div class="pal-footer-title">Use cases</div>
+                    <ul>
+                        <li>E–commerce</li>
+                        <li>Fintech</li>
+                        <li>Remittance</li>
+                        <li>Import–Export</li>
+                    </ul>
+                    </div>
+                    <div class="pal-footer-col">
+                    <div class="pal-footer-title">Developer</div>
+                    <ul>
+                        <li>API Document</li>
+                    </ul>
+                    </div>
+                    <div class="pal-footer-col">
+                    <div class="pal-footer-title">Legal</div>
+                    <ul>
+                        <li>Terms of Service</li>
+                        <li>Privacy policy</li>
+                    </ul>
+                    </div>
+                    <div class="pal-footer-col" style="min-width:160px;">
+                    <div class="pal-footer-title" style="margin-bottom:10px;">FOLLOW US ON</div>
+                    <div class="pal-footer-socials" style="gap:10px;">
+                        <a  target="_blank" href="#" aria-label="Facebook" class="pal-footer-social-link"><i class="bi bi-facebook"></i></a>
+                        <a  target="_blank" href="#" aria-label="Instagram" class="pal-footer-social-link"><i class="bi bi-instagram"></i></a>
+                        <a  target="_blank" href="#" aria-label="X" class="pal-footer-social-link"><i class="bi bi-twitter"></i></a>
+                        <a  target="_blank" href="#" aria-label="LinkedIn" class="pal-footer-social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pal-footer-note">
+                PAL Africa is not a licensed bank. Banking services on Pal are facilitated through partnerships with licensed financial institutions.
+            </div>
+            <div class="pal-footer-bottom">
+                <span>© PAL Africa. 2025 All rights reserved</span>
+            </div>
+            </footer>
+            <style>
+                .pal-footer {
+            background: rgba(24, 26, 27, 0.98);
+            background-image: url(assets/img/noise.png);
+            background-blend-mode: difference;
+            color: #fff;
+            /* border-top: 3px solid #2bb996; */
+            font-family: 'Inter', Arial, sans-serif;
+            margin-top: 0;
+            }
 
-.pal-footer-main {
-  display: flex;
-   flex-direction: column;
-  /* justify-content: space-between; */
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 48px 24px 24px 24px;
-  /* gap: 32px; */
-  /* flex-wrap: wrap; */
-}
+            .pal-footer-main {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 24px 24px 24px;
+            /* gap: 32px; */
+            /* flex-wrap: wrap; */
+            }
 
-.pal-footer-logo {
-  margin-bottom: 24px;
-}
+            .pal-footer-logo {
+            margin-bottom: 24px;
+            }
 
-.pal-footer-cols {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  gap: 32px;
-  flex-wrap: wrap;
-}
+            .pal-footer-cols {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 32px;
+            flex-wrap: wrap;
+            }
 
-.pal-footer-col {
-  min-width: 180px;
-  flex: 1 1 0;
-}
+            .pal-footer-col {
+            min-width: 180px;
+            flex: 1 1 0;
+            }
 
-.pal-footer-brand {
-  font-size: 2.8em;
-  font-weight: 900;
-  letter-spacing: -2px;
-  margin-bottom: 18px;
-}
+            .pal-footer-brand {
+            font-size: 2.8em;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+            }
 
-.pal-footer-title {
-  font-size: 1.18em;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
+            .pal-footer-title {
+            font-size: 1.18em;
+            font-weight: 700;
+            margin-bottom: 16px;
+            }
 
-.pal-footer-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+            .pal-footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            }
 
-.pal-footer-col ul li {
-  margin-bottom: 12px;
-  font-size: 1.08em;
-  color: #e0e0e0;
-}
+            .pal-footer-col ul li {
+            margin-bottom: 12px;
+            font-size: 1.08em;
+            color: #e0e0e0;
+            }
 
-.pal-footer-col ul li a {
-  color: #e0e0e0;
-  text-decoration: underline;
-  transition: color 0.2s;
-}
-.pal-footer-col ul li a:hover {
-  color: #2bb996;
-}
+            .pal-footer-col ul li a {
+            color: #e0e0e0;
+            text-decoration: underline;
+            transition: color 0.2s;
+            }
+            .pal-footer-col ul li a:hover {
+            color: #2bb996;
+            }
 
-.pal-footer-socials {
-  display: flex;
-  gap: 12px;
-  margin-top: 8px;
-}
+            .pal-footer-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+            }
 
-.pal-footer-social-link svg {
-  vertical-align: middle;
-  /* color: blue; */
-  transition: color 0.2s;
-}
-.pal-footer-social-link:hover svg {
-  color: #fff;
-}
+            .pal-footer-social-link svg {
+            vertical-align: middle;
+            /* color: blue; */
+            transition: color 0.2s;
+            }
+            .pal-footer-social-link:hover svg {
+            color: #fff;
+            }
 
-.pal-footer-note {
-  text-align: center;
-  color: #bdbdbd;
-  font-size: 1em;
-  margin: 24px 0 0 0;
-  padding: 0 24px;
-}
+            .pal-footer-note {
+            text-align: center;
+            color: #bdbdbd;
+            font-size: 1em;
+            margin: 24px 0 0 0;
+            padding: 0 24px;
+            }
 
-.pal-footer-bottom {
-  text-align: center;
-  align-items: center;
-  border-top: 1px solid #444;
-  margin-top: 32px;
-  padding: 18px 24px 12px 24px;
-  /* display: flex;
-  justify-content: space-between; */
-  font-size: 1.08em;
-  background: #181a1b;
-  background-image: url(assets/img/noise.png);
-  background-blend-mode: difference;
-  flex-wrap: wrap;
-  gap: 12px;
-}
+            .pal-footer-bottom {
+            text-align: center;
+            align-items: center;
+            border-top: 1px solid #444;
+            margin-top: 32px;
+            padding: 18px 24px 12px 24px;
+            /* display: flex;
+            justify-content: space-between; */
+            font-size: 1.08em;
+            background: #181a1b;
+            background-image: url(assets/img/noise.png);
+            background-blend-mode: difference;
+            flex-wrap: wrap;
+            gap: 12px;
+            }
 
-.pal-footer-bottom a {
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  margin-left: 8px;
-  margin-right: 8px;
-  transition: color 0.2s;
-}
-.pal-footer-bottom a:hover {
-  color: #979a99;
-}
+            .pal-footer-bottom a {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            margin-left: 8px;
+            margin-right: 8px;
+            transition: color 0.2s;
+            }
+            .pal-footer-bottom a:hover {
+            color: #979a99;
+            }
 
-@media (max-width: 900px) {
-  .pal-footer-main {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-  }
-  .pal-footer-bottom {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    font-size: 1em;
-  }
-}
-</style>
+            @media (max-width: 900px) {
+            .pal-footer-main {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+            .pal-footer-bottom {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                font-size: 1em;
+            }
+            }
+            </style>
     </div>
 
 
