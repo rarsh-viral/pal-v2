@@ -2163,7 +2163,7 @@
   color: #e0e0e0;
   line-height: 1.6;
   font-family: 'Inter', 'Arial', sans-serif;
-  max-width: 600px;
+  max-width: 1100px;
 }
 
 @media (max-width: 700px) {
@@ -3044,7 +3044,7 @@
                 </div>
                 <div class="trade-card trade-card-left card4">
                     <h1>Hold & SWAP</h1>
-                    <div class="currency">CHAD</div>
+                    <div class="currency">CAD</div>
                 </div>
                 <!-- <div class="trade-card trade-card-right">
                     <img class="person-image" src="assets/img/aisha-bakari.png" alt="Aicha Bakari">
@@ -3480,20 +3480,30 @@ showLeftCard(currentLeft);
 </section>
 <style>
   .experience-pesa-section {
-    background-color: #000; /* Dark background */
-    color: #fff; /* White text */
+    background-image: url('assets/img/pesa-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000000;
     padding: 80px 0;
-    text-align: left;
+    /* text-align: left; */
     position: relative;
     overflow: hidden; /* To contain the abstract shape */
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     min-height: 450px; /* Adjust as needed */
 }
 
 .experience-pesa-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    z-index: 2; /* Ensure text is above shape */
+    z-index: 2;
+    text-align: center;
 }
 
 .experience-pesa-section h1 {
@@ -3502,7 +3512,7 @@ showLeftCard(currentLeft);
     line-height: 1.1;
     margin-bottom: 30px;
     max-width: 600px; /* Adjust based on image */
-    padding-left: 20px; /* Add some padding on left */
+    padding-left: 0; /* Add some padding on left */
 }
 
 .open-account-btn {
@@ -3626,23 +3636,23 @@ showLeftCard(currentLeft);
         </a>
     </div>
   </div>
-  <div class="abstract-shape"></div>
+  <!-- <div class="abstract-shape"></div> -->
   <!-- Security & Trust Animation (replaces .security-animation-svg) -->
-  <div class="animation-container" style="position:relative;width:400px;height:500px;flex-shrink:0;">
-      <!-- Connection lines -->
+  <!-- <div class="animation-container" style="position:relative;width:400px;height:500px;flex-shrink:0;">
+      
       <div class="connection-line line-1"></div>
       <div class="connection-line line-2"></div>
       <div class="connection-line line-3"></div>
-      <!-- Floating security elements -->
+      
       <div class="floating-element shield">🛡️</div>
       <div class="floating-element money">💰</div>
       <div class="floating-element lock">🔒</div>
       <div class="floating-element certificate">✓</div>
       <div class="floating-element vault">🏦</div>
       <div class="floating-element key">🔑</div>
-      <!-- Central trust indicator -->
+     
       <div class="trust-center">TRUSTED<br>SECURE</div>
-  </div>
+  </div> -->
 </section>
 
 <!-- Security & Trust Animation Styles -->
