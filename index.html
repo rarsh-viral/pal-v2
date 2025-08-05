@@ -467,7 +467,16 @@
             .shape:nth-child(3) { width: 60px; height: 60px;}
             .animated-line { width: 160px !important;}
         }
-        
+        @media (max-width: 900px) {
+        .title {
+            font-size: 2em;
+        }
+        }
+        @media (max-width: 600px) {
+        .title {
+            font-size: 1.3em;
+        }
+        }
         .hero-container {
         display: flex;
         align-items: center;
@@ -1751,7 +1760,41 @@
                 .integration-left h2 {
                     font-size: 2em;
                 }
-            }
+              }
+               
+              @media (max-width: 900px) {
+                .integration-left {
+                    width: 100%;
+                    padding: 0 8px;
+                    align-items: flex-start;
+                }
+                .integration-left h2 {
+                    font-size: 2em;
+                    text-align: left;
+                }
+                .integration-desc {
+                    font-size: 1em;
+                }
+                .integration-btn {
+                    width: 100%;
+                    min-width: 180px;
+                    text-align: center;
+                    padding: 12px 0;
+                }
+                .integration-image-carousel {
+                    width: 100%;
+                }
+                }
+
+                @media (max-width: 600px) {
+                .integration-left {
+                    padding: 0 4px;
+                    align-items: flex-start;
+                }
+                .integration-left h2 {
+                    font-size: 1.2em;
+                }
+                }
               </style>
               <section class="security-trust-section">
                 <div class="security-trust-header">
