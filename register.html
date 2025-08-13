@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pal - Schedule a Demo Call</title>
+    <link rel="stylesheet" href="register.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background-image: url(assets/img/noise3.png);
+            background-color: #f5f5f5;
+            color: #222;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 48px;
+            border-bottom: 1px solid #eee;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.3rem;
+            /* color: #ff6600; */
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+        }
+        .cta {
+            background: #000000;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-menu > li {
+            position: relative;
+        }
+        .nav-menu > li > a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .arrow {
+            font-size: 0.7em;
+            margin-left: 2px;
+        }
+        .dropdown-menu {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 72px;
+            min-width: 340px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(44,62,80,0.13);
+            padding: 24px 32px;
+            z-index: 100;
+            flex-direction: row;
+            gap: 32px;
+            white-space: nowrap;
+        }
+        .dropdown:hover .dropdown-menu,
+        .dropdown:focus-within .dropdown-menu {
+            display: flex;
+        }
+        .dropdown-section {
+            min-width: 260px;
+        }
+        .dropdown-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #222;
+        }
+        .dropdown-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .dropdown-section li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.15s;
+            padding: 6px 8px;
+        }
+        .dropdown-section li:hover {
+            background: #f7f7f7;
+        }
+        .dropdown-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            margin-top: 2px;
+        }
+        .dropdown-label {
+            font-weight: 600;
+            color: #222;
+            font-size: 1em;
+        }
+        .dropdown-desc {
+            font-size: 0.97em;
+            color: #666;
+            margin-top: 2px;
+        }
+        @media (max-width: 900px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 0;
+            }
+            .dropdown-menu {
+                position: static;
+                min-width: 100%;
+                box-shadow: none;
+                padding: 16px 0;
+            }
+        }
+
+        .hero {
+            max-width: 1150px;
+            margin: 40px auto 0 auto;
+            padding: 0 24px;
+        }
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .hero-content {
+            display: flex;
+            gap: 32px;
+            margin-top: 24px;
+            align-items: flex-start;
+        }
+        .hero-img {
+            width: 570px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .locations {
+            flex: 1;
+        }
+        .location-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            padding: 16px;
+            min-width: 180px;
+            font-size: 0.95rem;
+        }
+        .form-section {
+            max-width: 1100px;
+            margin: 32px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding: 32px 24px;
+        }
+        .demo-form h2 {
+            margin-bottom: 24px;
+            font-size: 1.3rem;
+        }
+        .form-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .demo-form input,
+        .demo-form select,
+        .demo-form textarea {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: #fafbfc;
+        }
+        .demo-form textarea {
+            min-height: 60px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background: #000000;
+            color: #fff;
+            border: none;
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 32px 0 0 0;
+            margin-top: 48px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .footer-logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff6600;
+        }
+        .footer-info {
+            max-width: 300px;
+            font-size: 0.95rem;
+        }
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 32px;
+        }
+        .footer-globe {
+            width: 180px;
+            opacity: 0.2;
+        }
+        @media (max-width: 900px) {
+            .hero-content, .footer-content {
+                flex-direction: column;
+                gap: 24px;
+            }
+            /* .form-section {
+                padding: 24px 8px;
+            } */
+        }
+
+        .pal-footer {
+            background: rgba(24, 26, 27, 0.98);
+            background-image: url(assets/img/noise.png);
+            background-blend-mode: difference;
+            color: #fff;
+            /* border-top: 3px solid #2bb996; */
+            font-family: 'Inter', Arial, sans-serif;
+            margin-top: 0;
+            }
+
+            .pal-footer-main {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            align-items: flex-start;
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 48px 24px 24px 24px;
+            /* gap: 32px; */
+            /* flex-wrap: wrap; */
+            }
+
+            .pal-footer-logo {
+            margin-bottom: 24px;
+            }
+
+            .pal-footer-cols {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 32px;
+            flex-wrap: wrap;
+            }
+
+            .pal-footer-col {
+            min-width: 180px;
+            flex: 1 1 0;
+            }
+
+            .pal-footer-brand {
+            font-size: 2.8em;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+            }
+
+            .pal-footer-title {
+            font-size: 1.18em;
+            font-weight: 700;
+            margin-bottom: 16px;
+            }
+
+            .pal-footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            }
+
+            .pal-footer-col ul li {
+            margin-bottom: 12px;
+            font-size: 1.08em;
+            color: #e0e0e0;
+            }
+
+            .pal-footer-col ul li a {
+            color: #e0e0e0;
+            text-decoration: underline;
+            transition: color 0.2s;
+            }
+            .pal-footer-col ul li a:hover {
+            color: #2bb996;
+            }
+
+            .pal-footer-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+            }
+
+            .pal-footer-social-link svg {
+            vertical-align: middle;
+            /* color: blue; */
+            transition: color 0.2s;
+            }
+            .pal-footer-social-link:hover svg {
+            color: #fff;
+            }
+
+            .pal-footer-note {
+            text-align: left;
+            color: #bdbdbd;
+            font-size: 1em;
+            margin: 24px 0 0 0;
+            padding: 0 24px;
+            }
+
+            .pal-footer-bottom {
+            text-align: center;
+            align-items: center;
+            border-top: 1px solid #444;
+            margin-top: 32px;
+            padding: 18px 24px 12px 24px;
+            /* display: flex;
+            justify-content: space-between; */
+            font-size: 1.08em;
+            background: #181a1b;
+            background-image: url(assets/img/noise.png);
+            background-blend-mode: difference;
+            flex-wrap: wrap;
+            gap: 12px;
+            }
+
+            .pal-footer-bottom a {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            margin-left: 8px;
+            margin-right: 8px;
+            transition: color 0.2s;
+            }
+            .pal-footer-bottom a:hover {
+            color: #979a99;
+            }
+
+            @media (max-width: 900px) {
+            .pal-footer-main {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+            .pal-footer-bottom {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                font-size: 1em;
+            }
+            }
+
+            .globe-section {
+                background-image: url(assets/img/noise3.png);
+                position: relative;
+                
+                overflow: hidden;
+                min-height: 220px;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+            }
+
+            .globe-bg {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background: url('data:image/svg+xml;utf8,<svg width="1166" height="357" viewBox="0 0 1166 357" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="583" cy="357" rx="583" ry="357" fill="url(%23paint0_linear_1_2)" fill-opacity="0.28"/><defs><linearGradient id="paint0_linear_1_2" x1="583" y1="0" x2="583" y2="357" gradientUnits="userSpaceOnUse"><stop stop-color="%232bb996"/><stop offset="1" stop-color="%23b2f7e2" stop-opacity="0.18"/></linearGradient></defs></svg>') no-repeat center bottom;
+                background-size: cover;
+                width: 100%;
+                height: 100%;
+                opacity: 0.85; /* slightly more visible */
+                z-index: 1;
+                filter: brightness(1.15) blur(0.5px); /* subtle glow/softness */
+            }
+
+            .globe-content {
+                position: relative;
+                z-index: 2;
+                text-align: center;
+                padding: 48px 16px 32px 16px;
+                width: 100%;
+            }
+
+            .globe-content h2 {
+                color: green;
+                font-size: 2rem;
+                margin-bottom: 12px;
+                font-weight: 800;
+                letter-spacing: -1px;
+            }
+
+            .globe-content p {
+                color: #222;
+                font-size: 1.15rem;
+                margin: 0 auto;
+                max-width: 600px;
+            }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a class="navbar-brand" href="index.html">
+            <img height="60px" src="assets/img/logo_pal-removebg-preview.png" alt="">
+        </a>
+        <nav>
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="#">Products <span class="arrow">&#9662;</span></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-section">
+                            <div class="dropdown-title">Products</div>
+                            <ul>
+                                <li>
+                                    <span class="dropdown-icon" style="background:#fffbe6;"><i class="bi bi-credit-card"></i></span>
+                                    <div>
+                                        <div class="dropdown-label">Invoicing for Businesses</div>
+                                        <div class="dropdown-desc">Collect payments in one place</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="dropdown-icon" style="background:#fffbe6;"><i class="bi bi-wallet2"></i></span>
+                                    <div>
+                                        <div class="dropdown-label">Multi-Currency Wallet</div>
+                                        <div class="dropdown-desc">Local & global currencies for your business</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="dropdown-icon" style="background:#f0f7ff;"><i class="bi bi-cash-stack"></i></span>
+                                    <div>
+                                        <div class="dropdown-label">Treasury</div>
+                                        <div class="dropdown-desc">Simple, secure payment solutions</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dropdown-section">
+                            <ul>
+                                <li>
+                                    <span class="dropdown-icon" style="background:#f0f7ff;"><i class="bi bi-camera"></i></span>
+                                    <div>
+                                        <div class="dropdown-label">OTC Desk</div>
+                                        <div class="dropdown-desc">High value transactions at competitive rates</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="dropdown-icon" style="background:#fffbe6;"><i class="bi bi-briefcase"></i></span>
+                                    <div>
+                                        <div class="dropdown-label">Register Your Business</div>
+                                        <div class="dropdown-desc">Get a U.S. registered business</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="dropdown-icon" style="background:#f0f7ff;"><i class="bi bi-currency-dollar"></i></span>
+                                    <div>
+                                        <div class="dropdown-label">Stablecoins</div>
+                                        <div class="dropdown-desc">Simple, secure payment solutions</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Company <span class="arrow">&#9662;</span></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-section">
+                            <div class="dropdown-title">Company</div>
+                            <ul>
+                                <li>
+                                    <span class="dropdown-icon" style="background:#fffbe6;"><i class="bi bi-info-circle"></i></span>
+                                    <div>
+                                        <div class="dropdown-label">About Us</div>
+                                        <div class="dropdown-desc">WeWire is a B2B cross-border payment provider</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="dropdown-icon" style="background:#f0f7ff;"><i class="bi bi-briefcase"></i></span>
+                                    <div>
+                                        <div class="dropdown-label">Careers</div>
+                                        <div class="dropdown-desc">Join our amazing team</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="dropdown-icon" style="background:#eafff3;"><i class="bi bi-journal"></i></span>
+                                    <div>
+                                        <div class="dropdown-label">Blog</div>
+                                        <div class="dropdown-desc">Catch up on our latest updates and blog posts</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Use Cases <span class="arrow">&#9662;</span></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-section">
+                            <div class="dropdown-title">Use Cases</div>
+                            <ul>
+                                <li>
+                                    <span class="dropdown-icon" style="background:#f0f7ff;"><i class="bi bi-bank"></i></span>
+                                    <div>
+                                        <div class="dropdown-label">Import, Export & Manufacturing</div>
+                                        <div class="dropdown-desc">Cross-border payment solutions tailored to your needs</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="dropdown-icon" style="background:#fffbe6;"><i class="bi bi-cash"></i></span>
+                                    <div>
+                                        <div class="dropdown-label">Financial Institutions</div>
+                                        <div class="dropdown-desc">Making payments seamless for banks and fintechs</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Tools</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </nav>
+        <button class="cta">Login</button>
+    </header>
+    <br><br><br><br>
+    <main>
+        <section class="hero">
+            <div>
+                <h1>We are here to help and make your <br>transactions seamless</h1>
+                <p style="margin-bottom:32px;">Contact support via</p>
+            </div>
+            <div class="hero-content">
+                
+                <img src="assets/img/office.jpg" alt="Office" class="hero-img">
+                <div class="locations" style="flex:1;">
+                    <h3>We are located in</h3>
+                    <div class="location-cards">
+                        <div class="card">
+                            <span>
+                                <img src="assets/img/flags/bj.png" alt="Benin Flag" style="width:24px;vertical-align:middle;margin-right:6px;">
+                                Benin
+                            </span>
+                            <p>1566 Tsatse Dzani St.<br>East-Legon, Accra</p>
+                        </div>
+                        <div class="card">
+                            <span>
+                                <img src="assets/img/flags/ngn.png" alt="Nigeria Flag" style="width:24px;vertical-align:middle;margin-right:6px;">
+                                Nigeria
+                            </span>
+                            <p>No. 7 Ibiyinka Olorunbe Close,<br>Victoria Island, Lagos.</p>
+                        </div>
+                        <div class="card">
+                            <span>
+                                <img src="assets/img/flags/gh.png" alt="Ghana Flag" style="width:24px;vertical-align:middle;margin-right:6px;">
+                                Ghana
+                            </span>
+                            <p>18 Sheikh Rashid Tower,<br>World Trade Centre, Dubai, UAE</p>
+                        </div>
+                        <!-- <div class="card">
+                            <span>🇺🇸 USA</span>
+                            <p>1007 N Orange St.<br>4th Floor, Wilmington, DE</p>
+                        </div>
+                        <div class="card">
+                            <span>🇨🇦 Canada</span>
+                            <p>2015 Main St<br>Vancouver, B.C, Canada, V5T 3C2</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br><br>
+        <section class="form-section">
+            <form class="demo-form" action="https://formsubmit.co/your@email.com" method="POST">
+                <h2>Schedule a demo call</h2>
+                <div class="form-row">
+                    <input type="text" name="first_name" placeholder="First name" required>
+                    <input type="text" name="last_name" placeholder="Last name" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" name="email" placeholder="Email address" required>
+                    <input type="text" name="job_title" placeholder="Job title">
+                </div>
+                <div class="form-row">
+                    <input type="text" name="phone" placeholder="Phone number">
+                    <input type="text" name="company" placeholder="Company name">
+                </div>
+                <div class="form-row">
+                    <input type="text" name="website" placeholder="Website">
+                    <select name="country">
+                        <option value="">Country</option>
+                        <option>Ghana</option>
+                        <option>Nigeria</option>
+                        <option>UAE</option>
+                        <option>Canada</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <select name="product">
+                        <option value="">Which WeWire product do you want to schedule a call for?</option>
+                        <option>Product 1</option>
+                        <option>Product 2</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <select name="company_type">
+                        <option value="">What does your company do?</option>
+                        <option>Fintech</option>
+                        <option>E-commerce</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="monthly_volume" placeholder="What are your expected monthly volumes?">
+                </div>
+                <div class="form-row">
+                    <textarea name="about" placeholder="Tell us about your company"></textarea>
+                </div>
+                <div class="form-row">
+                    <select name="referral">
+                        <option value="">How did you hear about us?</option>
+                        <option>Google</option>
+                        <option>Referral</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </section>
+
+    </main>
+    <section class="globe-section">
+        <div class="globe-bg"></div>
+        <div class="globe-content">
+            <h2>Expanding your business across borders</h2>
+            <p>PAL Africa helps you connect, transact, and grow globally with seamless cross-border solutions.</p>
+        </div>
+    </section>
+    <footer class="pal-footer">
+    <div class="pal-footer-main">
+        <div class="pal-footer-logo">
+        <div class="pal-footer-brand">PAL.</div>
+        </div>
+        <div class="pal-footer-cols">
+            <div class="pal-footer-col">
+            <div class="pal-footer-title">Products</div>
+            <ul>
+                <li>Business Wallet</li>
+                <li>API for Businesses</li>
+                <li>Forex Exchange</li>
+            </ul>
+            </div>
+            <div class="pal-footer-col">
+            <div class="pal-footer-title">Use cases</div>
+            <ul>
+                <li>E–commerce</li>
+                <li>Fintech</li>
+                <li>Remittance</li>
+                <li>Import–Export</li>
+            </ul>
+            </div>
+            <div class="pal-footer-col">
+            <div class="pal-footer-title">Developer</div>
+            <ul>
+                <li>API Document</li>
+            </ul>
+            </div>
+            <div class="pal-footer-col">
+            <div class="pal-footer-title">Legal</div>
+            <ul>
+                <li>Terms of Service</li>
+                <li>Privacy policy</li>
+            </ul>
+            </div>
+            <div class="pal-footer-col" style="min-width:160px;">
+            <div class="pal-footer-title" style="margin-bottom:10px;">FOLLOW US ON</div>
+            <div class="pal-footer-socials" style="gap:10px;">
+                <a  target="_blank" href="https://www.facebook.com/people/PAL-Africa/61550575622118/" aria-label="Facebook" class="pal-footer-social-link"><i class="bi bi-facebook"></i></a>
+                <a  target="_blank" href="https://www.instagram.com/pal_afrika/" aria-label="Instagram" class="pal-footer-social-link"><i class="bi bi-instagram"></i></a>
+                <a  target="_blank" href="https://x.com/Palafrika" aria-label="X" class="pal-footer-social-link"><i class="bi bi-twitter"></i></a>
+                <a  target="_blank" href="https://www.linkedin.com/company/palafrica/" aria-label="LinkedIn" class="pal-footer-social-link"><i class="bi bi-linkedin"></i></a>
+            </div>
+            </div>
+        </div>
+    
+        <div class="pal-footer-note">
+            PAL AFRICA offers its products and services in partnership with licensed transmitters in their respective jurisdictions. All trademarks and brand names belong to 
+            their respective owners. Use of these trademarks and brand names do not represent endorsement by or association with PAL AFRICA
+            <br><br>
+            <strong>IMPORTANT INFORMATION ABOUT PROCEDURES FOR OPENING A NEW ACCOUNT:</strong> To help the government fight the funding of terrorism and money laundering 
+            activities, federal law requires all financial institutions to obtain, verify, and record information that identifies each person who opens an Account. What this means for you: When you open an Account, we will ask 
+            for your name, address, date of birth, and other information that will allow us to identify you. We may also ask to 
+            see a copy of your driver’s license and/or International Passport.
+        </div>
+    </div>
+    <div class="pal-footer-bottom">
+        <span>© PAL Africa. 2025 All rights reserved</span>
+    </div>
+    </footer>
+</div>
+</body>
+</html>
