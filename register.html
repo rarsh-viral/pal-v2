@@ -373,11 +373,12 @@
             }
 
             .pal-footer-note {
-            text-align: left;
+            /* text-align: left; */
+            max-width: 1108px;
             color: #bdbdbd;
             font-size: 1em;
             margin: 24px 0 0 0;
-            padding: 0 24px;
+            /* padding: 0 24px; */
             }
 
             .pal-footer-bottom {
@@ -625,13 +626,13 @@
                             </span>
                             <p>No. 7 Ibiyinka Olorunbe Close,<br>Victoria Island, Lagos.</p>
                         </div>
-                        <div class="card">
+                        <!-- <div class="card">
                             <span>
                                 <img src="assets/img/flags/gh.png" alt="Ghana Flag" style="width:24px;vertical-align:middle;margin-right:6px;">
                                 Ghana
                             </span>
                             <p>18 Sheikh Rashid Tower,<br>World Trade Centre, Dubai, UAE</p>
-                        </div>
+                        </div> -->
                         <!-- <div class="card">
                             <span>🇺🇸 USA</span>
                             <p>1007 N Orange St.<br>4th Floor, Wilmington, DE</p>
@@ -646,7 +647,7 @@
         </section>
         <br><br>
         <section class="form-section">
-            <form class="demo-form" action="https://formsubmit.co/your@email.com" method="POST">
+            <form class="demo-form" target="_blank" action="https://formsubmit.co/contact@pals.africa" method="POST">
                 <h2>Schedule a demo call</h2>
                 <div class="form-row">
                     <input type="text" name="first_name" placeholder="First name" required>
@@ -664,24 +665,37 @@
                     <input type="text" name="website" placeholder="Website">
                     <select name="country">
                         <option value="">Country</option>
-                        <option>Ghana</option>
+                        <option>Benin</option>
                         <option>Nigeria</option>
-                        <option>UAE</option>
-                        <option>Canada</option>
+                        <option>Ivory Coast</option>
+                        <option>Senegal</option>
+                        <option>Mali</option>
+                        <option>Ghana</option>
+                        <option>Burkina Faso</option>
+                        <option>Togo</option>
+                        <option>Cameroun</option>
                     </select>
                 </div>
                 <div class="form-row">
                     <select name="product">
                         <option value="">Which WeWire product do you want to schedule a call for?</option>
-                        <option>Product 1</option>
-                        <option>Product 2</option>
+                        <option>Pay in</option>
+                        <option>Pay out</option>
                     </select>
                 </div>
                 <div class="form-row">
                     <select name="company_type">
                         <option value="">What does your company do?</option>
                         <option>Fintech</option>
+                        <option>Financial institution</option>
+                        <option>Software/Saas provider</option>
+                        <option>Trading Platform</option>
+                        <option>Investment firm</option>
+                        <option>Account firm</option>
+                        <option>Insurance</option>
                         <option>E-commerce</option>
+                        <option>Others</option>
+                        
                     </select>
                 </div>
                 <div class="form-row">
@@ -695,6 +709,12 @@
                         <option value="">How did you hear about us?</option>
                         <option>Google</option>
                         <option>Referral</option>
+                        <option>Online Advertisement</option>
+                        <option>Conference</option>
+                        <option>Newsletter</option>
+                        <option>Direct mail</option>
+                        <option>Social Media</option>
+                        <option>Other</option>
                     </select>
                 </div>
                 <button type="submit" class="submit-btn">Submit</button>
