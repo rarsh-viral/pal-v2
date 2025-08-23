@@ -1055,9 +1055,9 @@
         }
 
         .pal-img {
-          width: 640px;
-          height: 800px;
-          margin-bottom: 120px;
+          width: 590px;
+          height: 650px;
+          margin-bottom: 90px;
           display: block;
           filter: drop-shadow(0 8px 32px rgba(44,185,150,0.18)) drop-shadow(0 2px 8px rgba(0,0,0,0.08));
           transition: transform 0.3s;
@@ -1069,7 +1069,7 @@
           justify-content: center;
           width: 36px;
           height: 36px;
-          background: #454646;
+          background: #095c02;
           color: #fff;
           border-radius: 50%;
           font-size: 1.0em;
@@ -3095,6 +3095,328 @@
         </div>
     </section>
 
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        } */
+
+        .fraud-alert {
+            width: 1000px;
+            background: #2b2b2b;
+            background-image: url(assets/img/noise.png);
+            background-blend-mode: difference;
+            color: #fff;
+            border-radius: 32px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+            /* width: 90vw; */
+            margin: 0 auto;
+            padding: 46px 30px 38px 30px;
+            display: flex;
+            /* background: linear-gradient(135deg, #4c1d95 0%, #1e3a8a 50%, #0f766e 100%); */
+            border-radius: 24px;
+            /* padding: 40px; */
+            /* max-width: 900px; */
+            display: flex;
+            /* align-items: center; */
+            /* gap: 60px; */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .space{
+          padding: 50px;;
+        }
+
+        .fraud-alert::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(19, 139, 29, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(19, 139, 29, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .content {
+            width: 750px;
+            flex: 1;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .contact-box {
+            background: rgba(139, 69, 19, 0.4);
+            border-radius: 16px;
+            padding: 19px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .email {
+            color: #4ade80;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .learn-more {
+            color: #4ade80;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .illustration {
+            width: 400px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hacker-figure {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .green-bg {
+            position: absolute;
+            top: 20px;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: #4ade80;
+            border-radius: 50% 70% 60% 40%;
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+        .hacker {
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            z-index: 3;
+            width: 150px;
+            height: 150px;
+        }
+
+        .hood {
+            width: 120px;
+            height: 100px;
+            background: #1f2937;
+            border-radius: 60px 60px 20px 20px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .hood::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -10px;
+            right: -10px;
+            height: 80px;
+            background: #1f2937;
+            border-radius: 70px 70px 0 0;
+            z-index: -1;
+        }
+
+        .face {
+            width: 60px;
+            height: 50px;
+            background: #d4a574;
+            border-radius: 30px 30px 20px 20px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .laptop {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .laptop-base {
+            width: 140px;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .laptop-screen {
+            width: 130px;
+            height: 90px;
+            background: #f3f4f6;
+            border-radius: 8px 8px 0 0;
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 3px solid #d1d5db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fraud-alert-badge {
+            background: #ef4444;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        .green-accent1 {
+            position: absolute;
+            top: -20px;
+            right: -30px;
+            width: 80px;
+            height: 80px;
+            background: #4ade80;
+            border-radius: 60% 40% 70% 30%;
+            opacity: 0.6;
+            z-index: 0;
+        }
+
+        .green-accent2 {
+            position: absolute;
+            bottom: -40px;
+            left: -20px;
+            width: 120px;
+            height: 60px;
+            background: #4ade80;
+            border-radius: 50px;
+            opacity: 0.4;
+            z-index: 0;
+            transform: rotate(-15deg);
+        }
+
+        @media (max-width: 768px) {
+            .fraud-alert {
+                flex-direction: column;
+                padding: 30px 20px;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hacker-figure {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .contact-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+     <div class="fraud-alert">
+        <div class="content">
+            <h1 class="main-title">"Scammers are relentless, but so are we!</h1>
+            <p class="subtitle">
+                Be assured: we will never ask for your login details, OTP, or PIN, and 
+                we will never instruct you to transfer funds or engage via 
+                unverified channels.
+            </p>
+            <div class="contact-box">
+                <p class="contact-text">
+                    If you notice unusual activity or suspect a scam, 
+                    please contact us:
+                </p>
+                <a href="mailto:contact@pals.africa" class="email">contact@pals.africa</a>
+                <!-- <span>Click <a href="#" class="learn-more">here</a> to learn more</span> -->
+            </div>
+        </div>
+        <div class="space"></div>
+    
+        <div class="illustration">
+            <div>
+                <img src="assets/img/fraud1.png" alt="Fraud Alert Illustration" style="width:300px; height:auto; display:block; position:relative; z-index:2;">
+            </div>
+            <!-- <div class="hacker-figure">
+                <div class="green-bg"></div>
+                <div class="green-accent1"></div>
+                <div class="green-accent2"></div>
+                
+                <div class="hacker">
+                    <div class="hood">
+                        <div class="face"></div>
+                    </div>
+                </div>
+                
+                <div class="laptop">
+                    <div class="laptop-base"></div>
+                    <div class="laptop-screen">
+                        <div class="fraud-alert-badge">FRAUD ALERT</div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
     <!-- Payment Link Section -->
    <section class="payment-section" style="padding:64px 0 64px 0;" id="payment-section">
     <div class="container">
@@ -3136,7 +3458,7 @@
           </ul>
           <div class="payment-image">
             <div class="payment-stack">
-              <img src="assets/img/woman7.png" alt="Smiling woman with phone" class="pal-img" />
+              <img src="assets/img/woman9.png" alt="Smiling woman with phone" class="pal-img" />
                     </div>
                 </div>
             </div>
@@ -3475,7 +3797,7 @@ showLeftCard(currentLeft);
       <strong>Built for your</strong> peace of mind
     </div>
     <div class="security-desc">
-      We use 2-Factor Authentication (2FA) to implement additional layers of authentication to verify the payer's identity during a transaction. We also utilize secure communication protocols, like SSL and secure network configurations to protect transmitted data.
+      To ensure the highest level of security for all transactions, we employ a multi-layered defense strategy. This begins with mandatory Two-Factor Authentication (2FA), ensuring that only the authorized account holder can initiate a payment. Furthermore, all data in transit is shielded using industry-standard TLS (Transport Layer Security) encryption.
     </div>
   </div>
 </section>
