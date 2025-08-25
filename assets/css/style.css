@@ -2137,14 +2137,14 @@ small.text {
   .navbar.style-1 .navbar-brand {
     margin-right: 40px; }
   .navbar.style-1 .navbar-nav .nav-item .nav-link {
-    font-size: 12px;
+    font-size: 16px;
     color: #000;
     font-weight: 700;
     line-height: 2;
     margin: 0 7px;
     text-transform: capitalize; }
-    .navbar.style-1 .navbar-nav .nav-item .nav-link.active {
-      color: var(--color-main); }
+    /* .navbar.style-1 .navbar-nav .nav-item .nav-link.active {
+      color: var(--color-main); } */
   .navbar.style-1 .nav-side {
     display: -webkit-box;
     display: -ms-flexbox;
