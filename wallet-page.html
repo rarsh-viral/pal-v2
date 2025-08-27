@@ -21,6 +21,71 @@
             color: #333;
         }
 
+                    /* Ensure proper emoji rendering */
+            .emoji-flag {
+                font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', 'EmojiOne Mozilla', 'Twemoji Mozilla', 'Segoe UI Symbol', Arial, sans-serif;
+                font-size: 1.2em;
+                line-height: 1;
+                vertical-align: middle;
+            }
+            
+            /* Flag styles for countries without image assets */
+            .flag.cameroon {
+                background: linear-gradient(to right, #007a5e 33.33%, #fcd116 33.33%, #fcd116 66.66%, #ce1126 66.66%);
+                position: relative;
+                width: 15px;
+                height: 15px;
+            }
+            
+            .flag.cameroon::after {
+                content: '★';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #fcd116;
+                font-size: 1px;
+                z-index: 2;
+            }
+            
+            .flag.niger {
+                background: linear-gradient(to bottom, #ff8c00 33.33%, white 33.33%, white 66.66%, #009639 66.66%);
+                position: relative;
+                width: 15px;
+                height: 15px;
+            }
+            
+            .flag.niger::after {
+                content: '●';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #ff8c00;
+                font-size: 1px;
+                z-index: 2;
+            }
+            
+            /* Inline flag styling for the text */
+            .inline-flag {
+                display: inline-block;
+                width: 2px;
+                height: 15px;
+                margin: 0 2px;
+                vertical-align: middle;
+                border-radius: 2px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            }
+            
+            .inline-flag-img {
+                width: 15px;
+                height: 10px;
+                vertical-align: middle;
+                margin: 0 2px;
+                border-radius: 2px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            }
+
         .page-bg {
           
             background-image: url(assets/img/noise3.png);
@@ -2875,7 +2940,7 @@
         </div>
         <div class="container">
             <h1><span class="highlight">Business Wallet</span> that make<br>trade happen</h1>
-            <p class="sub">From Lagos :flag-ng: to Yaoundé, Benin Republic, Niamey, and beyond — <strong>hold, send, and receive payments</strong> in any African currency with ease.</p>
+            <p class="sub">From Lagos <img src="assets/img/flags/ngn.png" alt="Nigeria" class="inline-flag-img"> to Yaoundé <span class="inline-flag flag cameroon"></span>, Benin Republic <img src="assets/img/flags/bj.png" alt="Benin Republic" class="inline-flag-img">, Niamey <span class="inline-flag flag niger"></span>, and beyond 🌎 — <strong>hold, send, and receive payments</strong> in any African currency with ease.</p>
             
             <div class="download-buttons">
                 <a  target="_blank" href="https://play.google.com/store/apps/details?id=com.moworri.pal " class="download-btn">
@@ -3758,6 +3823,106 @@
           <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
           <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
         </div>
+        <div class="feature-tags-row">
+          
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @PAL.</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> PAL.</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
+        <div class="feature-tags-row">
+          
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @PAL.</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> PAL.</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
+        <div class="feature-tags-row">
+          
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @PAL.</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> PAL.</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
+        <div class="feature-tags-row">
+          
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🔥</span> Referral Rewards</span>
+          <span class="tag tag-grey"><span class="tag-emoji">⚙️</span> Currency Conversion</span>
+          <span class="tag tag-red"><span class="tag-emoji">📈</span> Tracking</span>
+          <span class="tag tag-orange"><span class="tag-emoji">😎</span> @PAL.</span>
+          <span class="tag tag-brown"><span class="tag-emoji">🟤</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🏷️</span> PAL.</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+          <span class="tag tag-green"><span class="tag-emoji">💵</span> Best Rates</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-brown"><span class="tag-emoji"> 💪</span> Efficient and Easy</span>
+          <span class="tag tag-grey"><span class="tag-emoji">💱</span> Currency Conversion</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🕛</span> 24/7 Support</span>
+          <span class="tag tag-blue"><span class="tag-emoji">🔒</span> Top-notch Security</span>
+          <span class="tag tag-pink"><span class="tag-emoji">⚡</span> Instant Transfers</span>
+          <span class="tag tag-yellow"><span class="tag-emoji">🚫</span> No hidden Fees</span>
+          <span class="tag tag-purple"><span class="tag-emoji">🟪</span> Credit Building</span>
+          <span class="tag tag-grey"><span class="tag-emoji">🧠</span> Credit Score</span>
+        </div>
       </div>
     </div> -->
     <script>
@@ -3838,7 +4003,7 @@ showLeftCard(currentLeft);
       <strong>Built for your</strong> peace of mind
     </div>
     <div class="security-desc">
-      To ensure the highest level of security for all transactions, we employ a multi-layered defense strategy. This begins with mandatory Two-Factor Authentication (2FA), ensuring that only the authorized account holder can initiate a payment. Furthermore, all data in transit is shielded using industry-standard TLS (Transport Layer Security) encryption.
+      To ensure the highest level of security for all transactions, we employ a multi-layered defense strategy. This begins with mandatory Two-Factor Authentication (2FA), ensuring that only the authorized account holder can initiate a payment. Furthermore, all data in transit is shielded using industry-standard TLS (Transport Layer Security) encryption.
     </div>
   </div>
 </section>
@@ -4376,7 +4541,7 @@ setInterval(() => {
       <strong>IMPORTANT INFORMATION ABOUT PROCEDURES FOR OPENING A NEW ACCOUNT:</strong> To help the government fight the funding of terrorism and money laundering 
       activities, federal law requires all financial institutions to obtain, verify, and record information that identifies each person who opens an Account. What this means for you: When you open an Account, we will ask 
       for your name, address, date of birth, and other information that will allow us to identify you. We may also ask to 
-      see a copy of your driver’s license and/or International Passport.
+      see a copy of your driver's license and/or International Passport.
     </div>
   </div>
   <div class="pal-footer-bottom">

@@ -24,6 +24,59 @@
             background-image: url(https://via.placeholder.com/100x100/f5f5f5/f5f5f5.png);
             background-color: #f5f5f5;
         }
+        
+        /* Flag styles for countries without image assets */
+        .flag.cameroon {
+            background: linear-gradient(to right, #007a5e 33.33%, #fcd116 33.33%, #fcd116 66.66%, #ce1126 66.66%);
+            position: relative;
+        }
+        
+        .flag.cameroon::after {
+            content: '★';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fcd116;
+            font-size: 16px;
+            z-index: 2;
+        }
+        
+        .flag.niger {
+            background: linear-gradient(to bottom, #ff8c00 33.33%, white 33.33%, white 66.66%, #009639 66.66%);
+            position: relative;
+        }
+        
+        .flag.niger::after {
+            content: '●';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff8c00;
+            font-size: 18px;
+            z-index: 2;
+        }
+        
+        /* Inline flag styling for the text */
+        .inline-flag {
+            display: inline-block;
+            width: 20px;
+            height: 15px;
+            margin: 0 2px;
+            vertical-align: middle;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .inline-flag-img {
+            width: 20px;
+            height: 15px;
+            vertical-align: middle;
+            margin: 0 2px;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
 
         .container {
             max-width: 1200px;
@@ -1647,7 +1700,7 @@
         
         <div class="container">
             <h1><span class="highlight">Business Wallet</span> that make<br>trade happen</h1>
-            <p>From Lagos 🇳🇬:flag-ng: 🇳🇬 to Yaoundé 🇨🇲, Benin Republic 🇧🇯, Niamey 🇳🇪, and beyond 🌎 — <strong>hold, send, and receive payments</strong> in any African currency with ease.</p>
+            <p>From Lagos <img src="assets/img/flags/ngn.png" alt="Nigeria" class="inline-flag-img"> to Yaoundé <div class="inline-flag flag cameroon"></div>, Benin Republic <img src="assets/img/flags/bj.png" alt="Benin Republic" class="inline-flag-img">, Niamey <div class="inline-flag flag niger"></div>, and beyond 🌎 — <strong>hold, send, and receive payments</strong> in any African currency with ease.</p>
             
             <div class="download-buttons">
                 <a href="https://play.google.com/store/apps/details?id=com.moworri.pal" target="_blank" class="download-btn">
