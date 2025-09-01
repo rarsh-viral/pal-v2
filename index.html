@@ -1543,7 +1543,7 @@
         }
 
         .card-title {
-            font-size: 24px;
+            font-size: 16px;
             font-weight: 700;
             color: #00B894;
             margin-bottom: 15px;
@@ -1551,7 +1551,7 @@
         }
 
         .card-description {
-            font-size: 16px;
+            font-size: 14px;
             color: #2d3748;
             line-height: 1.6;
             opacity: 0.8;
@@ -1598,211 +1598,19 @@
         <div class="about-hero-feature-row">
           <div class="about-hero-feature-card feature-card-img">
             <!-- <img src="assets/img/trade1.png" alt="Trade 1" /> -->
-             <div class="icon-container">
-                <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Background circle -->
-                    <circle cx="32" cy="32" r="30" fill="#0f172a" stroke="#0f172a" stroke-width="2"/>
-                    
-                    <!-- Currency symbols arranged in triangle -->
-                    <g fill="#ffffff" font-family="Arial, sans-serif" font-weight="bold" font-size="8">
-                        <!-- XOF (top) -->
-                        <text x="32" y="18" text-anchor="middle">XOF</text>
-                        <!-- NGN (bottom left) -->
-                        <text x="20" y="48" text-anchor="middle">NGN</text>
-                        <!-- XAF (bottom right) -->
-                        <text x="44" y="48" text-anchor="middle">XAF</text>
-                    </g>
-                    
-                    <!-- Circular arrows connecting currencies -->
-                    <g fill="none" stroke="green" stroke-width="2" stroke-linecap="round">
-                        <!-- Arrow from XOF to NGN -->
-                        <path d="M 28 22 Q 22 28 22 38" marker-end="url(#arrowhead)"/>
-                        <!-- Arrow from NGN to XAF -->
-                        <path d="M 26 44 Q 32 50 38 44" marker-end="url(#arrowhead)"/>
-                        <!-- Arrow from XAF to XOF -->
-                        <path d="M 40 40 Q 46 28 36 22" marker-end="url(#arrowhead)"/>
-                    </g>
-                    
-                    <!-- Central swap/exchange symbol -->
-                    <g fill="#10b981" stroke="#10b981" stroke-width="1">
-                        <!-- Horizontal arrows -->
-                        <path d="M 26 30 L 34 30 M 32 28 L 34 30 L 32 32" stroke-linecap="round"/>
-                        <path d="M 38 34 L 30 34 M 32 32 L 30 34 L 32 36" stroke-linecap="round"/>
-                    </g>
-                    
-                    <!-- Lightning bolt for "instant" -->
-                    <path d="M 30 25 L 28 30 L 30 30 L 28 35 L 32 30 L 30 30 Z" fill="#fbbf24"/>
-                    
-                    <!-- Arrow marker definition -->
-                    <defs>
-                        <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
-                        <polygon points="0 0, 6 2, 0 4" fill="#fbbf24"/>
-                        </marker>
-                    </defs>
-                </svg>
-            </div>
+            
             <h2 class="card-title">TRADE IN XOF, NGN, XAF</h2>
             <p class="card-description">Move and swap money instantly, pay to Nigeria account or get paid from buyers across West Francophone Africa countries</p>
           </div>
         <div class="about-hero-feature-card feature-card-img">
             <!-- <img src="assets/img/trade2.png" alt="Trade 2" /> -->
-              <div class="icon-container">
-                <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Main circular background -->
-                    <circle cx="32" cy="32" r="28" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
-                    
-                    <!-- Inner glow circle -->
-                    <circle cx="32" cy="32" r="24" fill="none" stroke="green" stroke-width="1" opacity="0.3"/>
-                    
-                    <!-- Mobile wallet/phone shape -->
-                    <rect x="24" y="16" width="16" height="24" rx="3" ry="3" fill="#0f172a" stroke="green" stroke-width="1.5"/>
-                    
-                    <!-- Screen -->
-                    <rect x="26" y="19" width="12" height="18" rx="1" fill="#0f172a"/>
-                    
-                    <!-- Currency stack visualization -->
-                    <g>
-                        <!-- Currency layers with different colors -->
-                        <rect x="28" y="21" width="8" height="2" rx="1" fill="#fbbf24" opacity="0.9"/>
-                        <text x="32" y="22.5" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="3" font-weight="bold">XOF</text>
-                        
-                        <rect x="28" y="24" width="8" height="2" rx="1" fill="#10b981" opacity="0.9"/>
-                        <text x="32" y="25.5" text-anchor="middle" fill="white" font-family="Arial" font-size="3" font-weight="bold">NGN</text>
-                        
-                        <rect x="28" y="27" width="8" height="2" rx="1" fill="#f59e0b" opacity="0.9"/>
-                        <text x="32" y="28.5" text-anchor="middle" fill="white" font-family="Arial" font-size="3" font-weight="bold">XAF</text>
-                        
-                        <rect x="28" y="30" width="8" height="2" rx="1" fill="#ef4444" opacity="0.9"/>
-                        <text x="32" y="31.5" text-anchor="middle" fill="white" font-family="Arial" font-size="3" font-weight="bold">CAD</text>
-                        
-                        <!-- More currencies indicator -->
-                        <rect x="28" y="33" width="8" height="2" rx="1" fill="#8b5cf6" opacity="0.7"/>
-                        <text x="32" y="34.5" text-anchor="middle" fill="white" font-family="Arial" font-size="2.5">+MORE</text>
-                    </g>
-                    
-                    <!-- Smart chip/brain icon -->
-                    <g transform="translate(32, 8)">
-                        <circle cx="0" cy="0" r="4" fill="green" opacity="0.2"/>
-                        <path d="M -2 -1 Q 0 -2 2 -1 Q 1 0 0 0 Q -1 0 -2 -1 M -1 1 Q 0 2 1 1" 
-                            fill="none" stroke="green" stroke-width="1" stroke-linecap="round"/>
-                        <circle cx="0" cy="0" r="1" fill="green"/>
-                    </g>
-                    
-                    <!-- Africa outline (modern/geometric) -->
-                    <g transform="translate(48, 24)" fill="green" opacity="0.8">
-                        <path d="M 0 -2 Q 3 -3 6 0 Q 8 3 6 8 Q 4 12 2 10 Q 0 8 -1 4 Q -2 0 0 -2 Z"/>
-                        <circle cx="2" cy="3" r="1" fill="green" opacity="0.3"/>
-                    </g>
-                    
-                    <!-- Orbital rings around the wallet -->
-                    <circle cx="32" cy="32" r="20" fill="none" stroke="green" stroke-width="0.5" opacity="0.4" stroke-dasharray="2,3"/>
-                    <circle cx="32" cy="32" r="22" fill="none" stroke="green" stroke-width="0.5" opacity="0.3" stroke-dasharray="3,4"/>
-                    
-                    <!-- Floating currency symbols -->
-                    <g fill="#fbbf24" font-family="Arial" font-size="4" opacity="0.6">
-                        <text x="12" y="20">₦</text>
-                        <text x="52" y="46">₵</text>
-                        <text x="16" y="48">$</text>
-                    </g>
-                </svg>
-            </div>
+              
             <h2 class="card-title">SMART AFRICA WALLET</h2>
             <p class="card-description">Hold and manage money in XOF, NGN, XAF, CAD and more.</p>
         </div>
         <div class="about-hero-feature-card feature-card-img">
             <!-- <img src="assets/img/trade3.png" alt="Trade 3" /> -->
-             <div class="icon-container">
-                <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Gradient background -->
-                    <defs>
-                        <radialGradient id="bg-gradient" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
-                        </radialGradient>
-                        <linearGradient id="money-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    
-                    <rect width="64" height="64" rx="12" fill="url(#bg-gradient)"/>
-                    
-                    <!-- Central hub/source -->
-                    <circle cx="32" cy="32" r="8" fill="url(#money-gradient)" stroke="#34d399" stroke-width="1"/>
-                    
-                    <!-- Money symbol in center -->
-                    <g fill="#ffffff">
-                        <circle cx="32" cy="32" r="4" fill="#0f172a" opacity="0.3"/>
-                        <text x="32" y="36" text-anchor="middle" font-family="Arial" font-size="8" font-weight="bold">$</text>
-                    </g>
-                    
-                    <!-- Network nodes representing countries -->
-                    <g fill="#fbbf24" stroke="#f59e0b" stroke-width="1">
-                        <!-- Top tier -->
-                        <circle cx="16" cy="12" r="3"/>
-                        <circle cx="32" cy="8" r="3"/>
-                        <circle cx="48" cy="12" r="3"/>
-                        
-                        <!-- Middle tier -->
-                        <circle cx="8" cy="28" r="3"/>
-                        <circle cx="56" cy="28" r="3"/>
-                        <circle cx="12" cy="44" r="3"/>
-                        <circle cx="52" cy="44" r="3"/>
-                        
-                        <!-- Bottom tier -->
-                        <circle cx="24" cy="56" r="3"/>
-                        <circle cx="40" cy="56" r="3"/>
-                        
-                        <!-- Additional nodes -->
-                        <circle cx="20" cy="20" r="2.5"/>
-                        <circle cx="44" cy="20" r="2.5"/>
-                    </g>
-                    
-                    <!-- Connection lines (payout paths) -->
-                    <g stroke="#10b981" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round">
-                        <path d="M 32 24 L 32 16"/>
-                        <path d="M 28 26 L 20 16"/>
-                        <path d="M 36 26 L 44 16"/>
-                        <path d="M 24 32 L 16 32"/>
-                        <path d="M 40 32 L 48 32"/>
-                        <path d="M 26 38 L 16 48"/>
-                        <path d="M 38 38 L 48 48"/>
-                        <path d="M 30 40 L 26 52"/>
-                        <path d="M 34 40 L 38 52"/>
-                        <path d="M 26 28 L 22 22"/>
-                        <path d="M 38 28 L 42 22"/>
-                    </g>
-                    
-                    <!-- Mobile money indicators -->
-                    <g fill="#3b82f6" opacity="0.9">
-                        <rect x="14.5" y="9" width="3" height="5" rx="1"/>
-                        <rect x="30.5" y="5" width="3" height="5" rx="1"/>
-                        <rect x="46.5" y="9" width="3" height="5" rx="1"/>
-                        <rect x="6.5" y="25" width="3" height="5" rx="1"/>
-                        <rect x="54.5" y="25" width="3" height="5" rx="1"/>
-                        <rect x="10.5" y="41" width="3" height="5" rx="1"/>
-                    </g>
-                    
-                    <!-- Bank account indicators -->
-                    <g fill="#ef4444" opacity="0.8">
-                        <rect x="50.5" y="41" width="3" height="4" rx="0.5"/>
-                        <rect x="22.5" y="53" width="3" height="4" rx="0.5"/>
-                        <rect x="38.5" y="53" width="3" height="4" rx="0.5"/>
-                        <rect x="18.5" y="17" width="3" height="4" rx="0.5"/>
-                        <rect x="42.5" y="17" width="3" height="4" rx="0.5"/>
-                    </g>
-                    
-                    <!-- "10+" badge -->
-                    <g transform="translate(48, 8)">
-                        <circle cx="0" cy="0" r="6" fill="#ef4444" stroke="#ffffff" stroke-width="1"/>
-                        <text x="0" y="2" text-anchor="middle" fill="white" font-family="Arial" font-size="7" font-weight="bold">10+</text>
-                    </g>
-                    
-                    <!-- Pulse animation rings -->
-                    <circle cx="32" cy="32" r="12" fill="none" stroke="#10b981" stroke-width="1" opacity="0.3"/>
-                    <circle cx="32" cy="32" r="16" fill="none" stroke="#10b981" stroke-width="0.5" opacity="0.2"/>
-                </svg>
-            </div>
+             
             <h2 class="card-title">PAYOUT TO 10+</h2>
             <p class="card-description">Payout to more than 10+ Africa countries to mobile money or bank account</p>
         </div>
@@ -2015,6 +1823,145 @@
                         </div>
                     </div>
                    
+                </div>
+            </section>
+            <style>
+                /* Make action-item match hero-cta button design */
+                .action-item,
+                .action-item:visited {
+                    display: inline-block !important;
+                    background: #D9D9D9 !important;
+                    color: #000000 !important;
+                    font-size: 1.1em !important;
+                    font-weight: 500 !important;
+                    padding: 14px 32px !important;
+                    border-radius: 8px !important;
+                    text-decoration: none !important;
+                    margin-top: 12px !important;
+                    box-shadow: none !important;
+                    transition: background 0.2s !important;
+                }
+                .action-item:hover {
+                    background: #bdbdbd !important;
+                    color: #393939 !important;
+                    transform: none !important;
+                }
+                .action-item::before,
+                .action-item:hover::before {
+                    content: none !important;
+                }
+                .action-item .icon {
+                    width: 24px !important;
+                    height: 24px !important;
+                    background: transparent !important;
+                    border: none !important;
+                    border-radius: 0 !important;
+                    box-shadow: none !important;
+                }
+                .action-item .icon::before { content: none !important; }
+                .action-item .icon svg {
+                    width: 24px !important;
+                    height: 24px !important;
+                    stroke: currentColor !important;
+                    stroke-width: 2 !important;
+                    fill: none !important;
+                }
+            </style>
+
+             <section class="">
+                <div class="flag-slider bg-black dark" style="color: white; height: 90px;">
+                    <div class="flags-container">
+                        <div class="flags-track">
+                            <div class="flag-label">
+                            <div class="flag cote-divoire"></div>
+                            <span class="country-name">Côte d'Ivoire</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag togo"></div>
+                            <span class="country-name">Togo</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag maldives"></div>
+                            <span class="country-name">Maldives</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag mali"></div>
+                            <span class="country-name">Mali</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag nigeria"></div>
+                            <span class="country-name">Nigeria</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag ireland"></div>
+                            <span class="country-name">Ireland</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag togo2"></div>
+                            <span class="country-name">Togo</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag burkina-faso"></div>
+                            <span class="country-name">Burkina Faso</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag chad"></div>
+                            <span class="country-name">Chad</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag nigeria2"></div>
+                            <span class="country-name">Nigeria</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag burkina-faso2"></div>
+                            <span class="country-name">Burkina Faso</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag cote-divoire"></div>
+                            <span class="country-name">Côte d'Ivoire</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag togo"></div>
+                            <span class="country-name">Togo</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag maldives"></div>
+                            <span class="country-name">Maldives</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag mali"></div>
+                            <span class="country-name">Mali</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag nigeria"></div>
+                            <span class="country-name">Nigeria</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag ireland"></div>
+                            <span class="country-name">Ireland</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag togo2"></div>
+                            <span class="country-name">Togo</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag burkina-faso"></div>
+                            <span class="country-name">Burkina Faso</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag chad"></div>
+                            <span class="country-name">Chad</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag nigeria2"></div>
+                            <span class="country-name">Nigeria</span>
+                            </div>
+                            <div class="flag-label">
+                            <div class="flag burkina-faso2"></div>
+                            <span class="country-name">Burkina Faso</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -2263,102 +2210,7 @@
             </style>
             
 
-            <section class="">
-                <div class="flag-slider bg-black dark" style="color: white; height: 90px;">
-                    <div class="flags-container">
-                        <div class="flags-track">
-                            <div class="flag-label">
-                            <div class="flag cote-divoire"></div>
-                            <span class="country-name">Côte d'Ivoire</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag togo"></div>
-                            <span class="country-name">Togo</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag maldives"></div>
-                            <span class="country-name">Maldives</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag mali"></div>
-                            <span class="country-name">Mali</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag nigeria"></div>
-                            <span class="country-name">Nigeria</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag ireland"></div>
-                            <span class="country-name">Ireland</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag togo2"></div>
-                            <span class="country-name">Togo</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag burkina-faso"></div>
-                            <span class="country-name">Burkina Faso</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag chad"></div>
-                            <span class="country-name">Chad</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag nigeria2"></div>
-                            <span class="country-name">Nigeria</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag burkina-faso2"></div>
-                            <span class="country-name">Burkina Faso</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag cote-divoire"></div>
-                            <span class="country-name">Côte d'Ivoire</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag togo"></div>
-                            <span class="country-name">Togo</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag maldives"></div>
-                            <span class="country-name">Maldives</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag mali"></div>
-                            <span class="country-name">Mali</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag nigeria"></div>
-                            <span class="country-name">Nigeria</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag ireland"></div>
-                            <span class="country-name">Ireland</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag togo2"></div>
-                            <span class="country-name">Togo</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag burkina-faso"></div>
-                            <span class="country-name">Burkina Faso</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag chad"></div>
-                            <span class="country-name">Chad</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag nigeria2"></div>
-                            <span class="country-name">Nigeria</span>
-                            </div>
-                            <div class="flag-label">
-                            <div class="flag burkina-faso2"></div>
-                            <span class="country-name">Burkina Faso</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+           
             <br><br>
             <section class="integration-section">
                 <div class="integration-container">
@@ -2619,39 +2471,172 @@
                 .foot-container {
                     display: flex;
                     flex-direction: row;
-                    background: rgba(255, 255, 255, 0.9);
-                    background-image: url(assets/img/noise3.png);
-                    /* background-blend-mode: difference; */
-                    backdrop-filter: blur(10px);
-                    /* border-radius: 24px; */
-                    padding: 2rem 1.5rem;
-                    /* max-width: 1200px;
-                    width: 100%; */
-                    gap: 24rem;
-                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%); */
+                    background-image: url(assets/img/noise4.png);
+                    
+                    background-blend-mode: overlay;
+                    backdrop-filter: blur(20px);
+                    padding: 4rem 3rem;
+                    /* max-width: 1250px; */
+                    width: 100%;
+                    gap: 6rem;
+                    box-shadow: 
+                        0 25px 50px rgba(0, 0, 0, 0.08),
+                        0 0 0 1px rgba(255, 255, 255, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+                    border: 1px solid rgba(255, 255, 255, 0.4);
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                /* Background line design for foot-container */
+                .foot-container .foot-lines {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.3;
+                    pointer-events: none;
+                    z-index: 1;
+                }
+
+                .foot-container .foot-line {
+                    position: absolute;
+                    background: linear-gradient(45deg, #3bf673, #1dd85b);
+                    border-radius: 1px;
+                    animation: footFloat 12s ease-in-out infinite;
+                }
+                /* Thick accent curve behind content */
+                .foot-accent-line {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 100%;
+                    height: 220px;
+                    z-index: 0;
+                    pointer-events: none;
+                }
+                .foot-accent-line svg {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    filter: drop-shadow(0 20px 60px rgba(29, 216, 91, 0.18));
+                }
+
+                .foot-line:nth-child(1) {
+                    width: 180px; height: 2px; top: 15%; left: 10%;
+                    transform: rotate(35deg); animation-delay: 0s;
+                }
+                .foot-line:nth-child(2) {
+                    width: 120px; height: 1px; top: 25%; right: 15%;
+                    transform: rotate(-25deg); animation-delay: 2s;
+                }
+                .foot-line:nth-child(3) {
+                    width: 200px; height: 1px; top: 45%; left: 20%;
+                    transform: rotate(55deg); animation-delay: 4s;
+                }
+                .foot-line:nth-child(4) {
+                    width: 150px; height: 2px; bottom: 30%; right: 20%;
+                    transform: rotate(-40deg); animation-delay: 1s;
+                }
+                .foot-line:nth-child(5) {
+                    width: 100px; height: 1px; bottom: 20%; left: 15%;
+                    transform: rotate(20deg); animation-delay: 3s;
+                }
+                .foot-line:nth-child(6) {
+                    width: 140px; height: 1px; top: 35%; right: 30%;
+                    transform: rotate(-60deg); animation-delay: 5s;
+                }
+
+                @keyframes footFloat {
+                    0%, 100% {
+                        transform: translateY(0px) rotate(var(--rotation, 0deg));
+                        opacity: 0.3;
+                    }
+                    50% {
+                        transform: translateY(-8px) rotate(var(--rotation, 0deg));
+                        opacity: 0.5;
+                    }
+                }
+
+                .foot-container::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 1px;
+                    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+                }
+
+                .foot-container::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                                radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+                    pointer-events: none;
                 }
 
                 .header {
                     margin-bottom: 3rem;
-                    margin-left: 35px;
+                    margin-left: 0;
+                    position: relative;
+                    z-index: 2;
                 }
 
                 .get-started {
-                    font-size: 0.75rem;
-                    font-weight: 600;
-                    letter-spacing: 0.1em;
+                    font-size: 0.875rem;
+                    font-weight: 700;
+                    letter-spacing: 0.15em;
                     text-transform: uppercase;
-                    color: #64748b;
-                    margin-bottom: 1rem;
+                    color: green;
+                    margin-bottom: 1.5rem;
+                    background: linear-gradient(135deg, #3bf673, #1dd85b);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    position: relative;
+                    display: inline-block;
+                }
+
+                .get-started::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: linear-gradient(90deg, #23ff39, #1dd849);
+                    border-radius: 1px;
                 }
 
                 .titles {
-                    font-size: 3rem;
-                    font-weight: 700;
-                    color: #1e293b;
-                    line-height: 1.2;
-                    margin-bottom: 2rem;
+                    font-size: 3.5rem;
+                    font-weight: 800;
+                    background: linear-gradient(135deg, #1e3b25 0%, #335545 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    line-height: 1.1;
+                    margin-bottom: 2.5rem;
+                    position: relative;
+                }
+
+                .titles::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -12px;
+                    left: 0;
+                    width: 80px;
+                    height: 4px;
+                    background: linear-gradient(90deg, #4ef63b, #10b981);
+                    border-radius: 2px;
                 }
 
                 .actions {
@@ -2666,49 +2651,116 @@
                     font-size: 1.1em;
                     font-weight: 600;
                     padding: 14px 38px;
+                    /* border: 2px solid #b6ffad; */
+                    border-radius: 8px;
+                    box-shadow: none;
+                    transition: background 0.2s;
+                    cursor: pointer;
+                    /* background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+                    color: #1e293b; */
+                    /* font-size: 1.125rem;
+                    font-weight: 600;
+                    padding: 1.25rem 2rem; */
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    /* padding: 1.5rem 2rem; */
-                    /* background: rgba(255, 255, 255, 0.8); */
-                    border: 1px solid rgba(226, 232, 240, 0.8);
-                    /* border-radius: 16px;
+                    /* border: 2px solid rgba(226, 232, 240, 0.6);
+                    border-radius: 20px;
                     text-decoration: none;
-                    color: #334155; */
-                    /* font-weight: 500;
-                    font-size: 1.1rem; */
-                    transition: all 0.3s ease;
-                    cursor: pointer;
+                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); */
+                    /* cursor: pointer;
+                    position: relative; */
+                    overflow: hidden;
+                    /* box-shadow: 
+                        0 4px 20px rgba(0, 0, 0, 0.05),
+                        0 0 0 1px rgba(255, 255, 255, 0.8); */
+                }
+
+                .action-item::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+                    transition: left 0.6s ease;
                 }
 
                 .action-item:hover {
-                    background: #cdcdcd;
-                    color: #1f1f1f;
-                    border-color: #e2e8f0;
-                    transform: translateY(-2px);
-                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+                    color: #0f2a18;
+                    border-color: #3bf660;
+                    transform: translateY(-4px) scale(1.02);
+                    /* box-shadow: 
+                        0 20px 40px rgba(59, 130, 246, 0.15),
+                        0 0 0 1px rgba(59, 130, 246, 0.3); */
+                }
+
+                .action-item:hover::before {
+                    left: 100%;
                 }
 
                 .action-content {
                     display: flex;
                     align-items: center;
-                    gap: 1rem;
+                    gap: 1.25rem;
+                    position: relative;
+                    z-index: 2;
+                    
                 }
 
                 .icon {
-                    width: 24px;
-                    height: 24px;
+                    width: 48px;
+                    height: 48px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+                    border-radius: 16px;
+                    border: 1px solid rgba(226, 232, 240, 0.8);
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .icon::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(135deg, #3bf660 0%, #1dd842 100%);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
                 }
 
                 .icon svg {
-                    width: 20px;
-                    height: 20px;
+                    width: 24px;
+                    height: 24px;
                     stroke: #64748b;
-                    stroke-width: 2;
+                    stroke-width: 2.5;
                     fill: none;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .action-item:hover .icon {
+                    background: linear-gradient(135deg, #3bf657 0%, #1dd84f 100%);
+                    border-color: #3bf657;
+                    transform: scale(1.1);
+                    box-shadow: 0 8px 25px rgba(59, 246, 128, 0.3);
+                }
+
+                .action-item:hover .icon::before {
+                    opacity: 1;
+                }
+
+                .action-item:hover .icon svg {
+                    stroke: #ffffff;
+                    stroke-width: 3;
                 }
 
                 .arrow {
@@ -2738,16 +2790,29 @@
                 .action-item:hover .arrow svg {
                     transform: translateX(2px);
                 }
+                .space {
+                    padding: 30px;
+                }
 
                 /* Tablet styles */
         @media (max-width: 1024px) {
             .foot-container {
-                gap: 3rem;
-                padding: 2.5rem 2rem;
+                gap: 4rem;
+                padding: 3rem 2.5rem;
+                border-radius: 28px;
             }
             
             .titles {
-                font-size: 2.5rem;
+                font-size: 3rem;
+            }
+
+            .action-item {
+                padding: 1.125rem 1.75rem;
+            }
+
+            .icon {
+                width: 44px;
+                height: 44px;
             }
         }
 
@@ -2755,31 +2820,48 @@
         @media (max-width: 768px) {
             .foot-container {
                 flex-direction: column;
-                gap: 2.5rem;
-                padding: 2rem 1.5rem;
+                gap: 3rem;
+                padding: 2.5rem 2rem;
                 text-align: center;
+                border-radius: 24px;
             }
 
             .header {
                 flex: none;
+                margin-bottom: 2rem;
             }
 
             .titles {
-                font-size: 2.25rem;
-                margin-bottom: 1.5rem;
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .titles::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .get-started::after {
+                left: 50%;
+                transform: translateX(-50%);
             }
 
             .actions {
                 width: 100%;
                 min-width: 0;
-                max-width: 400px;
+                max-width: 450px;
                 margin: 0 auto;
             }
 
             .action-item {
                 justify-content: center;
-                padding: 18px 24px;
-                font-size: 1rem;
+                padding: 1.25rem 1.5rem;
+                font-size: 1.125rem;
+            }
+
+            .icon {
+                width: 44px;
+                height: 44px;
             }
         }
 
@@ -2790,51 +2872,66 @@
             }
 
             .foot-container {
-                padding: 1.5rem 1rem;
-                border-radius: 16px;
-                gap: 2rem;
+                padding: 2rem 1.5rem;
+                border-radius: 20px;
+                gap: 2.5rem;
             }
 
             .titles {
-                font-size: 1.875rem;
+                font-size: 2.25rem;
                 line-height: 1.1;
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
             }
 
             .get-started {
-                font-size: 0.6875rem;
-                margin-bottom: 0.75rem;
+                font-size: 0.75rem;
+                margin-bottom: 1rem;
             }
 
             .action-item {
-                padding: 16px 20px;
-                font-size: 0.9375rem;
-                border-radius: 10px;
+                padding: 1.125rem 1.25rem;
+                font-size: 1rem;
+                border-radius: 16px;
             }
 
             .action-content {
-                gap: 0.75rem;
+                gap: 1rem;
+            }
+
+            .icon {
+                width: 40px;
+                height: 40px;
             }
 
             .icon svg {
-                width: 18px;
-                height: 18px;
+                width: 20px;
+                height: 20px;
             }
         }
 
         /* Very small screens */
         @media (max-width: 360px) {
+            .foot-container {
+                padding: 1.75rem 1.25rem;
+                border-radius: 18px;
+            }
+
             .titles {
-                font-size: 1.625rem;
+                font-size: 2rem;
             }
 
             .action-item {
-                padding: 14px 16px;
-                font-size: 0.875rem;
+                padding: 1rem 1.125rem;
+                font-size: 0.9375rem;
             }
 
             .actions {
-                gap: 0.75rem;
+                gap: 0.875rem;
+            }
+
+            .icon {
+                width: 36px;
+                height: 36px;
             }
         }
 
@@ -2847,22 +2944,46 @@
             }
 
             .foot-container {
-                padding: 1.5rem;
-                gap: 2rem;
+                padding: 2rem 1.5rem;
+                gap: 2.5rem;
+                border-radius: 20px;
             }
 
             .titles {
-                font-size: 1.75rem;
-                margin-bottom: 1rem;
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .action-item {
+                padding: 1rem 1.5rem;
             }
         }
             </style>
             <section class="foot-container">
+                <div class="foot-accent-line">
+                    <svg viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="footGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#3bf673" stop-opacity="0.25"/>
+                                <stop offset="100%" stop-color="#1dd85b" stop-opacity="0.25"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M 0 140 C 250 60, 950 220, 1200 100" fill="none" stroke="url(#footGrad)" stroke-width="120" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="foot-lines">
+                    <div class="foot-line"></div>
+                    <div class="foot-line"></div>
+                    <div class="foot-line"></div>
+                    <div class="foot-line"></div>
+                    <div class="foot-line"></div>
+                    <div class="foot-line"></div>
+                </div>
                 <div class="header">
                     <div class="get-started">GET STARTED</div>
                     <h1 class="titles">Ready to start your<br>PAL journey?</h1>
                 </div>
-                
+                <div class="space"></div>
                 <div class="actions">
                     <a href="#" class="action-item">
                         <div class="action-content">
