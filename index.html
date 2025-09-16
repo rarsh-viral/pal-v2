@@ -1440,7 +1440,7 @@
       .about-hero-feature-card .feature-title {
         font-weight: 700;
         font-size: 1.1em;
-        margin-bottom: 6px;
+        /* margin-bottom: 6px; */
         color: #222;
       }
       .about-hero-feature-card .feature-desc {
@@ -1513,7 +1513,7 @@
         }
         
         .about-hero-feature-row {
-          gap: 10px;
+          gap: 5px;
         }
         .about-hero-title {
           margin-bottom: -100px;
@@ -1630,9 +1630,9 @@
             }
             
             .about-hero-feature-row {
-                gap: 10px;
+                
                 margin-top: 40px;
-                justify-content: center;
+                justify-content: flex-start;
             }
             
             .about-hero-feature-card.feature-card-img {
@@ -1668,6 +1668,11 @@
                 font-size: 1.8em;
             }
             
+            .about-hero-feature-row {
+                gap: 3px;
+                justify-content: flex-start;
+            }
+            
             .about-hero-feature-card.feature-card-img {
                 min-width: 180px;
                 max-width: 240px;
@@ -1693,6 +1698,11 @@
             
             .about-hero-title {
                 font-size: 1.6em;
+            }
+            
+            .about-hero-feature-row {
+                gap: 2px;
+                justify-content: flex-start;
             }
             
             .about-hero-feature-card.feature-card-img {
@@ -1747,18 +1757,18 @@
             <h2 class="card-title">TRADE IN XOF, NGN, XAF</h2>
             <p class="card-description">Move and swap money instantly, pay to Nigeria account or get paid from buyers across West Francophone Africa countries</p>
           </div>
-        <div class="about-hero-feature-card feature-card-img">
-            <!-- <img src="assets/img/trade2.png" alt="Trade 2" /> -->
-              
-            <h2 class="card-title">SMART AFRICA WALLET</h2>
-            <p class="card-description">Hold and manage money in XOF, NGN, XAF, CAD and more.</p>
-        </div>
-        <div class="about-hero-feature-card feature-card-img">
+          <div class="about-hero-feature-card feature-card-img">
+                <!-- <img src="assets/img/trade2.png" alt="Trade 2" /> -->
+                
+                <h2 class="card-title">SMART AFRICA WALLET</h2>
+                <p class="card-description">Hold and manage money in XOF, NGN, XAF, CAD and more.</p>
+           </div>
+           <div class="about-hero-feature-card feature-card-img">
             <!-- <img src="assets/img/trade3.png" alt="Trade 3" /> -->
              
             <h2 class="card-title">PAYOUT TO 10+</h2>
             <p class="card-description">Payout to more than 10+ Africa countries to mobile money or bank account</p>
-        </div>
+           </div>
         </div>
         <div class="about-hero-cta-row">
           <a  target="_blank" class="about-hero-cta-btn" href="wallet-page.html">Pay or get paid – it’s free</a>
@@ -2940,6 +2950,18 @@
                 .space {
                     padding: 30px;
                 }
+                
+                @media (max-width: 768px) {
+                    .space {
+                        padding: 5px;
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    .space {
+                        padding: 0px;
+                    }
+                }
 
                 /* Tablet styles */
         @media (max-width: 1024px) {
@@ -2967,7 +2989,7 @@
         @media (max-width: 768px) {
             .foot-container {
                 flex-direction: column;
-                gap: 3rem;
+                gap: 1rem;
                 padding: 2.5rem 2rem;
                 text-align: center;
                 border-radius: 24px;
@@ -2975,12 +2997,12 @@
 
             .header {
                 flex: none;
-                margin-bottom: 2rem;
+                margin-bottom: 0.5rem;
             }
 
             .titles {
                 font-size: 2.5rem;
-                margin-bottom: 2rem;
+                margin-bottom: 0.5rem;
             }
 
             .titles::after {
@@ -3021,13 +3043,13 @@
             .foot-container {
                 padding: 2rem 1.5rem;
                 border-radius: 20px;
-                gap: 2.5rem;
+                gap: 0.5rem;
             }
 
             .titles {
                 font-size: 2.25rem;
                 line-height: 1.1;
-                margin-bottom: 1.5rem;
+                margin-bottom: 0.25rem;
             }
 
             .get-started {

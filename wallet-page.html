@@ -2521,6 +2521,10 @@
         .navbar-brand img {
           height: 40px !important;
         }
+        
+        .payment-features, .virtual-cards-features, .vc-features {
+          text-align: left !important;
+        }
       }
       @media (max-width: 900px) {
         .navbar-collapse {
@@ -2563,6 +2567,12 @@
         }
         .hero p {
           font-size: 1rem;
+        }
+        
+        .payment-features, .virtual-cards-features, .vc-features {
+          text-align: left !important;
+        }
+        .hero p {
           margin-bottom: 24px;
         }
         .download-buttons {
@@ -2749,7 +2759,7 @@
    
     font-size: 1em;
     margin-bottom: 14px;
-    justify-content: center;
+    /* justify-content: center; */
   }
   .vc-check {
     width: 20px;
@@ -2782,6 +2792,7 @@
           max-width: 100%;
           padding: 0;
           flex: none;
+          text-align: left !important;
         }
         .payment-features li, .virtual-cards-features li {
           font-size: 1em;
@@ -2952,6 +2963,10 @@
             font-size: 0.9em;
           }
           
+          .payment-features {
+            text-align: left;
+          }
+          
           .payment-image {
             max-width: 200px;
           }
@@ -3024,6 +3039,10 @@
             margin-bottom: 12px;
             font-size: 0.85em;
             padding: 15px 10px;
+          }
+          
+          .payment-features {
+            text-align: left;
           }
           
           .payment-image {
@@ -4198,16 +4217,43 @@ setInterval(() => {
 
 // Show the first card on load
 showLeftCard(currentLeft);
+
+// Force left alignment for vc-right on mobile
+function forceLeftAlignment() {
+  if (window.innerWidth <= 900) {
+    const vcRight = document.querySelector('.vc-right');
+    const vcFeatures = document.querySelector('.vc-features');
+    const vcContainer = document.querySelector('.vc-container');
+    
+    if (vcRight) {
+      vcRight.style.textAlign = 'left';
+      vcRight.style.alignItems = 'flex-start';
+      vcRight.style.justifyContent = 'flex-start';
+    }
+    if (vcFeatures) {
+      vcFeatures.style.textAlign = 'left';
+      vcFeatures.style.marginLeft = '0';
+      vcFeatures.style.paddingLeft = '0';
+    }
+    if (vcContainer) {
+      vcContainer.style.alignItems = 'flex-start';
+    }
+  }
+}
+
+// Apply on load and resize
+document.addEventListener('DOMContentLoaded', forceLeftAlignment);
+window.addEventListener('resize', forceLeftAlignment);
 </script>
-    <section class="virtual-cards-section" id="virtual-card">
-      <div class="vc-container">
+    <section class="virtual-cards-section" id="virtual-card" style="text-align: left !important;">
+      <div class="vc-container" style="align-items: flex-start !important;">
         <div class="vc-left">
           <img src="assets/img/visual-card.png" alt="Virtual Card Visual" class="vc-main-image" />
         </div>
-        <div class="vc-right">
+        <div class="vc-right" style="text-align: left !important; align-items: flex-start !important; justify-content: flex-start !important;">
           <div class="vc-coming-soon">COMING SOON</div>
           <h2 >Virtual cards<br><span class="highlight">for a <b>cashless world.</b></span></h2>
-          <ul class="vc-features"
+          <ul class="vc-features" style="text-align: left !important; margin-left: 0 !important; padding-left: 0 !important;"
           >
           <div class="px-3 py-3"></div>
             <li><span style="color: #2BB996; font-size: 1.2em; vertical-align: middle;">
@@ -4808,6 +4854,100 @@ setInterval(() => {
     <span>© PAL Africa. 2025 All rights reserved</span>
   </div>
 </footer>
+
+<!-- HIGH PRIORITY MOBILE ALIGNMENT OVERRIDES -->
+<style>
+@media (max-width: 900px) {
+  .payment-features, .virtual-cards-features, .vc-features {
+    text-align: left !important;
+  }
+  .payment-features li, .virtual-cards-features li, .vc-features li {
+    text-align: left !important;
+  }
+  .payment-flex, .virtual-cards-flex {
+    align-items: flex-start !important;
+  }
+  .payment-content, .virtual-cards-content {
+    text-align: left !important;
+  }
+  .vc-right {
+    text-align: left !important;
+  }
+  .vc-right .vc-features {
+    text-align: left !important;
+  }
+  .vc-right .vc-features li {
+    text-align: left !important;
+  }
+  .vc-container {
+    align-items: flex-start !important;
+  }
+  .virtual-cards-section {
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .payment-features, .virtual-cards-features, .vc-features {
+    text-align: left !important;
+  }
+  .payment-features li, .virtual-cards-features li, .vc-features li {
+    text-align: left !important;
+  }
+  .payment-flex, .virtual-cards-flex {
+    align-items: flex-start !important;
+  }
+  .payment-content, .virtual-cards-content {
+    text-align: left !important;
+  }
+  .vc-right {
+    text-align: left !important;
+  }
+  .vc-right .vc-features {
+    text-align: left !important;
+  }
+  .vc-right .vc-features li {
+    text-align: left !important;
+  }
+  .vc-container {
+    align-items: flex-start !important;
+  }
+  .virtual-cards-section {
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-features, .virtual-cards-features, .vc-features {
+    text-align: left !important;
+  }
+  .payment-features li, .virtual-cards-features li, .vc-features li {
+    text-align: left !important;
+  }
+  .payment-flex, .virtual-cards-flex {
+    align-items: flex-start !important;
+  }
+  .payment-content, .virtual-cards-content {
+    text-align: left !important;
+  }
+  .vc-right {
+    text-align: left !important;
+  }
+  .vc-right .vc-features {
+    text-align: left !important;
+  }
+  .vc-right .vc-features li {
+    text-align: left !important;
+  }
+  .vc-container {
+    align-items: flex-start !important;
+  }
+  .virtual-cards-section {
+    text-align: left !important;
+  }
+}
+</style>
+
 </body>
 <!--mobile responsive-->
 <style>
@@ -5001,6 +5141,10 @@ setInterval(() => {
                 font-size: 16px;
                 gap: 15px;
                 margin-bottom: 25px;
+            }
+            
+            .payment-features, .virtual-cards-features, .vc-features {
+                text-align: left;
             }
 
             .checkmark {
@@ -5214,6 +5358,10 @@ setInterval(() => {
                 font-size: 18px;
                 margin-bottom: 30px;
             }
+            
+            .payment-features, .virtual-cards-features, .vc-features {
+                text-align: left;
+            }
 
             .checkmark {
                 width: 32px;
@@ -5375,6 +5523,10 @@ setInterval(() => {
                 font-size: 13px;
                 gap: 10px;
                 margin-bottom: 15px;
+            }
+            
+            .payment-features, .virtual-cards-features, .vc-features {
+                text-align: left;
             }
 
             .checkmark, .step-icon {
