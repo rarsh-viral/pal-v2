@@ -738,6 +738,9 @@
         .trade-card-left,
         .trade-card-right {
             height: 500px;
+            width: 100%;
+            max-width: 620px;
+            min-width: 300px;
         }
 
         .trade-card-left {
@@ -773,10 +776,19 @@
             justify-content: flex-end;
         }
 
+        .trade-card-right {
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
         .trade-card-right .person-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain !important;
+            object-position: center !important;
         }
 
         .trade-card-right .card-overlay {
@@ -2662,19 +2674,28 @@
           min-height: 220px;
         }
         .trade-card-left, .trade-card-right {
-          height: 100px; /* Reduced from 220px to maintain proportions */
+          height: 50px; /* Very compact height for mobile */
+          width: 100%;
+          max-width: 100%;
+          min-width: 280px;
         }
         .trade-card-left h1, .trade-card-left .currency {
           font-size: 1.8em; /* Reduced from 3.0em but still prominent */
         }
         .trade-card-right {
-          height: 140px; /* Slightly taller to better accommodate image */
+          height: 50px; /* Same height as trade-card-left */
+          background: #f8f9fa;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         .trade-card-right .person-image {
-          width: 100%;
-          height: 100%;
-          object-fit: contain; /* Show full image without cropping */
-          object-position: center; /* Center the image */
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: contain !important; /* Show full image without cropping */
+          object-position: center !important; /* Center the image */
+          max-width: 100% !important;
+          max-height: 100% !important;
         }
         .trade-card-right .card-overlay {
           height: 40px; /* Reduced from 80px proportionally */
@@ -2914,11 +2935,18 @@
           min-width: 300px;
           min-height: 150px;
         }
-        .trade-card-left {
-          height: 100px; /* Further reduced */
+        .trade-card-left, .trade-card-right {
+          height: 40px; /* Very compact height for smaller mobile */
+          width: 100%;
+          max-width: 100%;
+          min-width: 250px;
         }
         .trade-card-right {
-          height: 120px; /* Slightly taller for better image display */
+          height: 40px; /* Same height as trade-card-left */
+          background: #f8f9fa;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         .trade-card-left h1, .trade-card-left .currency {
           font-size: 1.5em; /* Further reduced */
@@ -3372,19 +3400,19 @@
             <br>
             
             <div class="trade-cards">
-                <div class="trade-card trade-card-left card1 active">
+                <div class="trade-card trade-card-left card1 active" style="height: 100px !important; max-height: 100px !important;">
                         <h1>Hold & SWAP</h1>
                         <div class="currency">NGN</div>
                     </div>
-                <div class="trade-card trade-card-left card2">
+                <div class="trade-card trade-card-left card2" style="height: 100px !important; max-height: 100px !important;">
                     <h1>Hold & SWAP</h1>
                     <div class="currency">XOF</div>
                 </div>
-                <div class="trade-card trade-card-left card3">
+                <div class="trade-card trade-card-left card3" style="height: 100px !important; max-height: 100px !important;">
                     <h1>Hold & SWAP</h1>
                     <div class="currency">XAF</div>
                 </div>
-                <div class="trade-card trade-card-left card4">
+                <div class="trade-card trade-card-left card4" style="height: 100px !important; max-height: 100px !important;">
                     <h1>Hold & SWAP</h1>
                     <div class="currency">CAD</div>
                 </div>
@@ -3398,7 +3426,7 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="trade-card trade-card-right">
+                <div class="trade-card trade-card-right" style="height: 100px !important; max-height: 100px !important;">
                 <img class="person-image" src="assets/img/aisha1.png" alt="Aicha Bakari">
                 
             </div>
@@ -3843,7 +3871,7 @@
                   </div>
                 </div>
               </div>
-            <button class="payment-btn" style="margin-top:32px;">Ready? Start Now</button>
+            <button class="payment-btn" style="margin-top:32px; display: block; margin-left: auto; margin-right: auto;">Ready? Start Now</button>
             </div>
           </div>
     </section>
@@ -4244,7 +4272,109 @@ function forceLeftAlignment() {
 // Apply on load and resize
 document.addEventListener('DOMContentLoaded', forceLeftAlignment);
 window.addEventListener('resize', forceLeftAlignment);
+
+// Ensure trade cards have consistent sizing
+function ensureTradeCardConsistency() {
+  const tradeCardsLeft = document.querySelectorAll('.trade-card-left');
+  const tradeCardsRight = document.querySelectorAll('.trade-card-right');
+  
+  // Set mobile-appropriate heights
+  const isMobile = window.innerWidth <= 1024;
+  let cardHeight = '500px';
+  let maxHeight = '500px';
+  let minHeight = '500px';
+  
+  if (window.innerWidth <= 480) {
+    cardHeight = '70px';
+    maxHeight = '70px';
+    minHeight = '70px';
+  } else if (window.innerWidth <= 768) {
+    cardHeight = '80px';
+    maxHeight = '80px';
+    minHeight = '80px';
+  } else if (window.innerWidth <= 1024) {
+    cardHeight = '100px';
+    maxHeight = '100px';
+    minHeight = '100px';
+  }
+  
+  tradeCardsLeft.forEach(card => {
+    card.style.width = '100%';
+    card.style.maxWidth = '100%';
+    card.style.minWidth = '250px';
+    card.style.height = cardHeight;
+    card.style.maxHeight = maxHeight;
+    card.style.minHeight = minHeight;
+  });
+  
+  tradeCardsRight.forEach(card => {
+    card.style.width = '100%';
+    card.style.maxWidth = '100%';
+    card.style.minWidth = '250px';
+    card.style.height = cardHeight;
+    card.style.maxHeight = maxHeight;
+    card.style.minHeight = minHeight;
+    card.style.background = '#f8f9fa';
+    card.style.display = 'flex';
+    card.style.alignItems = 'center';
+    card.style.justifyContent = 'center';
+    
+    // Ensure image fits properly
+    const image = card.querySelector('.person-image');
+    if (image) {
+      image.style.width = '100%';
+      image.style.height = '100%';
+      image.style.objectFit = 'contain';
+      image.style.objectPosition = 'center';
+      image.style.maxWidth = '100%';
+      image.style.maxHeight = '100%';
+      image.style.display = 'block';
+    }
+  });
+}
+
+// Apply trade card consistency on load and resize
+document.addEventListener('DOMContentLoaded', ensureTradeCardConsistency);
+window.addEventListener('resize', ensureTradeCardConsistency);
 </script>
+
+<style>
+/* HIGH PRIORITY: Force trade card heights on mobile */
+@media (max-width: 1024px) {
+  .trade-card-left, .trade-card-right {
+    height: 400px !important;
+    max-height: 400px !important;
+    min-height: 400px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .trade-card-left, .trade-card-right {
+    height: 300px !important;
+    max-height: 300px !important;
+    min-height: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .trade-card-left, .trade-card-right {
+    height: 287px !important;
+    max-height: 287px !important;
+    min-height: 287px !important;
+  }
+}
+
+/* Force image to fit properly in trade-card-right on all devices */
+.trade-card-right .person-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  display: block !important;
+}
+</style>
     <section class="virtual-cards-section" id="virtual-card" style="text-align: left !important;">
       <div class="vc-container" style="align-items: flex-start !important;">
         <div class="vc-left">
